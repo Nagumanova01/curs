@@ -411,14 +411,14 @@ headsep=1cm, footskip=1cm]{geometry}
 	
 	Мы рассмотрели способы вычисления вероятностей для квантилей при аппроксимации логнормального распределения. Но эти вероятности находятся не при любом $\sigma$. Выясним, какое должно быть ограничение на этот параметр.
 	\begin{proposition}
-		Положительные вероятности $p_{1}$, $p_{2}$, $p_{3}$ для аппроксимации логнормальной случайной величины $\eta$ с квантилями вида $x_{0.1}$, $x_{0.5}$, $x_{0.9}$ существуют только при условии \[\exp(\sigma^{2})+\exp(-\sigma^{2})-\exp(\Phi(0.1)\sigma-\dfrac{\sigma^{2}}{2})-\exp(\Phi^{-1}(0.9)\sigma-\dfrac{\sigma^{2}}{2})\leq 0,\] (при $\sigma\leq 0.6913$ примерно).
+		Положительные вероятности $p_{1}$, $p_{2}$, $p_{3}$ для аппроксимации логнормальной случайной величины $\eta$ с квантилями вида $x_{\pi}$, $x_{0.5}$, $x_{1-\pi}$ существуют только при условии \[\exp(\sigma^{2})+\exp(-\sigma^{2})-\exp\left( \Phi^{-1}(\pi)\sigma-\dfrac{\sigma^{2}}{2}\right) -\exp\left( \Phi^{-1}(1-\pi)\sigma-\dfrac{\sigma^{2}}{2}\right) \leq 0,\]
 	\end{proposition}
 	\begin{Proof}
 		\begin{equation*}
 			\ln(\eta) \sim N(\mu, \sigma^{2}), \quad\quad \tilde{\F}(y) = \mathsf{P}\left(\eta\leq y \right).
 		\end{equation*}
-		Рассмотрим случай $\pi_{1} = 0.1$, $\pi_{2} = 0.5$, $\pi_{3} = 0.9$. С помощью формулы (12) найдем $\displaystyle{\tilde{\F}^{-1}(\pi_{i})}$ и сделаем следующие обозначения
-		\[\tilde{\F}^{-1}(0.1) = t_{1}, \quad\quad\quad \tilde{\F}^{-1}(0.5) = t_{2}, \quad\quad\quad \tilde{\F}^{-1}(0.9) = t_{3}.\]
+		С помощью формулы (12) найдем $\displaystyle{\tilde{\F}^{-1}(\pi_{i})}$ и сделаем следующие обозначения
+		\[\tilde{\F}^{-1}(\pi) = t_{1}, \quad\quad\quad \tilde{\F}^{-1}(0.5) = t_{2}, \quad\quad\quad \tilde{\F}^{-1}(1-\pi) = t_{3}.\]
 		Теперь рассмотрим систему \eqref{6}, запишем ее через $t_{1}$, $t_{2}$, $t_{3}$ и выразим вероятности $p_{1}$, $p_{2}$, $p_{3}$.
 		\[p_{2}(t_{2}-t_{3})=p_{1}(t_{3}-t_{1})-t_{3},\]
 		\[p_{1}(t_{1}^{2}-t_{3}^{2}) + p_{2}(t_{2}^{2} - t_{3}^{2})=1-t_{3}^{2}.\]
@@ -432,32 +432,35 @@ headsep=1cm, footskip=1cm]{geometry}
 		\end{align}
 		
 		Все вероятности должны быть положительными, подставим в формулы для вероятностей значения переменных $t_{1}$, $t_{2}$, $t_{3}$, которые ищутся по формуле (11).
-		\[p_{1}=\dfrac{1+\dfrac{(\exp(-\dfrac{\sigma^{2}}{2})-1)(\exp(\Phi^{-1}(0.9)\sigma-\dfrac{\sigma^{2}}{2})-1)}{\exp(\sigma^{2})-1}}{\dfrac{\exp(\Phi^{-1}(0.1)\sigma-\dfrac{\sigma^{2}}{2})-\exp(\Phi^{-1}(0.9)\sigma-\dfrac{\sigma^{2}}{2})}{\sqrt{\exp(\sigma^{2})-1}}\dfrac{\exp(\Phi^{-1}(0.1)\sigma-\dfrac{\sigma^{2}}{2})-\exp(-\dfrac{\sigma^{2}}{2})}{\sqrt{\exp(\sigma^{2})-1}}}=\]
+		\[p_{1}=\dfrac{1+\dfrac{\left( \exp\left( -\dfrac{\sigma^{2}}{2}\right) -1\right) \left( \exp(\Phi^{-1}(1-\pi)\sigma-\dfrac{\sigma^{2}}{2})-1\right) }{\exp(\sigma^{2})-1}}{\dfrac{\exp\left( \Phi^{-1}(\pi)\sigma-\dfrac{\sigma^{2}}{2}\right) -\exp\left( \Phi^{-1}(1-\pi)\sigma-\dfrac{\sigma^{2}}{2}\right) }{\sqrt{\exp(\sigma^{2})-1}}\dfrac{\exp\left( \Phi^{-1}(\pi)\sigma-\dfrac{\sigma^{2}}{2}\right) -\exp\left( -\dfrac{\sigma^{2}}{2}\right) }{\sqrt{\exp(\sigma^{2})-1}}}=\]
 		
-		\[=\dfrac{\exp(\sigma^{2})+\exp(\Phi^{-1}(0.9)\sigma-\sigma^{2})-\exp(-\dfrac{\sigma^{2}}{2})-\exp(\Phi^{-1}(0.9)\sigma-\dfrac{\sigma^{2}}{2})}{\exp(\Phi^{-1}(0.1)*2\sigma-\sigma^{2})-\exp(\Phi^{-1}(0.1)\sigma-\sigma^{2})-\exp(-\sigma^{2})+\exp(\Phi^{-1}(0.9)\sigma-\sigma^{2})}.\]
+		\[=\dfrac{\exp(\sigma^{2})+\exp(\Phi^{-1}(1-\pi)\sigma-\sigma^{2})-\exp(-\dfrac{\sigma^{2}}{2})-\exp(\Phi^{-1}(1-\pi)\sigma-\dfrac{\sigma^{2}}{2})}{\exp(\Phi^{-1}(0.1)*2\sigma-\sigma^{2})-\exp(\Phi^{-1}(\pi)\sigma-\sigma^{2})-\exp(-\sigma^{2})+\exp(\Phi^{-1}(1-\pi)\sigma-\sigma^{2})}.\]
 		
-		\[p_{2}=\dfrac{1+\dfrac{(\exp(\Phi^{-1}(0.1)\sigma-\dfrac{\sigma^{2}}{2})-1)(\exp(\Phi^{-1}(0.9)\sigma-\dfrac{\sigma^{2}}{2})-1)}{\exp(\sigma^{2})-1}}{\dfrac{\exp(-\dfrac{\sigma^{2}}{2})-\exp(\Phi^{-1}(0.1)\sigma-\dfrac{\sigma^{2}}{2})}{\sqrt{\exp(\sigma^{2})-1}}\dfrac{\exp(-\dfrac{\sigma^{2}}{2})-\exp(\Phi^{-1}(0.9)\sigma-\dfrac{\sigma^{2}}{2})}{\sqrt{\exp(\sigma^{2})-1}}}=\]
+		\[p_{2}=\dfrac{1+\dfrac{(\exp(\Phi^{-1}(\pi)\sigma-\dfrac{\sigma^{2}}{2})-1)(\exp(\Phi^{-1}(1-\pi)\sigma-\dfrac{\sigma^{2}}{2})-1)}{\exp(\sigma^{2})-1}}{\dfrac{\exp(-\dfrac{\sigma^{2}}{2})-\exp(\Phi^{-1}(\pi)\sigma-\dfrac{\sigma^{2}}{2})}{\sqrt{\exp(\sigma^{2})-1}}\dfrac{\exp(-\dfrac{\sigma^{2}}{2})-\exp(\Phi^{-1}(1-\pi)\sigma-\dfrac{\sigma^{2}}{2})}{\sqrt{\exp(\sigma^{2})-1}}}=\]
 		
-		\[=\dfrac{\exp(\sigma^{2})+\exp(-\sigma^{2})-\exp(\Phi(0.1)\sigma-\dfrac{\sigma^{2}}{2})-\exp(\Phi^{-1}(0.9)\sigma-\dfrac{\sigma^{2}}{2})}{\exp(-\sigma^{2})-\exp(\Phi^{-1}(0.9)\sigma-\sigma^{2})-\exp(\Phi^{-1}(0.1)\sigma-\sigma^{2})+\exp(-\sigma^{2})}.\]
+		\[=\dfrac{\exp(\sigma^{2})+\exp(-\sigma^{2})-\exp(\Phi^{-1}(\pi)\sigma-\dfrac{\sigma^{2}}{2})-\exp(\Phi^{-1}(1-\pi)\sigma-\dfrac{\sigma^{2}}{2})}{\exp(-\sigma^{2})-\exp(\Phi^{-1}(1-\pi)\sigma-\sigma^{2})-\exp(\Phi^{-1}(\pi)\sigma-\sigma^{2})+\exp(-\sigma^{2})}=\]
 		
-		График зависимости $p_{1}$, $p_{2}$, $p_{3}$ от $\sigma$ представлен на Рис. 1.
+		\[=\dfrac{\exp(\sigma^{2})+\exp(-\sigma^{2})-\exp\left( \dfrac{\sigma^{2}}{2}\right)\left(\exp(\Phi^{-1}(\pi)\sigma)+\exp(-\Phi^{-1}(\pi)\sigma)\right) }{2\exp(-\sigma^{2})-\exp(-\sigma^{2})\left( \exp(-\Phi^{-1}(\pi)\sigma)+\exp(\Phi^{-1}(\pi)\sigma)\right) }.\]
 		
-		Заметим, что знаменатель дроби в $p_{2}$ всегда отрицательный, поэтому можно смотреть только на числитель. Он отрицательный, когда $\sigma\leq 0.6913$. А вероятности $p_{1}$ и $p_{3}$ положительные при любом параметре $\sigma$.
-		
-		Таким образом, получили условие $\sigma\leq 0.6913$.
+		Вероятности $p_{1}$ и $p_{3}$ положительные при любом параметре $\sigma$. Рассмотрим знаменатель $p_{2}$.
+		\[2\exp(-\sigma^{2})-\exp(-\sigma^{2})\left( \exp(-\Phi^{-1}(\pi)\sigma)+\exp(\Phi^{-1}(\pi)\sigma)\right)=\]
+		\[=\exp(-\sigma^{2})(2- \exp(-\Phi^{-1}(\pi)\sigma)-\exp(\Phi^{-1}(\pi)\sigma))=\]
+		\[=-\dfrac{\exp(-\sigma^{2})(\exp(\Phi^{-1}(\pi)\sigma)-1)^{2}}{\exp(\Phi^{-1}(\pi)\sigma)}.\]
+		Числитель и знаменатель дроби положительные при любом значении параметра $\sigma$. Значит, весь знаменатель $p_{2}$ отрицательный. Из условия отрицательности числителя получаем следующее ограничение на $\sigma$.
+		\[\exp(\sigma^{2})+\exp(-\sigma^{2})-\exp\left( \dfrac{\sigma^{2}}{2}\right)\left(\exp(\Phi^{-1}(\pi)\sigma)+\exp(-\Phi^{-1}(\pi)\sigma)\right) \leq 0.\]
 	\end{Proof}
 	
-	\begin{figure}[h]
-		\begin{center}
-			\includegraphics[scale=0.09]{prob.png}
-			\caption{Зависимость $p_{1}$, $p_{2}$, $p_{3}$ от $\sigma$.} %% подпись к рисунку
-			\label{ris5} %% метка рисунка для ссылки на него
-		\end{center}
-	\end{figure}
 	
+	Например, для $\pi=0.1$ получаем ограничение $\sigma\leq 0.6913$. 
 	Посмотрим, какому коэффициенту асимметрии соответствует это значение $\sigma$.
 	\[\gamma_{3} = \sqrt{\exp(\sigma^{2})-1}(\exp(\sigma^{2})+2),\]
 	\[\gamma_{3} = 2.82778.\]
+	
+	Ограничение на $\sigma$ становится слабее при уменьшении значения $\pi$.
+	
+	Рассмотрим $\pi = 0.05$, получаем ограничение $\sigma \leq 1.04585$.
+	\[\gamma_{3} = 7.02529.\]
+	
 	\subsection{Варианты постановки задачи}
 	
 	\textbf{Задача:} имеются квантили $x_{\pi}$, $x_{0.5}$, $x_{1-\pi}$ логнормальной случайной величины $\eta$. Нужно уметь считать её математическое ожидание и дисперсию.

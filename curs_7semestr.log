@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  14 MAR 2023 08:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  20 MAR 2023 14:02
 entering extended mode
 **./curs_7semestr.tex
 (curs_7semestr.tex
@@ -1209,89 +1209,88 @@ Overfull \hbox (10.62225pt too wide) in paragraph at lines 374--377
 OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 
  []
 
-[9] [10] [11]
-<prob.png, id=60, 2007.5pt x 2007.5pt>
-File: prob.png Graphic file (type png)
-<use prob.png>
-Package pdftex.def Info: prob.png  used on input line 452.
-(pdftex.def)             Requested size: 180.6672pt x 180.6672pt.
- [12 <./prob.png>]
-Overfull \hbox (1.20496pt too wide) in paragraph at lines 483--485
+[9] [10]
+Overfull \hbox (16.94235pt too wide) detected at line 435
+\OML/cmm/m/it/12 p[] \OT1/cmr/m/n/12 = [] =
+ []
+
+[11] [12]
+Overfull \hbox (1.20496pt too wide) in paragraph at lines 486--488
 \T2A/cmr/bx/n/12 Доказательство. \T2A/cmr/m/n/12 Вы-ра-зим ошиб-ку ап-прок-си-м
 а-ции мат.ожидания ло-гнор-маль-но-го рас-
  []
 
 [13]
-Overfull \hbox (5.46295pt too wide) detected at line 498
+Overfull \hbox (5.46295pt too wide) detected at line 501
 \OT1/cmr/m/n/12 = [] =
  []
 
-<ris1.png, id=70, 495.35063pt x 417.81094pt>
+<ris1.png, id=67, 495.35063pt x 417.81094pt>
 File: ris1.png Graphic file (type png)
 <use ris1.png>
-Package pdftex.def Info: ris1.png  used on input line 505.
+Package pdftex.def Info: ris1.png  used on input line 508.
 (pdftex.def)             Requested size: 187.78532pt x 158.38728pt.
 
-Underfull \hbox (badness 2990) in paragraph at lines 506--506
+Underfull \hbox (badness 2990) in paragraph at lines 509--509
+[]\T2A/cmr/m/n/12 Рис. 1: |Ошиб-ка ап-прок-си-ма-ции
+ []
+
+<ris2.png, id=68, 495.35063pt x 417.81094pt>
+File: ris2.png Graphic file (type png)
+<use ris2.png>
+Package pdftex.def Info: ris2.png  used on input line 514.
+(pdftex.def)             Requested size: 187.78532pt x 158.38728pt.
+
+Underfull \hbox (badness 2990) in paragraph at lines 515--515
 []\T2A/cmr/m/n/12 Рис. 2: |Ошиб-ка ап-прок-си-ма-ции
  []
 
-<ris2.png, id=71, 495.35063pt x 417.81094pt>
-File: ris2.png Graphic file (type png)
-<use ris2.png>
-Package pdftex.def Info: ris2.png  used on input line 511.
+[14 <./ris1.png> <./ris2.png>]
+<ris3.png, id=74, 495.35063pt x 417.81094pt>
+File: ris3.png Graphic file (type png)
+<use ris3.png>
+Package pdftex.def Info: ris3.png  used on input line 548.
 (pdftex.def)             Requested size: 187.78532pt x 158.38728pt.
 
-Underfull \hbox (badness 2990) in paragraph at lines 512--512
+Underfull \hbox (badness 2990) in paragraph at lines 549--549
 []\T2A/cmr/m/n/12 Рис. 3: |Ошиб-ка ап-прок-си-ма-ции
  []
 
-[14 <./ris1.png> <./ris2.png>]
-<ris3.png, id=77, 495.35063pt x 417.81094pt>
-File: ris3.png Graphic file (type png)
-<use ris3.png>
-Package pdftex.def Info: ris3.png  used on input line 545.
+<ris4.png, id=75, 495.35063pt x 417.81094pt>
+File: ris4.png Graphic file (type png)
+<use ris4.png>
+Package pdftex.def Info: ris4.png  used on input line 554.
 (pdftex.def)             Requested size: 187.78532pt x 158.38728pt.
 
-Underfull \hbox (badness 2990) in paragraph at lines 546--546
+Underfull \hbox (badness 2990) in paragraph at lines 555--555
 []\T2A/cmr/m/n/12 Рис. 4: |Ошиб-ка ап-прок-си-ма-ции
  []
 
-<ris4.png, id=78, 495.35063pt x 417.81094pt>
-File: ris4.png Graphic file (type png)
-<use ris4.png>
-Package pdftex.def Info: ris4.png  used on input line 551.
-(pdftex.def)             Requested size: 187.78532pt x 158.38728pt.
-
-Underfull \hbox (badness 2990) in paragraph at lines 552--552
-[]\T2A/cmr/m/n/12 Рис. 5: |Ошиб-ка ап-прок-си-ма-ции
- []
-
 [15 <./ris3.png> <./ris4.png>] [16] [17]
-Underfull \hbox (badness 10000) in paragraph at lines 697--700
+Underfull \hbox (badness 10000) in paragraph at lines 700--703
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 701--702
+Underfull \hbox (badness 10000) in paragraph at lines 704--705
 
  []
 
 [19] [20] [21]
-Underfull \hbox (badness 1028) in paragraph at lines 873--874
+Underfull \hbox (badness 1028) in paragraph at lines 876--877
 []\T2A/cmr/m/n/12 Bickel, J. Eric, Lake, Larry W., and John Lehman. "Discretiza
 tion, Simulation,
  []
 
 
-Underfull \hbox (badness 4072) in paragraph at lines 873--874
+Underfull \hbox (badness 4072) in paragraph at lines 876--877
 \T2A/cmr/m/n/12 and Swanson's (Inaccurate) Mean."SPE Econ Mgmt 3 (2011): 12814
 0. doi:
  []
 
 [22] [23] [24] [25]
 
-LaTeX Warning: Reference `18' on page 26 undefined on input line 1080.
+LaTeX Warning: Reference `18' on page 26 undefined on input line 1083.
 
 [26] [27] (curs_7semestr.aux)
 
@@ -1302,10 +1301,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 25622 strings out of 492968
- 640363 string characters out of 3117975
+ 25616 strings out of 492968
+ 640298 string characters out of 3117975
  835619 words of memory out of 3000000
- 28955 multiletter control sequences out of 15000+200000
+ 28950 multiletter control sequences out of 15000+200000
  21652 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,13n,96p,1342b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1333,9 +1332,9 @@ KTeX 2.9/fonts/type1/public/cm-super/sfbx1440.pfb><C:/Users/РџРѕР»СЊР·РѕРІР°С‚Р
 b><C:/Users/РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/cm-super/sfrm1200.pfb><C:/Users/РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ/AppData/Loc
 al/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on curs_7semestr.pdf (27 pages, 466568 bytes).
+Output written on curs_7semestr.pdf (27 pages, 348830 bytes).
 PDF statistics:
- 173 PDF objects out of 1000 (max. 8388607)
+ 170 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 
