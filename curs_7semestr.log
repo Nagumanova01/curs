@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  20 MAR 2023 14:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  16 APR 2023 21:13
 entering extended mode
 **./curs_7semestr.tex
 (curs_7semestr.tex
@@ -1057,23 +1057,29 @@ LaTeX Warning: Label `16' multiply defined.
 
 LaTeX Warning: Label `17' multiply defined.
 
+
+LaTeX Warning: Label `ris1' multiply defined.
+
+
+LaTeX Warning: Label `ris2' multiply defined.
+
 )
 \openout1 = `curs_7semestr.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1188,13 +1194,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  [2
 
 ] [3] [4] [5]
-Overfull \hbox (5.22647pt too wide) in paragraph at lines 234--234
+Overfull \hbox (5.22647pt too wide) in paragraph at lines 235--235
 []\T2A/cmr/bx/n/14.4 Способ на-хож-де-ния ве-ро-ят-но-стей че-рез ма-те-ма-ти-ч
 е-ское ожи-
  []
 
 
-Overfull \hbox (10.62225pt too wide) in paragraph at lines 241--244
+Overfull \hbox (10.62225pt too wide) in paragraph at lines 242--245
 []\T2A/cmr/bx/n/12 Алгоритм 1. []Да-но: \T2A/cmr/m/it/12 кван-ти-ли $\OML/cmm/m
 /it/12 x[]; x[]; x[]$ \T2A/cmr/m/it/12 ло-гнор-маль-ной слу-чай-ной ве-ли-чи-ны
  $\OML/cmm/m/it/12 $\T2A/cmr/m/it/12 , $[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 \
@@ -1202,7 +1208,7 @@ OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 
  []
 
 [6] [7] [8]
-Overfull \hbox (10.62225pt too wide) in paragraph at lines 374--377
+Overfull \hbox (10.62225pt too wide) in paragraph at lines 375--378
 []\T2A/cmr/bx/n/12 Алгоритм 2. []Да-но: \T2A/cmr/m/it/12 кван-ти-ли $\OML/cmm/m
 /it/12 x[]; x[]; x[]$ \T2A/cmr/m/it/12 ло-гнор-маль-ной слу-чай-ной ве-ли-чи-ны
  $\OML/cmm/m/it/12 $\T2A/cmr/m/it/12 , $[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 \
@@ -1210,38 +1216,38 @@ OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 
  []
 
 [9] [10]
-Overfull \hbox (16.94235pt too wide) detected at line 435
+Overfull \hbox (16.94235pt too wide) detected at line 436
 \OML/cmm/m/it/12 p[] \OT1/cmr/m/n/12 = [] =
  []
 
 [11] [12]
-Overfull \hbox (1.20496pt too wide) in paragraph at lines 486--488
+Overfull \hbox (1.20496pt too wide) in paragraph at lines 490--492
 \T2A/cmr/bx/n/12 Доказательство. \T2A/cmr/m/n/12 Вы-ра-зим ошиб-ку ап-прок-си-м
 а-ции мат.ожидания ло-гнор-маль-но-го рас-
  []
 
 [13]
-Overfull \hbox (5.46295pt too wide) detected at line 501
+Overfull \hbox (5.46295pt too wide) detected at line 505
 \OT1/cmr/m/n/12 = [] =
  []
 
 <ris4.pdf, id=67, 505.89pt x 505.89pt>
 File: ris4.pdf Graphic file (type pdf)
 <use ris4.pdf>
-Package pdftex.def Info: ris4.pdf  used on input line 508.
+Package pdftex.def Info: ris4.pdf  used on input line 512.
 (pdftex.def)             Requested size: 187.78532pt x 187.78618pt.
 
-Underfull \hbox (badness 2990) in paragraph at lines 509--509
+Underfull \hbox (badness 2990) in paragraph at lines 513--513
 []\T2A/cmr/m/n/12 Рис. 1: |Ошиб-ка ап-прок-си-ма-ции
  []
 
 <ris1.pdf, id=68, 505.89pt x 505.89pt>
 File: ris1.pdf Graphic file (type pdf)
 <use ris1.pdf>
-Package pdftex.def Info: ris1.pdf  used on input line 514.
+Package pdftex.def Info: ris1.pdf  used on input line 518.
 (pdftex.def)             Requested size: 187.78532pt x 187.78618pt.
 
-Underfull \hbox (badness 2990) in paragraph at lines 515--515
+Underfull \hbox (badness 2990) in paragraph at lines 519--519
 []\T2A/cmr/m/n/12 Рис. 2: |Ошиб-ка ап-прок-си-ма-ции
  []
 
@@ -1249,20 +1255,20 @@ Underfull \hbox (badness 2990) in paragraph at lines 515--515
 <ris2.pdf, id=82, 505.89pt x 505.89pt>
 File: ris2.pdf Graphic file (type pdf)
 <use ris2.pdf>
-Package pdftex.def Info: ris2.pdf  used on input line 548.
+Package pdftex.def Info: ris2.pdf  used on input line 552.
 (pdftex.def)             Requested size: 187.78532pt x 187.78618pt.
 
-Underfull \hbox (badness 2990) in paragraph at lines 549--549
+Underfull \hbox (badness 2990) in paragraph at lines 553--553
 []\T2A/cmr/m/n/12 Рис. 3: |Ошиб-ка ап-прок-си-ма-ции
  []
 
 <ris3.pdf, id=83, 505.89pt x 505.89pt>
 File: ris3.pdf Graphic file (type pdf)
 <use ris3.pdf>
-Package pdftex.def Info: ris3.pdf  used on input line 554.
+Package pdftex.def Info: ris3.pdf  used on input line 558.
 (pdftex.def)             Requested size: 187.78532pt x 187.78618pt.
 
-Underfull \hbox (badness 2990) in paragraph at lines 555--555
+Underfull \hbox (badness 2990) in paragraph at lines 559--559
 []\T2A/cmr/m/n/12 Рис. 4: |Ошиб-ка ап-прок-си-ма-ции
  []
 
@@ -1270,32 +1276,76 @@ Underfull \hbox (badness 2990) in paragraph at lines 555--555
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [15] [16 <./ris2.pdf> <./ris3.pdf>] [17]
-Underfull \hbox (badness 10000) in paragraph at lines 700--703
+Underfull \hbox (badness 10000) in paragraph at lines 704--707
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 704--705
+Underfull \hbox (badness 10000) in paragraph at lines 708--709
 
  []
 
 [19] [20] [21]
-Underfull \hbox (badness 1028) in paragraph at lines 876--877
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 888.
+
+
+Overfull \hbox (3.97978pt too wide) in paragraph at lines 890--906
+[][] 
+ []
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 907.
+
+
+Overfull \hbox (31.61192pt too wide) in paragraph at lines 909--925
+[][] 
+ []
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 927.
+
+
+Overfull \hbox (3.9798pt too wide) in paragraph at lines 929--945
+[][] 
+ []
+
+<hist6.png, id=116, 471.26062pt x 366.61969pt>
+File: hist6.png Graphic file (type png)
+<use hist6.png>
+Package pdftex.def Info: hist6.png  used on input line 952.
+(pdftex.def)             Requested size: 469.47049pt x 365.23143pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<hist1.png, id=117, 471.26062pt x 366.61969pt>
+File: hist1.png Graphic file (type png)
+<use hist1.png>
+Package pdftex.def Info: hist1.png  used on input line 961.
+(pdftex.def)             Requested size: 469.47049pt x 365.23143pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[22] [23] [24 <./hist6.png>]
+Underfull \hbox (badness 1028) in paragraph at lines 979--980
 []\T2A/cmr/m/n/12 Bickel, J. Eric, Lake, Larry W., and John Lehman. "Discretiza
 tion, Simulation,
  []
 
 
-Underfull \hbox (badness 4072) in paragraph at lines 876--877
+Underfull \hbox (badness 4072) in paragraph at lines 979--980
 \T2A/cmr/m/n/12 and Swanson's (Inaccurate) Mean."SPE Econ Mgmt 3 (2011): 12814
 0. doi:
  []
 
-[22] [23] [24] [25]
+[25 <./hist1.png>] [26] [27] [28]
 
-LaTeX Warning: Reference `18' on page 26 undefined on input line 1083.
+LaTeX Warning: Reference `18' on page 29 undefined on input line 1186.
 
-[26] [27] (curs_7semestr.aux)
+[29] (curs_7semestr.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1304,10 +1354,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 25615 strings out of 492968
- 640390 string characters out of 3117975
- 835619 words of memory out of 3000000
- 28950 multiletter control sequences out of 15000+200000
+ 25627 strings out of 492968
+ 640539 string characters out of 3117975
+ 860619 words of memory out of 3000000
+ 28959 multiletter control sequences out of 15000+200000
  21652 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,13n,96p,1342b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1335,9 +1385,9 @@ KTeX 2.9/fonts/type1/public/cm-super/sfbx1440.pfb><C:/Users/РџРѕР»СЊР·РѕРІР°С‚Р
 b><C:/Users/РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/cm-super/sfrm1200.pfb><C:/Users/РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ/AppData/Loc
 al/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on curs_7semestr.pdf (27 pages, 361633 bytes).
+Output written on curs_7semestr.pdf (29 pages, 382102 bytes).
 PDF statistics:
- 186 PDF objects out of 1000 (max. 8388607)
+ 196 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 63 words of extra memory for PDF output out of 10000 (max. 10000000)
 
