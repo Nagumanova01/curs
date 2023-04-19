@@ -15,4 +15,4 @@
 \contentsline {subsection}{\numberline {6.1}\IeC {\CYRT }\IeC {\cyro }\IeC {\cyrch }\IeC {\cyrn }\IeC {\cyro }\IeC {\cyrs }\IeC {\cyrt }\IeC {\cyrsftsn } \IeC {\cyra }\IeC {\cyrp }\IeC {\cyrp }\IeC {\cyrr }\IeC {\cyro }\IeC {\cyrk }\IeC {\cyrs }\IeC {\cyri }\IeC {\cyrm }\IeC {\cyra }\IeC {\cyrc }\IeC {\cyri }\IeC {\cyri }}{22}
 \contentsline {section}{\numberline {7}\IeC {\CYRZ }\IeC {\cyra }\IeC {\cyrk }\IeC {\cyrl }\IeC {\cyryu }\IeC {\cyrch }\IeC {\cyre }\IeC {\cyrn }\IeC {\cyri }\IeC {\cyre }}{24}
 \contentsline {section}{ \IeC {\CYRS }\IeC {\cyrp }\IeC {\cyri }\IeC {\cyrs }\IeC {\cyro }\IeC {\cyrk } \IeC {\cyrl }\IeC {\cyri }\IeC {\cyrt }\IeC {\cyre }\IeC {\cyrr }\IeC {\cyra }\IeC {\cyrt }\IeC {\cyru }\IeC {\cyrr }\IeC {\cyrery }}{24}
-\contentsline {section}{\numberline {8}\IeC {\CYRP }\IeC {\cyrr }\IeC {\cyri }\IeC {\cyrl }\IeC {\cyro }\IeC {\cyrzh }\IeC {\cyre }\IeC {\cyrn }\IeC {\cyri }\IeC {\cyre }}{25}
+\contentsline {section}{\numberline {8}\IeC {\CYRP }\IeC {\cyrr }\IeC {\cyri }\IeC {\cyrl }\IeC {\cyro }\IeC {\cyrzh }\IeC {\cyre }\IeC {\cyrn }\IeC {\cyri }\IeC {\cyre }}{26}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  16 APR 2023 21:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  19 APR 2023 05:08
 entering extended mode
 **./curs_7semestr.tex
 (curs_7semestr.tex
@@ -1313,39 +1313,52 @@ Overfull \hbox (3.9798pt too wide) in paragraph at lines 929--945
 [][] 
  []
 
-<hist6.png, id=116, 471.26062pt x 366.61969pt>
+[22] [23]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 951.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 966.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 981.
+
+<hist6.png, id=122, 471.26062pt x 366.61969pt>
 File: hist6.png Graphic file (type png)
 <use hist6.png>
-Package pdftex.def Info: hist6.png  used on input line 952.
+Package pdftex.def Info: hist6.png  used on input line 1000.
 (pdftex.def)             Requested size: 469.47049pt x 365.23143pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<hist1.png, id=117, 471.26062pt x 366.61969pt>
+<hist1.png, id=123, 471.26062pt x 366.61969pt>
 File: hist1.png Graphic file (type png)
 <use hist1.png>
-Package pdftex.def Info: hist1.png  used on input line 961.
+Package pdftex.def Info: hist1.png  used on input line 1009.
 (pdftex.def)             Requested size: 469.47049pt x 365.23143pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[22] [23] [24 <./hist6.png>]
-Underfull \hbox (badness 1028) in paragraph at lines 979--980
+[24]
+Underfull \hbox (badness 1028) in paragraph at lines 1027--1028
 []\T2A/cmr/m/n/12 Bickel, J. Eric, Lake, Larry W., and John Lehman. "Discretiza
 tion, Simulation,
  []
 
 
-Underfull \hbox (badness 4072) in paragraph at lines 979--980
+Underfull \hbox (badness 4072) in paragraph at lines 1027--1028
 \T2A/cmr/m/n/12 and Swanson's (Inaccurate) Mean."SPE Econ Mgmt 3 (2011): 12814
 0. doi:
  []
 
-[25 <./hist1.png>] [26] [27] [28]
+[25 <./hist6.png>] [26 <./hist1.png>] [27] [28]
 
-LaTeX Warning: Reference `18' on page 29 undefined on input line 1186.
+LaTeX Warning: Reference `18' on page 29 undefined on input line 1234.
 
-[29] (curs_7semestr.aux)
+[29] [30] (curs_7semestr.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1356,7 +1369,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  25627 strings out of 492968
  640539 string characters out of 3117975
- 860619 words of memory out of 3000000
+ 859618 words of memory out of 3000000
  28959 multiletter control sequences out of 15000+200000
  21652 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1385,9 +1398,9 @@ KTeX 2.9/fonts/type1/public/cm-super/sfbx1440.pfb><C:/Users/Пользоват�
 b><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/cm-super/sfrm1200.pfb><C:/Users/Пользователь/AppData/Loc
 al/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on curs_7semestr.pdf (29 pages, 382102 bytes).
+Output written on curs_7semestr.pdf (30 pages, 383650 bytes).
 PDF statistics:
- 196 PDF objects out of 1000 (max. 8388607)
+ 199 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  63 words of extra memory for PDF output out of 10000 (max. 10000000)
 
