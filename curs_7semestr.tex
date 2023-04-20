@@ -879,14 +879,16 @@ headsep=1cm, footskip=1cm]{geometry}
 \[q_{10} = F_{\eta}^{-1}(0.1), \quad\quad q_{50} = F_{\eta}^{-1}(0.5), \quad\quad q_{90} = F_{\eta}^{-1}(0.9), \quad где\]
 \[F_{\eta}(x) = \int_{0}^{x}\left( \dfrac{1}{2}+\dfrac{1}{2}erf\left( \dfrac{\ln(x-y)-\mu_{1}}{\sigma_{1}\sqrt{2}}\right) \right) \left( \dfrac{1}{\sqrt{2\pi}y\sigma_{2}}\exp\left( -\left( \dfrac{\ln(y)-\mu_{2}}{\sqrt{2}\sigma_{2}}\right) ^{2}\right) \right) dy \]
 
-Ниже представлены таблицы с ошибками для $\ln(\xi_{1}) \sim N(4, \sigma _{1}^{2})$, $\ln(\xi_{2}) \sim N(6, \sigma _{1}^{2})$, полученные с помощью моделирования.
+В таблицах \ref{tab1}, \ref{tab2} и \ref{tab3} представлены ошибки для $\ln(\xi_{1}) \sim N(4, \sigma _{1}^{2})$, $\ln(\xi_{2}) \sim N(6, \sigma _{1}^{2})$, полученные с помощью моделирования.
 
 %\centering
 %\textbf{$\sigma_{1}^{2}$, $\sigma_{2}^{2}$}
 %\backslashbox{два}{один} 
 
-\begin{table}[]
+\begin{table}[!hhh]
 	\caption{Ошибка аппроксимации медианы в \% при 0.05 < $\sigma_{1}^{2}, \sigma_{2}^{2}$ < 2.25 }
+	\label{tab1}
+	
 	\begin{tabular}{|c|ccclcccccccc}
 		\hline
 		\textbf{}                         & \multicolumn{1}{c|}{\textbf{0.05}} & \multicolumn{1}{c|}{\textbf{0.25}} & \multicolumn{1}{c|}{\textbf{0.45}} & \multicolumn{1}{l|}{\textbf{0.65}} & \multicolumn{1}{c|}{\textbf{0.85}} & \multicolumn{1}{c|}{\textbf{1.05}} & \multicolumn{1}{c|}{\textbf{1.25}} & \multicolumn{1}{c|}{\textbf{1.45}} & \multicolumn{1}{c|}{\textbf{1.65}} & \multicolumn{1}{c|}{\textbf{1.85}} & \multicolumn{1}{c|}{\textbf{2.05}} & \multicolumn{1}{c|}{\textbf{2.25}} \\ \hline
@@ -904,8 +906,9 @@ headsep=1cm, footskip=1cm]{geometry}
 		\multicolumn{1}{|l|}{\textbf{2.25}} & \multicolumn{1}{l}{10.30}          & \multicolumn{1}{l}{8.88}           & \multicolumn{1}{l}{6.63}           & 3.95                               & \multicolumn{1}{l}{2.76}           & \multicolumn{1}{l}{2.32}           & \multicolumn{1}{l}{2.65}           & \multicolumn{1}{l}{4.43}           & \multicolumn{1}{l}{4.72}           & \multicolumn{1}{l}{7.12}           & \multicolumn{1}{l}{9.41}           & \multicolumn{1}{l}{9.79}           \\ \cline{1-1}
 	\end{tabular}
 \end{table}
-\begin{table}[]
+\begin{table}[!hhh]
 	\caption{Ошибка аппроксимации $q_{10}$ в \% при 0.05 < $\sigma_{1}^{2}, \sigma_{2}^{2}$ < 2.25 }
+	\label{tab2}
 	\begin{tabular}{|c|ccclcccccccc}
 		\hline
 		\textbf{\%}                         & \multicolumn{1}{c|}{\textbf{0.05}} & \multicolumn{1}{c|}{\textbf{0.25}} & \multicolumn{1}{c|}{\textbf{0.45}} & \multicolumn{1}{l|}{\textbf{0.65}} & \multicolumn{1}{c|}{\textbf{0.85}} & \multicolumn{1}{c|}{\textbf{1.05}} & \multicolumn{1}{c|}{\textbf{1.25}} & \multicolumn{1}{c|}{\textbf{1.45}} & \multicolumn{1}{c|}{\textbf{1.65}} & \multicolumn{1}{c|}{\textbf{1.85}} & \multicolumn{1}{c|}{\textbf{2.05}} & \multicolumn{1}{c|}{\textbf{2.25}} \\ \hline
@@ -924,8 +927,9 @@ headsep=1cm, footskip=1cm]{geometry}
 	\end{tabular}
 \end{table}
 
-\begin{table}[]
+\begin{table}[!hhh]
 	\caption{Ошибка аппроксимации $q_{10}$ в \% при 0.05 < $\sigma_{1}^{2}, \sigma_{2}^{2}$ < 2.25 }
+	\label{tab3}
 	\begin{tabular}{|c|ccclcccccccc}
 		\hline
 		\textbf{\%}                         & \multicolumn{1}{c|}{\textbf{0.05}} & \multicolumn{1}{c|}{\textbf{0.25}} & \multicolumn{1}{c|}{\textbf{0.45}} & \multicolumn{1}{l|}{\textbf{0.65}} & \multicolumn{1}{c|}{\textbf{0.85}} & \multicolumn{1}{c|}{\textbf{1.05}} & \multicolumn{1}{c|}{\textbf{1.25}} & \multicolumn{1}{c|}{\textbf{1.45}} & \multicolumn{1}{c|}{\textbf{1.65}} & \multicolumn{1}{c|}{\textbf{1.85}} & \multicolumn{1}{c|}{\textbf{2.05}} & \multicolumn{1}{c|}{\textbf{2.25}} \\ \hline
@@ -946,69 +950,95 @@ headsep=1cm, footskip=1cm]{geometry}
 
 Таким образом, при аппроксимации суммы двух логнормальных распределений логнормальным распределением ошибки мат. ожидания и дисперсии равны 0, то есть $m=m_{n}$ и $s^{2} = s_{n}^{2}$. Но если для каких-либо расчетов понадобятся квантили $\eta_{n}$, то ошибка медианы может достигать 11\%, ошибка  квантиля $q_{10}$ достигает 51\%, ошибка квантиля $q_{90}$ достигает 40\%.
 
-Теперь посчитаем значения функции $F_{\eta}(x)$ от квантилей $z_{10}$, $z_{50}$, $z_{90}$ случайной величины $\eta_{n}$ при 0.15 < $\sigma_{1}^{2}, \sigma_{2}^{2}$ < 2.25. Результаты приведены в таблицаx.
-
-\begin{table}[]
-	\centering
-	\caption{$F_{\eta}(z_{50})$ в \% при 0.15 < $\sigma_{1}^{2}, \sigma_{2}^{2}$ < 2.25 }
-	\begin{tabular}{rrrrr}
-		\hline
-		& \textbf{0.15} & \textbf{0.85} & \textbf{0.55} & \textbf{2.25} \\ 
-		\hline
-		\textbf{0.15} & 50.51 & 50.16 & 49.18 & 48.46 \\ 
-		\textbf{0.85} & 50.09 & 49.60 & 48.28 & 47.20 \\ 
-		\textbf{0.55} & 48.73 & 49.58 & 47.98 & 46.36 \\ 
-		\textbf{2.25} & 39.98 & 48.67 & 48.34 & 46.42 \\ 
-		\hline
-	\end{tabular}
-\end{table}
-
-\begin{table}[]
-	\centering
-	\caption{$F_{\eta}(z_{10})$ в \% при 0.15 < $\sigma_{1}^{2}, \sigma_{2}^{2}$ < 2.25 }
-	\begin{tabular}{rrrrr}
-		\hline
-		& \textbf{0.15} & \textbf{0.85} & \textbf{0.55} & \textbf{2.25} \\ 
-		\hline
-		\textbf{0.15} & 9.36 & 6.06 & 3.53 & 1.75 \\ 
-		\textbf{0.85} & 9.52 & 7.27 & 4.78 & 3.19 \\ 
-		\textbf{0.55} & 4.86 & 8.43 & 5.98 & 4.15 \\ 
-		\textbf{2.25} & 0.37 & 7.74 & 7.08 & 5.13 \\ 
-		\hline
-	\end{tabular}
-\end{table}
-
-\begin{table}[]
-	\centering
-	\caption{$F_{\eta}(z_{90})$ в \% при 0.15 < $\sigma_{1}^{2}, \sigma_{2}^{2}$ < 2.25 }
-	\begin{tabular}{rrrrr}
-		\hline
-		& \textbf{0.15} & \textbf{0.85} & \textbf{0.55} & \textbf{2.25} \\  
-		\hline
-		\textbf{0.15} & 90.11 & 90.49 & 90.48 & 90.36 \\ 
-		\textbf{0.85} & 90.26 & 90.56 & 90.62 & 90.49 \\ 
-		\textbf{0.55} & 92.76 & 90.39 & 90.63 & 90.58 \\ 
-		\textbf{2.25} & 95.16 & 90.60 & 90.49 & 90.53 \\ 
-		\hline
-	\end{tabular}
-\end{table}
-
+Построим графики \ref{ris7}, \ref{ris8} и \ref{ris9}. зависимости ошибки аппроксимации квантилей от $\sigma_{2}^{2}$ при фиксированной $\sigma_{1}^{2} = 0.45$.
 
 \begin{figure}[h]
+	\begin{center}
+		\begin{minipage}[h]{0.4\linewidth}
+			\includegraphics[width=1\linewidth]{gr1.pdf}
+			\caption{Ошибка аппроксимации медианы при $\sigma_{1}^{2} = 0.45$.} %% подпись к рисунку
+			\label{ris7} %% метка рисунка для ссылки на него
+		\end{minipage}
+		\hfill
+		\begin{minipage}[h]{0.4\linewidth}
+			\includegraphics[width=1\linewidth]{gr2.pdf}
+			\caption{Ошибка аппроксимации $q_{10}$ при $\sigma_{1}^{2} = 0.45$.}
+			\label{ris8}
+		\end{minipage}
+	\hfill
+	\begin{minipage}[h]{0.4\linewidth}
+		\includegraphics[width=1\linewidth]{gr3.pdf}
+		\caption{Ошибка аппроксимации $q_{90}$ при $\sigma_{1}^{2} = 0.45$.}
+		\label{ris9}
+	\end{minipage}
+	\end{center}
+\end{figure}
+
+\begin{table}[!hhh]
+	\centering
+	\caption{$F_{\eta}(z_{50})$ в \% при 0.15 < $\sigma_{1}^{2}, \sigma_{2}^{2}$ < 2.25 }
+	\label{tab4}
+	\begin{tabular}{rrrrr}
+		\hline
+		& \textbf{0.15} & \textbf{0.85} & \textbf{0.55} & \textbf{2.25} \\
+		\hline
+		\textbf{0.15} & 0.51 & 0.50 & 0.49 & 0.48 \\ 
+		\textbf{0.85} & 0.50 & 0.50 & 0.48 & 0.47 \\ 
+		\textbf{0.55} & 0.49 & 0.50 & 0.48 & 0.46 \\ 
+		\textbf{2.25} & 0.40 & 0.49 & 0.48 & 0.46 \\ 
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[!hhh]
+	\centering
+	\caption{$F_{\eta}(z_{10})$ при 0.15 < $\sigma_{1}^{2}, \sigma_{2}^{2}$ < 2.25 }
+	\label{tab5}
+	\begin{tabular}{rrrrr}
+		\hline
+		& \textbf{0.15} & \textbf{0.85} & \textbf{0.55} & \textbf{2.25} \\
+		\hline
+		\textbf{0.15} & 0.09 & 0.06 & 0.04 & 0.02 \\ 
+		\textbf{0.85} & 0.10 & 0.07 & 0.05 & 0.03 \\ 
+		\textbf{0.55} & 0.05 & 0.08 & 0.06 & 0.04 \\ 
+		\textbf{2.25} & 0.00 & 0.08 & 0.07 & 0.05 \\ 
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[!hhh]
+	\centering
+	\caption{$F_{\eta}(z_{90})$ при 0.15 < $\sigma_{1}^{2}, \sigma_{2}^{2}$ < 2.25 }
+	\label{tab6}
+	\begin{tabular}{rrrrr}
+		\hline
+		& \textbf{0.15} & \textbf{0.85} & \textbf{0.55} & \textbf{2.25} \\
+		\hline
+		\textbf{0.15} & 0.90 & 0.90 & 0.90 & 0.90 \\ 
+		\textbf{0.85} & 0.90 & 0.91 & 0.91 & 0.90 \\ 
+		\textbf{0.55} & 0.93 & 0.90 & 0.91 & 0.91 \\ 
+		\textbf{2.25} & 0.95 & 0.91 & 0.90 & 0.91 \\ 
+		\hline
+	\end{tabular}
+\end{table}
+
+Теперь посчитаем значения функции $F_{\eta}(x)$ от квантилей $z_{10}$, $z_{50}$, $z_{90}$ случайной величины $\eta_{n}$ при 0.15 < $\sigma_{1}^{2}, \sigma_{2}^{2}$ < 2.25. Результаты приведены в таблицаx \ref{tab4}, \ref{tab5} и \ref{tab6}.
+
+\begin{figure}[!hhh]
 	\begin{center}
 		
 			\includegraphics[width=1\linewidth]{hist6.png}
 			\caption{Сумма логнормальных} %% подпись к рисунку
-			\label{ris1} %% метка рисунка для ссылки на него
+			\label{ris5} %% метка рисунка для ссылки на него
 		
 	\end{center}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[!hhh]
 	\begin{center}
 			\includegraphics[width=1\linewidth]{hist1.png}
 			\caption{Сумма логнормальных}
-			\label{ris2}
+			\label{ris6}
 	\end{center}
 \end{figure}
 
