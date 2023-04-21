@@ -877,7 +877,7 @@ headsep=1cm, footskip=1cm]{geometry}
 
 Квантили $\eta$ выражаются как
 \[q_{10} = F_{\eta}^{-1}(0.1), \quad\quad q_{50} = F_{\eta}^{-1}(0.5), \quad\quad q_{90} = F_{\eta}^{-1}(0.9), \quad где\]
-\[F_{\eta}(x) = \int_{0}^{x}\left( \dfrac{1}{2}+\dfrac{1}{2}erf\left( \dfrac{\ln(x-y)-\mu_{1}}{\sigma_{1}\sqrt{2}}\right) \right) \left( \dfrac{1}{\sqrt{2\pi}y\sigma_{2}}\exp\left( -\left( \dfrac{\ln(y)-\mu_{2}}{\sqrt{2}\sigma_{2}}\right) ^{2}\right) \right) dy \]
+\[F_{\eta}(x) = \int_{0}^{x}\left( \dfrac{1}{2}+\dfrac{1}{2} \mathrm{erf}\left( \dfrac{\ln(x-y)-\mu_{1}}{\sigma_{1}\sqrt{2}}\right) \right) \left( \dfrac{1}{\sqrt{2\pi}y\sigma_{2}}\exp\left( -\left( \dfrac{\ln(y)-\mu_{2}}{\sqrt{2}\sigma_{2}}\right) ^{2}\right) \right) dy \]
 
 В таблицах \ref{tab1}, \ref{tab2} и \ref{tab3} представлены ошибки для $\ln(\xi_{1}) \sim N(4, \sigma _{1}^{2})$, $\ln(\xi_{2}) \sim N(6, \sigma _{1}^{2})$, полученные с помощью моделирования.
 
@@ -950,7 +950,7 @@ headsep=1cm, footskip=1cm]{geometry}
 
 Таким образом, при аппроксимации суммы двух логнормальных распределений логнормальным распределением ошибки мат. ожидания и дисперсии равны 0, то есть $m=m_{n}$ и $s^{2} = s_{n}^{2}$. Но если для каких-либо расчетов понадобятся квантили $\eta_{n}$, то ошибка медианы может достигать 11\%, ошибка  квантиля $q_{10}$ достигает 51\%, ошибка квантиля $q_{90}$ достигает 40\%.
 
-Построим графики \ref{ris7}, \ref{ris8} и \ref{ris9}. зависимости ошибки аппроксимации квантилей от $\sigma_{2}^{2}$ при фиксированной $\sigma_{1}^{2} = 0.45$.
+Построим графики \ref{ris7}, \ref{ris8} и \ref{ris9} зависимости ошибки аппроксимации квантилей от $\sigma_{2}^{2}$ при фиксированной $\sigma_{1}^{2} = 0.45$. При моделировании объемы выборок равны 1000, а количество рассматриваемых $\sigma_{2}^{2}$ равно 45.
 
 \begin{figure}[h]
 	\begin{center}
@@ -980,11 +980,11 @@ headsep=1cm, footskip=1cm]{geometry}
 	\label{tab4}
 	\begin{tabular}{rrrrr}
 		\hline
-		& \textbf{0.15} & \textbf{0.85} & \textbf{0.55} & \textbf{2.25} \\
+		& \textbf{0.15} & \textbf{0.85} & \textbf{1.55} & \textbf{2.25} \\
 		\hline
 		\textbf{0.15} & 0.51 & 0.50 & 0.49 & 0.48 \\ 
 		\textbf{0.85} & 0.50 & 0.50 & 0.48 & 0.47 \\ 
-		\textbf{0.55} & 0.49 & 0.50 & 0.48 & 0.46 \\ 
+		\textbf{1.55} & 0.49 & 0.50 & 0.48 & 0.46 \\ 
 		\textbf{2.25} & 0.40 & 0.49 & 0.48 & 0.46 \\ 
 		\hline
 	\end{tabular}
@@ -996,11 +996,11 @@ headsep=1cm, footskip=1cm]{geometry}
 	\label{tab5}
 	\begin{tabular}{rrrrr}
 		\hline
-		& \textbf{0.15} & \textbf{0.85} & \textbf{0.55} & \textbf{2.25} \\
+		& \textbf{0.15} & \textbf{0.85} & \textbf{1.55} & \textbf{2.25} \\
 		\hline
 		\textbf{0.15} & 0.09 & 0.06 & 0.04 & 0.02 \\ 
 		\textbf{0.85} & 0.10 & 0.07 & 0.05 & 0.03 \\ 
-		\textbf{0.55} & 0.05 & 0.08 & 0.06 & 0.04 \\ 
+		\textbf{1.55} & 0.05 & 0.08 & 0.06 & 0.04 \\ 
 		\textbf{2.25} & 0.00 & 0.08 & 0.07 & 0.05 \\ 
 		\hline
 	\end{tabular}
@@ -1012,11 +1012,11 @@ headsep=1cm, footskip=1cm]{geometry}
 	\label{tab6}
 	\begin{tabular}{rrrrr}
 		\hline
-		& \textbf{0.15} & \textbf{0.85} & \textbf{0.55} & \textbf{2.25} \\
+		& \textbf{0.15} & \textbf{0.85} & \textbf{1.55} & \textbf{2.25} \\
 		\hline
 		\textbf{0.15} & 0.90 & 0.90 & 0.90 & 0.90 \\ 
 		\textbf{0.85} & 0.90 & 0.91 & 0.91 & 0.90 \\ 
-		\textbf{0.55} & 0.93 & 0.90 & 0.91 & 0.91 \\ 
+		\textbf{1.55} & 0.93 & 0.90 & 0.91 & 0.91 \\ 
 		\textbf{2.25} & 0.95 & 0.91 & 0.90 & 0.91 \\ 
 		\hline
 	\end{tabular}
@@ -1024,23 +1024,43 @@ headsep=1cm, footskip=1cm]{geometry}
 
 Теперь посчитаем значения функции $F_{\eta}(x)$ от квантилей $z_{10}$, $z_{50}$, $z_{90}$ случайной величины $\eta_{n}$ при 0.15 < $\sigma_{1}^{2}, \sigma_{2}^{2}$ < 2.25. Результаты приведены в таблицаx \ref{tab4}, \ref{tab5} и \ref{tab6}.
 
+На графиках \ref{ris10} и \ref{ris11} представлены диаграммы с не очень большими ошибками квантилей. На графиках \ref{ris12} и \ref{ris13} наоборот с большими.
+
 \begin{figure}[!hhh]
 	\begin{center}
 		
-			\includegraphics[width=1\linewidth]{hist6.png}
+			\includegraphics[width=1\linewidth]{hist_new_1.pdf}
 			\caption{Сумма логнормальных} %% подпись к рисунку
-			\label{ris5} %% метка рисунка для ссылки на него
+			\label{ris10} %% метка рисунка для ссылки на него
 		
 	\end{center}
 \end{figure}
 
 \begin{figure}[!hhh]
 	\begin{center}
-			\includegraphics[width=1\linewidth]{hist1.png}
+			\includegraphics[width=1\linewidth]{hist_new_2.pdf}
 			\caption{Сумма логнормальных}
-			\label{ris6}
+			\label{ris11}
 	\end{center}
 \end{figure}
+
+\begin{figure}[!hhh]
+	\begin{center}
+		\includegraphics[width=1\linewidth]{hist_new_3.pdf}
+		\caption{Сумма логнормальных}
+		\label{ris12}
+	\end{center}
+\end{figure}
+
+\begin{figure}[!hhh]
+	\begin{center}
+		\includegraphics[width=1\linewidth]{hist_new_4.pdf}
+		\caption{Сумма логнормальных}
+		\label{ris13}
+	\end{center}
+\end{figure}
+
+
 
 	\section{Заключение}
 	

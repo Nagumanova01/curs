@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  20 APR 2023 23:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  21 APR 2023 15:36
 entering extended mode
 **./curs_7semestr.tex
 (curs_7semestr.tex
@@ -1330,39 +1330,58 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<hist6.png, id=125, 471.26062pt x 366.61969pt>
-File: hist6.png Graphic file (type png)
-<use hist6.png>
-Package pdftex.def Info: hist6.png  used on input line 1030.
-(pdftex.def)             Requested size: 469.47049pt x 365.23143pt.
+[24 <./gr1.pdf> <./gr2.pdf> <./gr3.pdf>]
+<hist_new_1.pdf, id=143, 505.89pt x 505.89pt>
+File: hist_new_1.pdf Graphic file (type pdf)
+<use hist_new_1.pdf>
+Package pdftex.def Info: hist_new_1.pdf  used on input line 1032.
+(pdftex.def)             Requested size: 469.47049pt x 469.47704pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<hist1.png, id=126, 471.26062pt x 366.61969pt>
-File: hist1.png Graphic file (type png)
-<use hist1.png>
-Package pdftex.def Info: hist1.png  used on input line 1039.
-(pdftex.def)             Requested size: 469.47049pt x 365.23143pt.
+<hist_new_2.pdf, id=144, 505.89pt x 505.89pt>
+File: hist_new_2.pdf Graphic file (type pdf)
+<use hist_new_2.pdf>
+Package pdftex.def Info: hist_new_2.pdf  used on input line 1041.
+(pdftex.def)             Requested size: 469.47049pt x 469.47704pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[24 <./gr1.pdf> <./gr2.pdf> <./gr3.pdf>] [25 <./hist6.png>]
-Underfull \hbox (badness 1028) in paragraph at lines 1057--1058
+<hist_new_3.pdf, id=145, 505.89pt x 505.89pt>
+File: hist_new_3.pdf Graphic file (type pdf)
+<use hist_new_3.pdf>
+Package pdftex.def Info: hist_new_3.pdf  used on input line 1049.
+(pdftex.def)             Requested size: 469.47049pt x 469.47704pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<hist_new_4.pdf, id=146, 505.89pt x 505.89pt>
+File: hist_new_4.pdf Graphic file (type pdf)
+<use hist_new_4.pdf>
+Package pdftex.def Info: hist_new_4.pdf  used on input line 1057.
+(pdftex.def)             Requested size: 469.47049pt x 469.47704pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 1028) in paragraph at lines 1077--1078
 []\T2A/cmr/m/n/12 Bickel, J. Eric, Lake, Larry W., and John Lehman. "Discretiza
 tion, Simulation,
  []
 
 
-Underfull \hbox (badness 4072) in paragraph at lines 1057--1058
+Underfull \hbox (badness 4072) in paragraph at lines 1077--1078
 \T2A/cmr/m/n/12 and Swanson's (Inaccurate) Mean."SPE Econ Mgmt 3 (2011): 12814
 0. doi:
  []
 
-[26 <./hist1.png>] [27] [28] [29]
+[25] [26 <./hist_new_1.pdf>] [27 <./hist_new_2.pdf>] [28 <./hist_new_3.pdf>]
+[29 <./hist_new_4.pdf>] [30] [31]
 
-LaTeX Warning: Reference `18' on page 30 undefined on input line 1264.
+LaTeX Warning: Reference `18' on page 32 undefined on input line 1284.
 
-[30] [31] (curs_7semestr.aux)
+[32] [33] (curs_7semestr.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1371,10 +1390,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 25653 strings out of 492968
- 640839 string characters out of 3117975
+ 25664 strings out of 492968
+ 641175 string characters out of 3117975
  859619 words of memory out of 3000000
- 28982 multiletter control sequences out of 15000+200000
+ 28992 multiletter control sequences out of 15000+200000
  21652 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,13n,96p,1342b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1402,9 +1421,9 @@ KTeX 2.9/fonts/type1/public/cm-super/sfbx1440.pfb><C:/Users/Пользоват�
 b><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/cm-super/sfrm1200.pfb><C:/Users/Пользователь/AppData/Loc
 al/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on curs_7semestr.pdf (31 pages, 406681 bytes).
+Output written on curs_7semestr.pdf (33 pages, 431802 bytes).
 PDF statistics:
- 221 PDF objects out of 1000 (max. 8388607)
+ 256 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 78 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 88 words of extra memory for PDF output out of 10000 (max. 10000000)
 
