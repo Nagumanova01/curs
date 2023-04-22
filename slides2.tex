@@ -653,7 +653,7 @@
 		\end{equation*}
 		\begin{equation*}
 			z_{0.5}=x_{0.5}y_{5},
-		\end{equation*}/.
+		\end{equation*}
 		\begin{equation*}
 			z_{1-\pi}=\exp(\sigma\Phi^{-1}(1-\pi)+a),
 		\end{equation*}
@@ -778,6 +778,236 @@
 	
 \end{frame}
 
+\begin{frame}{Точность аппроксимации }
+	
+	Oшибки аппроксимации квантилей $q_{10}$, $q_{50}$, $q_{90}$ случайной величины $\eta$ равны
+\[\dfrac{\left| q_{10} - z_{10}\right|}{q_{10}}, \quad\quad \dfrac{\left| q_{50} - z_{50}\right|}{q_{50}}, \quad\quad \dfrac{\left| q_{90} - z_{90}\right|}{q_{90}},\] где
+\[z_{p*100} = F_{\eta_{n}}^{-1}(p) = \exp(\mu+\sigma\sqrt{2}\mathrm{erf}^{-1}(2p-1)).\]
+Значение квантилей $q_{i}$ выражаются как $q_{p*100} = F_{\eta}^{-1}(p)$, где
+\[F_{\eta}(x) = \int_{0}^{x}\left( \dfrac{1}{2}+\dfrac{1}{2} \mathrm{erf}\left( \dfrac{\ln(x-y)-\mu_{1}}{\sigma_{1}\sqrt{2}}\right) \right)\times\]
+\[\times \left( \dfrac{1}{\sqrt{2\pi}y\sigma_{2}}\exp\left( -\left( \dfrac{\ln(y)-\mu_{2}}{\sqrt{2}\sigma_{2}}\right) ^{2}\right) \right) dy \]
+	
+\end{frame}
+
+\begin{frame}{Точность аппроксимации }
+	Рассмотрим $\ln(\xi_{1}) \sim N(4, \sigma _{1}^{2})$, $\ln(\xi_{2}) \sim N(6, \sigma _{1}^{2})$ и найдем ошибки с помощью моделирования.
+	
+	\bigskip
+	
+	Ниже приведены фрагменты таблиц с ошибками, выраженными в $\%$ для 0.05 < $\sigma_{1}^{2}, \sigma_{2}^{2}$ < 2.25.
+	
+	\begin{table}[ht]
+		\centering
+		\caption{Ошибка аппроксимации медианы  }
+		\begin{tabular}{rrrrrr}
+			\hline
+			& \textbf{0.25} & \textbf{0.75} & \textbf{1.25} & \textbf{1.75} & \textbf{2.5} \\ 
+			\hline
+			\textbf{0.25} & 0.58 & 0.29 & 0.89 & 2.64 & 6.41 \\ 
+			\textbf{0.75} & 0.13 & 0.12 & 2.15 & 4.88 & 7.27 \\ 
+			\textbf{1.25} & 0.01 & 0.83 & 2.94 & 5.58 & 10.02 \\ 
+			\textbf{1.75} & 2.23 & 0.52 & 3.61 & 6.74 & 9.84 \\ 
+			\textbf{2.5} & 9.15 & 3.35 & 3.25 & 6.76 & 9.89 \\ 
+			\hline
+		\end{tabular}
+	\end{table}
+	
+\end{frame}
+
+\begin{frame}{Точность аппроксимации }
+	\begin{table}[ht]
+		\centering
+		\caption{Ошибка аппроксимации $q_{10}$ }
+		\begin{tabular}{rrrrrr}
+			\hline
+			& \textbf{0.25} & \textbf{0.75} & \textbf{1.25} & \textbf{1.75} & \textbf{2.5} \\
+			\hline
+			\textbf{0.25} & 2.35 & 13.59 & 23.93 & 33.20 & 42.75 \\ 
+			\textbf{0.75} & 1.20 & 10.54 & 21.80 & 33.93 & 42.82 \\ 
+			\textbf{1.25} & 3.02 & 7.03 & 18.43 & 29.49 & 40.09 \\ 
+			\textbf{1.75} & 14.45 & 5.27 & 14.33 & 26.50 & 36.75 \\ 
+			\textbf{2.5} & 34.70 & 11.44 & 11.10 & 23.05 & 32.84 \\ 
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\begin{table}[ht]
+		\centering
+		\caption{Ошибка аппроксимации $q_{90}$ }
+		\begin{tabular}{rrrrrr}
+			\hline
+			& \textbf{0.25} & \textbf{0.75} & \textbf{1.25} & \textbf{1.75} & \textbf{2.5} \\
+			\hline
+			\textbf{0.25} & 1.01 & 3.00 & 4.24 & 4.10 & 3.40 \\ 
+			\textbf{0.75} & 0.04 & 2.51 & 4.11 & 3.26 & 5.45 \\ 
+			\textbf{1.25} & 1.44 & 1.81 & 3.29 & 3.93 & 5.82 \\ 
+			\textbf{1.75} & 8.25 & 2.60 & 2.93 & 3.60 & 4.49 \\ 
+			\textbf{2.5} & 18.17 & 3.00 & 3.30 & 2.44 & 4.99 \\ 
+			\hline
+		\end{tabular}
+	\end{table}
+	
+\end{frame}
+
+\begin{frame}{Точность аппроксимации }
+	\begin{itemize}
+		\item При аппроксимации суммы двух логнормальных распределений логнормальным распределением ошибки математического ожидания и дисперсии равны 0, то есть $m=m_{n}$ и $s^{2} = s_{n}^{2}$. Но ошибки аппроксимации квантилей $\eta$ могут достигать 11\% для $q_{50}$, ошибка  квантиля $q_{10}$ достигает 51\%, ошибка квантиля $q_{90}$ достигает 40\%.
+		\bigskip
+		\item При этом значения мат ожидания и дисперсии $\eta$, вычисленные по этим квантилям тоже имеют нулевую ошибку.
+	\end{itemize}	
+\end{frame}
+
+\begin{frame}{Точность аппроксимации }
+	Построим графики зависимости ошибки аппроксимации квантилей от $\sigma_{2}^{2}$ при фиксированной $\sigma_{1}^{2} = 0.45$. При моделировании объемы выборок равны $10^{6}$, а количество рассматриваемых $\sigma_{2}^{2}$ равно 23.
+	\begin{figure}[h]
+		\begin{center}
+			\begin{minipage}[h]{0.45\linewidth}
+				\includegraphics[width=1\linewidth]{gr_new_1.pdf}
+				\caption{Ошибка аппроксимации медианы при $\sigma_{1}^{2} = 0.45$.} %% подпись к рисунку
+				\label{ris7} %% метка рисунка для ссылки на него
+			\end{minipage}
+		\end{center}
+	\end{figure}	
+\end{frame}
+
+\begin{frame}{Точность аппроксимации }
+	
+	\begin{figure}[h]
+		\begin{center}
+			\begin{minipage}[h]{0.47\linewidth}
+				\includegraphics[width=1\linewidth]{gr_new_2.pdf}
+				\caption{Ошибка аппроксимации $q_{10}$ при $\sigma_{1}^{2} = 0.45$.} %% подпись к рисунку
+				\label{ris7} %% метка рисунка для ссылки на него
+			\end{minipage}
+			\hfill
+			\begin{minipage}[h]{0.47\linewidth}
+				\includegraphics[width=1\linewidth]{gr_new_3.pdf}
+				\caption{Ошибка аппроксимации $q_{90}$ при $\sigma_{1}^{2} = 0.45$.}
+				\label{ris8}
+			\end{minipage}
+
+		\end{center}
+	\end{figure}	
+\end{frame}
+
+\begin{frame}{Точность аппроксимации }
+	
+	Посчитаем значения функции $F_{\eta}(x)$ от квантилей $z_{10}$, $z_{50}$, $z_{90}$ случайной величины $\eta_{n}$ при 0.15 < $\sigma_{1}^{2}, \sigma_{2}^{2}$ < 2.25. Они показывают, каким квантилем для $\eta$ являются квантили $z_{i}$. Результаты приведены в следующих таблицаx.
+	
+	\begin{table}[!hhh]
+		\centering
+		\caption{$F_{\eta}(z_{50})$ в \% при 0.15 < $\sigma_{1}^{2}, \sigma_{2}^{2}$ < 2.25 }
+		\label{tab4}
+		\begin{tabular}{rrrrr}
+			\hline
+			& \textbf{0.15} & \textbf{0.85} & \textbf{1.55} & \textbf{2.25} \\
+			\hline
+			\textbf{0.15} & 0.51 & 0.50 & 0.49 & 0.48 \\ 
+			\textbf{0.85} & 0.50 & 0.50 & 0.48 & 0.47 \\ 
+			\textbf{1.55} & 0.49 & 0.50 & 0.48 & 0.46 \\ 
+			\textbf{2.25} & 0.40 & 0.49 & 0.48 & 0.46 \\ 
+			\hline
+		\end{tabular}
+	\end{table}	
+\end{frame}
+
+\begin{frame}{Точность аппроксимации }
+	
+	\begin{table}[!hhh]
+		\centering
+		\caption{$F_{\eta}(z_{10})$ при 0.15 < $\sigma_{1}^{2}, \sigma_{2}^{2}$ < 2.25 }
+		\label{tab5}
+		\begin{tabular}{rrrrr}
+			\hline
+			& \textbf{0.15} & \textbf{0.85} & \textbf{1.55} & \textbf{2.25} \\
+			\hline
+			\textbf{0.15} & 0.09 & 0.06 & 0.04 & 0.02 \\ 
+			\textbf{0.85} & 0.10 & 0.07 & 0.05 & 0.03 \\ 
+			\textbf{1.55} & 0.05 & 0.08 & 0.06 & 0.04 \\ 
+			\textbf{2.25} & 0.00 & 0.08 & 0.07 & 0.05 \\ 
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\begin{table}[!hhh]
+		\centering
+		\caption{$F_{\eta}(z_{90})$ при 0.15 < $\sigma_{1}^{2}, \sigma_{2}^{2}$ < 2.25 }
+		\label{tab6}
+		\begin{tabular}{rrrrr}
+			\hline
+			& \textbf{0.15} & \textbf{0.85} & \textbf{1.55} & \textbf{2.25} \\
+			\hline
+			\textbf{0.15} & 0.90 & 0.90 & 0.90 & 0.90 \\ 
+			\textbf{0.85} & 0.90 & 0.91 & 0.91 & 0.90 \\ 
+			\textbf{1.55} & 0.93 & 0.90 & 0.91 & 0.91 \\ 
+			\textbf{2.25} & 0.95 & 0.91 & 0.90 & 0.91 \\ 
+			\hline
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\begin{frame}{Точность аппроксимации }
+	
+	Также построим гистограммы для $\eta$ и $\eta_{n}$, когда ошибки имеют очень маленькие значения и когда достаточно большие.
+	
+	\begin{figure}[h]
+		\begin{center}
+			\begin{minipage}[h]{0.7\linewidth}
+				\includegraphics[width=1\linewidth]{hist_new_1.pdf}
+				\caption{Сумма логнормальных.} %% подпись к рисунку
+				\label{ris7} %% метка рисунка для ссылки на него
+			\end{minipage}
+			
+		\end{center}
+	\end{figure}	
+	
+\end{frame}
+
+\begin{frame}{Точность аппроксимации }
+	
+	\begin{figure}[h]
+		\begin{center}
+			\begin{minipage}[h]{0.8\linewidth}
+				\includegraphics[width=1\linewidth]{hist_new_2.pdf}
+				\caption{Сумма логнормальных.} %% подпись к рисунку
+				\label{ris7} %% метка рисунка для ссылки на него
+			\end{minipage}
+			
+		\end{center}
+	\end{figure}	
+	
+\end{frame}
+
+\begin{frame}{Точность аппроксимации }
+	
+	\begin{figure}[h]
+		\begin{center}
+			\begin{minipage}[h]{0.8\linewidth}
+				\includegraphics[width=1\linewidth]{hist_new_3.pdf}
+				\caption{Сумма логнормальных.} %% подпись к рисунку
+				\label{ris7} %% метка рисунка для ссылки на него
+			\end{minipage}
+			
+		\end{center}
+	\end{figure}	
+	
+\end{frame}
+
+\begin{frame}{Точность аппроксимации }
+	
+	\begin{figure}[h]
+		\begin{center}
+			\begin{minipage}[h]{0.8\linewidth}
+				\includegraphics[width=1\linewidth]{hist_new_4.pdf}
+				\caption{Сумма логнормальных.} %% подпись к рисунку
+				\label{ris7} %% метка рисунка для ссылки на него
+			\end{minipage}
+			
+		\end{center}
+	\end{figure}	
+	
+\end{frame}
+
 \begin{frame}{}
 	
 	
@@ -788,6 +1018,7 @@
 		\item Точность аппроксимации логнормального правилом 30-40-30.
 		\item Метод аппроксимации произведения логнормальных распределений.
 		\item Метод аппроксимации суммы логнормальных распределений.
+		\item Точность аппроксимации суммы логнормальных распределений.
 	\end{enumerate}
 	\bigskip
 	\textcolor{blue}{\hbox{\textbf{Проблемы:}}}
