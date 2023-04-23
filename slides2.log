@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  22 APR 2023 04:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  23 APR 2023 07:52
 entering extended mode
 **./slides2.tex
 (slides2.tex
@@ -1528,10 +1528,10 @@ Overfull \vbox (10.87483pt too high) detected at line 850
 ] [42
 
 ]
-<gr_new_1.pdf, id=344, 505.89pt x 505.89pt>
-File: gr_new_1.pdf Graphic file (type pdf)
-<use gr_new_1.pdf>
-Package pdftex.def Info: gr_new_1.pdf  used on input line 871.
+<gr_new_2.pdf, id=344, 505.89pt x 505.89pt>
+File: gr_new_2.pdf Graphic file (type pdf)
+<use gr_new_2.pdf>
+Package pdftex.def Info: gr_new_2.pdf  used on input line 871.
 (pdftex.def)             Requested size: 138.2795pt x 138.28264pt.
 
 Overfull \vbox (14.66425pt too high) detected at line 871
@@ -1539,26 +1539,26 @@ Overfull \vbox (14.66425pt too high) detected at line 871
 
 [43
 
- <./gr_new_1.pdf>]
-<gr_new_2.pdf, id=358, 505.89pt x 505.89pt>
-File: gr_new_2.pdf Graphic file (type pdf)
-<use gr_new_2.pdf>
-Package pdftex.def Info: gr_new_2.pdf  used on input line 891.
+ <./gr_new_2.pdf>]
+<gr_new_1.pdf, id=358, 505.89pt x 505.89pt>
+File: gr_new_1.pdf Graphic file (type pdf)
+<use gr_new_1.pdf>
+Package pdftex.def Info: gr_new_1.pdf  used on input line 892.
 (pdftex.def)             Requested size: 144.4266pt x 144.42715pt.
 pdfTeX warning (ext4): destination with the same identifier (name{ris7}) has be
 en already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.891 \end{frame}
+l.892 \end{frame}
                  
 <gr_new_3.pdf, id=359, 505.89pt x 505.89pt>
 File: gr_new_3.pdf Graphic file (type pdf)
 <use gr_new_3.pdf>
-Package pdftex.def Info: gr_new_3.pdf  used on input line 891.
+Package pdftex.def Info: gr_new_3.pdf  used on input line 892.
 (pdftex.def)             Requested size: 144.4266pt x 144.42715pt.
  [44
 
- <./gr_new_2.pdf> <./gr_new_3.pdf>] [45
+ <./gr_new_1.pdf> <./gr_new_3.pdf>] [45
 
 ] [46
 
@@ -1566,15 +1566,15 @@ Package pdftex.def Info: gr_new_3.pdf  used on input line 891.
 <hist_new_1.pdf, id=393, 505.89pt x 505.89pt>
 File: hist_new_1.pdf Graphic file (type pdf)
 <use hist_new_1.pdf>
-Package pdftex.def Info: hist_new_1.pdf  used on input line 964.
+Package pdftex.def Info: hist_new_1.pdf  used on input line 965.
 (pdftex.def)             Requested size: 215.10196pt x 215.1046pt.
 pdfTeX warning (ext4): destination with the same identifier (name{ris7}) has be
 en already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.964 \end{frame}
+l.965 \end{frame}
                  
-Overfull \vbox (52.18808pt too high) detected at line 964
+Overfull \vbox (52.18808pt too high) detected at line 965
  []
 
 [47
@@ -1583,15 +1583,15 @@ Overfull \vbox (52.18808pt too high) detected at line 964
 <hist_new_2.pdf, id=408, 505.89pt x 505.89pt>
 File: hist_new_2.pdf Graphic file (type pdf)
 <use hist_new_2.pdf>
-Package pdftex.def Info: hist_new_2.pdf  used on input line 979.
+Package pdftex.def Info: hist_new_2.pdf  used on input line 980.
 (pdftex.def)             Requested size: 245.83282pt x 245.83493pt.
 pdfTeX warning (ext4): destination with the same identifier (name{ris7}) has be
 en already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.979 \end{frame}
+l.980 \end{frame}
                  
-Overfull \vbox (53.94453pt too high) detected at line 979
+Overfull \vbox (53.94453pt too high) detected at line 980
  []
 
 [48
@@ -1600,15 +1600,15 @@ Overfull \vbox (53.94453pt too high) detected at line 979
 <hist_new_3.pdf, id=423, 505.89pt x 505.89pt>
 File: hist_new_3.pdf Graphic file (type pdf)
 <use hist_new_3.pdf>
-Package pdftex.def Info: hist_new_3.pdf  used on input line 994.
+Package pdftex.def Info: hist_new_3.pdf  used on input line 995.
 (pdftex.def)             Requested size: 245.83282pt x 245.83493pt.
 pdfTeX warning (ext4): destination with the same identifier (name{ris7}) has be
 en already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.994 \end{frame}
+l.995 \end{frame}
                  
-Overfull \vbox (53.94453pt too high) detected at line 994
+Overfull \vbox (53.94453pt too high) detected at line 995
  []
 
 [49
@@ -1617,15 +1617,15 @@ Overfull \vbox (53.94453pt too high) detected at line 994
 <hist_new_4.pdf, id=439, 505.89pt x 505.89pt>
 File: hist_new_4.pdf Graphic file (type pdf)
 <use hist_new_4.pdf>
-Package pdftex.def Info: hist_new_4.pdf  used on input line 1009.
+Package pdftex.def Info: hist_new_4.pdf  used on input line 1010.
 (pdftex.def)             Requested size: 245.83282pt x 245.83493pt.
 pdfTeX warning (ext4): destination with the same identifier (name{ris7}) has be
 en already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1009 \end{frame}
+l.1010 \end{frame}
                   
-Overfull \vbox (53.94453pt too high) detected at line 1009
+Overfull \vbox (53.94453pt too high) detected at line 1010
  []
 
 [50
@@ -1642,11 +1642,11 @@ Overfull \vbox (53.94453pt too high) detected at line 1009
 \tf@snm=\write8
 \openout8 = `slides2.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1035.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1035.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1036.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1036.
  (slides2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1035.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1035.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1036.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1036.
 
 Package rerunfilecheck Info: File `slides2.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
@@ -1694,7 +1694,7 @@ Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfss1095.pfb><C:/Use
 rs/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
 c/cm-super/sfss1440.pfb><C:/Users/Пользователь/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/type1/public/cm-super/sfsx1095.pfb>
-Output written on slides2.pdf (51 pages, 570348 bytes).
+Output written on slides2.pdf (51 pages, 570387 bytes).
 PDF statistics:
  556 PDF objects out of 1000 (max. 8388607)
  133 named destinations out of 1000 (max. 500000)
