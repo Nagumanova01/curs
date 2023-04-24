@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  23 APR 2023 07:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  24 APR 2023 23:04
 entering extended mode
 **./slides2.tex
 (slides2.tex
@@ -1140,22 +1140,7 @@ File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
 File: uni-4.def 2013/05/13 UCS: Unicode data U+0400..U+04FF
 ) (slides2.aux
 
-LaTeX Warning: Label `12' multiply defined.
-
-
-LaTeX Warning: Label `13' multiply defined.
-
-
-LaTeX Warning: Label `ris7' multiply defined.
-
-
-LaTeX Warning: Label `ris7' multiply defined.
-
-
-LaTeX Warning: Label `ris7' multiply defined.
-
-
-LaTeX Warning: Label `ris7' multiply defined.
+LaTeX Warning: Label `2' multiply defined.
 
 
 LaTeX Warning: Label `ris7' multiply defined.
@@ -1163,30 +1148,30 @@ LaTeX Warning: Label `ris7' multiply defined.
 )
 \openout1 = `slides2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 70.
-LaTeX Font Info:    Try loading font information for T2A+cmr on input line 70.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 71.
+LaTeX Font Info:    Try loading font information for T2A+cmr on input line 71.
 
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\latex
 \cyrillic\t2acmr.fd"
 File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
-LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    ... okay on input line 71.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1254,7 +1239,7 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 ) ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box61
-Package hyperref Info: Link coloring OFF on input line 70.
+Package hyperref Info: Link coloring OFF on input line 71.
 
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\latex
 \hyperref\nameref.sty"
@@ -1266,9 +1251,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count194
 )
-LaTeX Info: Redefining \ref on input line 70.
-LaTeX Info: Redefining \pageref on input line 70.
-LaTeX Info: Redefining \nameref on input line 70.
+LaTeX Info: Redefining \ref on input line 71.
+LaTeX Info: Redefining \pageref on input line 71.
+LaTeX Info: Redefining \nameref on input line 71.
  (slides2.out) (slides2.out)
 \@outlinefile=\write5
 \openout5 = `slides2.out'.
@@ -1311,7 +1296,7 @@ Dictionary: translator-numbers-dictionary, Language: English
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 70.
+LaTeX Info: Redefining \selectfont on input line 71.
 
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.16} (current compat level: 1.9).
@@ -1326,13 +1311,13 @@ x.map}] [2
 ] [4
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 138.
+LaTeX Font Info:    Try loading font information for U+msa on input line 144.
 
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\latex
 \amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 138.
+LaTeX Font Info:    Try loading font information for U+msb on input line 144.
 
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\latex
 \amsfonts\umsb.fd"
@@ -1351,286 +1336,99 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ] [11
 
-] [12
+]pdfTeX warning (ext4): destination with the same identifier (name{2}) has been
+ already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.270 \end{frame}
+                  [12
 
 ] [13
 
 ]
-Overfull \hbox (15.891pt too wide) detected at line 338
-[]\OML/cmm/m/it/10.95 :
- []
+<m_sig.pdf, id=138, 505.89pt x 505.89pt>
+File: m_sig.pdf Graphic file (type pdf)
+<use m_sig.pdf>
+Package pdftex.def Info: m_sig.pdf  used on input line 301.
+(pdftex.def)             Requested size: 153.64493pt x 153.64394pt.
 
-
-Overfull \vbox (0.47551pt too high) detected at line 338
+Overfull \vbox (28.75778pt too high) detected at line 301
  []
 
 [14
 
-] [15
-
-] [16
-
-] [17
+ <./m_sig.pdf>] [15
 
 ]
-Overfull \hbox (3.80444pt too wide) detected at line 412
-[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 []\OT1/cmr/m/n/10.95 ) + [](\OMS/cms
-y/m/n/10.95  \OML/cmm/m/it/10.95 []\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95   
-[]\OT1/cmr/m/n/10.95 ((0\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 1)\OML/cmm/m/i
-t/10.95  \OMS/cmsy/m/n/10.95   []\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95   []
-\OT1/cmr/m/n/10.95 ([](0\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 9)\OML/cmm/m/i
-t/10.95  \OMS/cmsy/m/n/10.95   []\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95  \O
-T1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ;
+<s_sig.pdf, id=158, 505.89pt x 505.89pt>
+File: s_sig.pdf Graphic file (type pdf)
+<use s_sig.pdf>
+Package pdftex.def Info: s_sig.pdf  used on input line 331.
+(pdftex.def)             Requested size: 153.64493pt x 153.64394pt.
+
+Overfull \vbox (30.24733pt too high) detected at line 331
  []
 
+[16
 
-Overfull \vbox (1.64119pt too high) detected at line 412
+ <./s_sig.pdf>] [17
+
+]
+Overfull \vbox (3.15172pt too high) detected at line 371
  []
 
 [18
 
 ] [19
 
-]
-<prob.png, id=182, 2007.5pt x 2007.5pt>
-File: prob.png Graphic file (type png)
-<use prob.png>
-Package pdftex.def Info: prob.png  used on input line 441.
-(pdftex.def)             Requested size: 160.60327pt x 160.60327pt.
- [20
+] [20
 
- <./prob.png>] [21
+] [21
 
 ] [22
 
-]
-Overfull \vbox (3.80843pt too high) detected at line 477
- []
+] [23
 
-[23
+] [24
 
-]
-<ris1.png, id=210, 495.35063pt x 417.81094pt>
-File: ris1.png Graphic file (type png)
-<use ris1.png>
-Package pdftex.def Info: ris1.png  used on input line 497.
-(pdftex.def)             Requested size: 122.91406pt x 103.67468pt.
-<ris2.png, id=211, 495.35063pt x 417.81094pt>
-File: ris2.png Graphic file (type png)
-<use ris2.png>
-Package pdftex.def Info: ris2.png  used on input line 497.
-(pdftex.def)             Requested size: 122.91406pt x 103.67468pt.
- [24
-
- <./ris1.png> <./ris2.png>] [25
+] [25
 
 ]
-Overfull \hbox (21.40533pt too wide) detected at line 520
-\OMS/cmsy/m/n/10.95  [] []\OT1/cmr/m/n/10.95 (2\OML/cmm/m/it/10.95  \OT1/cmr/m
-/n/10.95 + 2\OML/cmm/m/it/10.95 \OT1/cmr/m/n/10.95 [](0\OML/cmm/m/it/10.95 :\
-OT1/cmr/m/n/10.95 9)) + \OML/cmm/m/it/10.95 m[] \OMS/cmsy/m/n/10.95 j \OML/cmm/
-m/it/10.95 = []\OT1/cmr/m/n/10.95 (2\OML/cmm/m/it/10.95  \OT1/cmr/m/n/10.95 + 
-\OML/cmm/m/it/10.95 []\OT1/cmr/m/n/10.95 )([](\OML/cmm/m/it/10.95 [] \OMS/cms
-y/m/n/10.95   \OT1/cmr/m/n/10.95 1))
- []
-
-
-Overfull \hbox (0.8157pt too wide) detected at line 520
-\OMS/cmsy/m/n/10.95  [] []\OT1/cmr/m/n/10.95 (2\OML/cmm/m/it/10.95 \OT1/cmr/m/
-n/10.95 [](0\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 9)) + \OML/cmm/m/it/10.95 
-m[]=\OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95  \OMS/cmsy/m/n/10.95 j \OML/cmm/m/
-it/10.95 = []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 []\OT1/cmr/m/n/10.95 )([]
-(\OML/cmm/m/it/10.95 [] \OMS/cmsy/m/n/10.95   \OT1/cmr/m/n/10.95 1))\OML/cmm/m
-/it/10.95 :
+Overfull \vbox (4.4277pt too high) detected at line 548
  []
 
 [26
 
 ]
-<ris3.png, id=235, 495.35063pt x 417.81094pt>
-File: ris3.png Graphic file (type png)
-<use ris3.png>
-Package pdftex.def Info: ris3.png  used on input line 540.
-(pdftex.def)             Requested size: 122.91406pt x 103.67468pt.
-<ris4.png, id=236, 495.35063pt x 417.81094pt>
-File: ris4.png Graphic file (type png)
-<use ris4.png>
-Package pdftex.def Info: ris4.png  used on input line 540.
-(pdftex.def)             Requested size: 122.91406pt x 103.67468pt.
- [27
+<par_2.pdf, id=238, 505.89pt x 505.89pt>
+File: par_2.pdf Graphic file (type pdf)
+<use par_2.pdf>
+Package pdftex.def Info: par_2.pdf  used on input line 565.
+(pdftex.def)             Requested size: 122.91406pt x 122.9136pt.
 
- <./ris3.png> <./ris4.png>] [28
-
-]
-Overfull \hbox (15.77356pt too wide) detected at line 573
-\OT1/cmss/m/n/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 [] < x[]\OT1/cmr/
-m/n/10.95 ) = \OT1/cmss/m/n/10.95 P\OT1/cmr/m/n/10.95 ([](\OML/cmm/m/it/10.95 
-[]\OT1/cmr/m/n/10.95 ) \OML/cmm/m/it/10.95 < []\OT1/cmr/m/n/10.95 (\OML/cmm/m/i
-t/10.95 x[]\OT1/cmr/m/n/10.95 )) = \OT1/cmss/m/n/10.95 P [] \OML/cmm/m/it/10.95
- :
+Overfull \vbox (13.3142pt too high) detected at line 565
  []
 
-[29
+[27
 
-]pdfTeX warning (ext4): destination with the same identifier (name{12}) has bee
-n already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.602 	\end{frame}
-                  pdfTeX warning (ext4): destination with the same identifier (
-name{13}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.602 	\end{frame}
-                   [30
-
-]
-Overfull \hbox (10.02953pt too wide) detected at line 633
-\OT1/cmr/m/n/10.95 = \OT1/cmss/m/n/10.95 P [] \OML/cmm/m/it/10.95 :
- []
-
-[31
-
-]
-Overfull \hbox (24.7711pt too wide) detected at line 644
-\OT1/cmss/m/n/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 [][] < x[]y[]\OT
-1/cmr/m/n/10.95 ) =  [] \OML/cmm/m/it/10.95 :
- []
-
-[32
-
-] [33
-
-] [34
-
-]
-Overfull \vbox (41.33775pt too high) detected at line 720
- []
-
-[35
-
-] [36
-
-] [37
-
-] [38
-
-] [39
-
-] [40
-
-]
-Overfull \vbox (10.87483pt too high) detected at line 850
- []
-
-[41
-
-] [42
-
-]
-<gr_new_2.pdf, id=344, 505.89pt x 505.89pt>
-File: gr_new_2.pdf Graphic file (type pdf)
-<use gr_new_2.pdf>
-Package pdftex.def Info: gr_new_2.pdf  used on input line 871.
-(pdftex.def)             Requested size: 138.2795pt x 138.28264pt.
-
-Overfull \vbox (14.66425pt too high) detected at line 871
- []
-
-[43
-
- <./gr_new_2.pdf>]
-<gr_new_1.pdf, id=358, 505.89pt x 505.89pt>
-File: gr_new_1.pdf Graphic file (type pdf)
-<use gr_new_1.pdf>
-Package pdftex.def Info: gr_new_1.pdf  used on input line 892.
-(pdftex.def)             Requested size: 144.4266pt x 144.42715pt.
+ <./par_2.pdf>]
+<par_1.pdf, id=252, 505.89pt x 505.89pt>
+File: par_1.pdf Graphic file (type pdf)
+<use par_1.pdf>
+Package pdftex.def Info: par_1.pdf  used on input line 579.
+(pdftex.def)             Requested size: 184.3758pt x 184.37427pt.
 pdfTeX warning (ext4): destination with the same identifier (name{ris7}) has be
 en already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.892 \end{frame}
+l.579 \end{frame}
                  
-<gr_new_3.pdf, id=359, 505.89pt x 505.89pt>
-File: gr_new_3.pdf Graphic file (type pdf)
-<use gr_new_3.pdf>
-Package pdftex.def Info: gr_new_3.pdf  used on input line 892.
-(pdftex.def)             Requested size: 144.4266pt x 144.42715pt.
- [44
-
- <./gr_new_1.pdf> <./gr_new_3.pdf>] [45
-
-] [46
-
-]
-<hist_new_1.pdf, id=393, 505.89pt x 505.89pt>
-File: hist_new_1.pdf Graphic file (type pdf)
-<use hist_new_1.pdf>
-Package pdftex.def Info: hist_new_1.pdf  used on input line 965.
-(pdftex.def)             Requested size: 215.10196pt x 215.1046pt.
-pdfTeX warning (ext4): destination with the same identifier (name{ris7}) has be
-en already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.965 \end{frame}
-                 
-Overfull \vbox (52.18808pt too high) detected at line 965
+Overfull \vbox (3.80098pt too high) detected at line 579
  []
 
-[47
+[28
 
- <./hist_new_1.pdf>]
-<hist_new_2.pdf, id=408, 505.89pt x 505.89pt>
-File: hist_new_2.pdf Graphic file (type pdf)
-<use hist_new_2.pdf>
-Package pdftex.def Info: hist_new_2.pdf  used on input line 980.
-(pdftex.def)             Requested size: 245.83282pt x 245.83493pt.
-pdfTeX warning (ext4): destination with the same identifier (name{ris7}) has be
-en already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.980 \end{frame}
-                 
-Overfull \vbox (53.94453pt too high) detected at line 980
- []
-
-[48
-
- <./hist_new_2.pdf>]
-<hist_new_3.pdf, id=423, 505.89pt x 505.89pt>
-File: hist_new_3.pdf Graphic file (type pdf)
-<use hist_new_3.pdf>
-Package pdftex.def Info: hist_new_3.pdf  used on input line 995.
-(pdftex.def)             Requested size: 245.83282pt x 245.83493pt.
-pdfTeX warning (ext4): destination with the same identifier (name{ris7}) has be
-en already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.995 \end{frame}
-                 
-Overfull \vbox (53.94453pt too high) detected at line 995
- []
-
-[49
-
- <./hist_new_3.pdf>]
-<hist_new_4.pdf, id=439, 505.89pt x 505.89pt>
-File: hist_new_4.pdf Graphic file (type pdf)
-<use hist_new_4.pdf>
-Package pdftex.def Info: hist_new_4.pdf  used on input line 1010.
-(pdftex.def)             Requested size: 245.83282pt x 245.83493pt.
-pdfTeX warning (ext4): destination with the same identifier (name{ris7}) has be
-en already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1010 \end{frame}
-                  
-Overfull \vbox (53.94453pt too high) detected at line 1010
- []
-
-[50
-
- <./hist_new_4.pdf>] [51
+ <./par_1.pdf>] [29
 
 ]
 \tf@nav=\write6
@@ -1642,12 +1440,11 @@ Overfull \vbox (53.94453pt too high) detected at line 1010
 \tf@snm=\write8
 \openout8 = `slides2.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1036.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1036.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 598.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 598.
  (slides2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1036.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1036.
-
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 598.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 598.
 Package rerunfilecheck Info: File `slides2.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1656,37 +1453,37 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 36770 strings out of 492968
- 835358 string characters out of 3117975
- 1032161 words of memory out of 3000000
- 39805 multiletter control sequences out of 15000+200000
- 27611 words of font info for 83 fonts, out of 3000000 for 9000
+ 36615 strings out of 492968
+ 833752 string characters out of 3117975
+ 1032162 words of memory out of 3000000
+ 39715 multiletter control sequences out of 15000+200000
+ 26726 words of font info for 82 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,15n,98p,776b,628s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/en
 c/dvips/cm-super/cm-super-t2a.enc}<C:/Users/Пользователь/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/П�
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/П�
 �льзователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmmi10.pfb><C:/Users/Пользователь/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Пользоват
-ель/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.p
-fb><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Пользователь/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/По
-льзователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmr10.pfb><C:/Users/Пользователь/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Пользовате�
-�ь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><
-C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmr7.pfb><C:/Users/Пользователь/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Польз
-ователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmss10.pfb><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Пользователь/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/
+onts/cm/cmex10.pfb><C:/Users/Пользователь/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Пользоват
+ель/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.
+pfb><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Пользователь/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/П�
+�льзователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmmi8.pfb><C:/Users/Пользователь/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Пользовате
+ль/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb>
+<C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmr6.pfb><C:/Users/Пользователь/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Поль�
+�ователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmr8.pfb><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/Пользователь/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
 Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/cm-super/sfsi1095.pfb><C:/Users/Пользователь/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/public/cm-super/sfso1095.pfb><C:/Users/Польз�
+blic/amsfonts/cm/cmsy8.pfb><C:/Users/Пользователь/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/cm-super/sfsi1095.pfb><C:/Users/Польз�
 �ватель/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfs
 s0600.pfb><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/
 fonts/type1/public/cm-super/sfss1000.pfb><C:/Users/Пользователь/App
@@ -1694,9 +1491,9 @@ Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfss1095.pfb><C:/Use
 rs/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
 c/cm-super/sfss1440.pfb><C:/Users/Пользователь/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/type1/public/cm-super/sfsx1095.pfb>
-Output written on slides2.pdf (51 pages, 570387 bytes).
+Output written on slides2.pdf (29 pages, 362034 bytes).
 PDF statistics:
- 556 PDF objects out of 1000 (max. 8388607)
- 133 named destinations out of 1000 (max. 500000)
- 145 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 353 PDF objects out of 1000 (max. 8388607)
+ 77 named destinations out of 1000 (max. 500000)
+ 105 words of extra memory for PDF output out of 10000 (max. 10000000)
 

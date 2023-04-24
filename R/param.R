@@ -1,4 +1,9 @@
 library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(googlesheets4)
+library(ggrepel)
+library(readxl)
 
 m<-function(x){
   return(abs(exp(x*x/2)-0.305*exp(-1.28*x)-0.39-0.305*exp(1.28*x))/(exp(x*x/2)))
@@ -9,7 +14,7 @@ s<-function(x){
 }
 
 ggplot() +
-  xlim(c(0, 1.5)) +
+  xlim(c(0, 5)) +
   geom_function(fun = m,
                 colour = "red",
                 lwd = 1,
