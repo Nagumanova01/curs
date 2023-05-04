@@ -228,8 +228,8 @@
 		\bigskip
 		
 			\begin{enumerate}
-				\item Вычисляем значения мат. ожидания $m$ и дисперсии $d$ случайной величины $\eta$, используя известные $x_{\pi_{1}}, x_{\pi_{2}}, x_{\pi_{3}}$.
-				\item Выражаем параметры $\mu$ и $\sigma$ мат. ожидание и дисперсию соответствующего нормального распределения через параметры $m$ и $d$ логнормального распределения
+				\item Вычисляем значения мат. ожидания $m$ и дисперсии $s^{2}$ случайной величины $\eta$, используя известные $x_{\pi_{1}}, x_{\pi_{2}}, x_{\pi_{3}}$.
+				\item Выражаем параметры $\mu$ и $\sigma$ мат. ожидание и дисперсию соответствующего нормального распределения через параметры $m$ и $s^{2}$ логнормального распределения
 				\item С помощью системы метода для нормального распределения находим значения вероятностей $p_{1}$, $p_{2}$, $p_{3}$.
 			\end{enumerate}
 		\bigskip
@@ -288,7 +288,7 @@
 	\begin{figure}[h]
 		\begin{center}
 			\begin{minipage}[h]{0.5\linewidth}
-				\includegraphics[width=1\linewidth]{m_sig.pdf}
+				\includegraphics[width=1\linewidth]{img/m_sig.pdf}
 				\caption{Ошибка аппроксимации мат.ожидания} %% подпись к рисунку
 				\label{ris:image1} %% метка рисунка для ссылки на него
 			\end{minipage}
@@ -318,7 +318,7 @@
 	\begin{figure}[h]
 	\begin{center}
 		\begin{minipage}[h]{0.5\linewidth}
-			\includegraphics[width=1\linewidth]{s_sig.pdf}
+			\includegraphics[width=1\linewidth]{img/s_sig.pdf}
 			\caption{Ошибка аппроксимации дисперсии} %% подпись к рисунку
 			\label{ris:image2} %% метка рисунка для ссылки на него
 		\end{minipage}
@@ -412,6 +412,7 @@
 		\item $z_{\pi}$, $z_{0.5}$, $z_{1-\pi}$ $\rightarrow$ $p_{1}$, $p_{2}$, $p_{3}$
 		
 	\end{enumerate}
+\begin{pr3}\end{pr3} вероятности $p_{1}$, $p_{2}$, $p_{3}$ для квантилей $z_{\pi_{1}}, z_{\pi_{2}}, z_{\pi_{3}}$ случайной величины $\xi_{1} + \xi_{2}$.
 	
 \end{frame}
 	
@@ -497,7 +498,7 @@
 	
 	\begin{table}[!hhh]
 		\centering
-		\caption{$F_{\eta}(z_{50})$ ($\%$) в зависимости от $\sigma_{1}^{2}$ (строка) и $\sigma_{2}^{2}$ (столбец) }
+		\caption{$F_{\eta}(z_{50})$ в зависимости от $\sigma_{1}^{2}$ (строка) и $\sigma_{2}^{2}$ (столбец) }
 		\label{tab4}
 		\begin{tabular}{rrrrr}
 			\hline
@@ -516,7 +517,7 @@
 	
 	\begin{table}[!hhh]
 		\centering
-		\caption{$F_{\eta}(z_{10})$ ($\%$) в зависимости от $\sigma_{1}^{2}$ (строка) и $\sigma_{2}^{2}$ (столбец) }
+		\caption{$F_{\eta}(z_{10})$ в зависимости от $\sigma_{1}^{2}$ (строка) и $\sigma_{2}^{2}$ (столбец) }
 		\label{tab5}
 		\begin{tabular}{rrrrr}
 			\hline
@@ -532,7 +533,7 @@
 	
 	\begin{table}[!hhh]
 		\centering
-		\caption{$F_{\eta}(z_{90})$ ($\%$) в зависимости от $\sigma_{1}^{2}$ (строка) и $\sigma_{2}^{2}$ (столбец)}
+		\caption{$F_{\eta}(z_{90})$ в зависимости от $\sigma_{1}^{2}$ (строка) и $\sigma_{2}^{2}$ (столбец)}
 		\label{tab6}
 		\begin{tabular}{rrrrr}
 			\hline
@@ -554,7 +555,7 @@
 	\begin{figure}[h]
 		\begin{center}
 			\begin{minipage}[h]{0.4\linewidth}
-				\includegraphics[width=1\linewidth]{par_2.pdf}
+				\includegraphics[width=1\linewidth]{img/par_2.pdf}
 				\caption{$\sigma_{1}^{2} = 1.05$, $\sigma_{2}^{2} = 0.45$, $err_{med}$ = 0.09\%,  $err_{q_{10}} = 2.4\%$,  $err_{q_{90}} = 1.1\%$. } %% подпись к рисунку
 				\label{ris7} %% метка рисунка для ссылки на него
 			\end{minipage}
@@ -569,7 +570,7 @@
 	\begin{figure}[h]
 		\begin{center}
 			\begin{minipage}[h]{0.6\linewidth}
-				\includegraphics[width=1\linewidth]{par_1.pdf}
+				\includegraphics[width=1\linewidth]{img/par_1.pdf}
 				\caption{$\sigma_{1}^{2} = 2.25$, $\sigma_{2}^{2} = 0.05$, $err_{med}$ = 9.92\%,  $err_{q_{10}} = 51.34\%$,  $err_{q_{90}} = 39.88\%$. } %% подпись к рисунку
 				\label{ris7} %% метка рисунка для ссылки на него
 			\end{minipage}
