@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  4 MAY 2023 04:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  5 MAY 2023 21:01
 entering extended mode
 **./slides2.tex
 (slides2.tex
@@ -1343,7 +1343,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 l.270 \end{frame}
                   [12
 
-] [13
+]
+Overfull \vbox (12.0308pt too high) detected at line 282
+ []
+
+[13
 
 ]
 <img/m_sig.pdf, id=138, 505.89pt x 505.89pt>
@@ -1416,14 +1420,14 @@ Overfull \vbox (13.3142pt too high) detected at line 566
 File: img/par_1.pdf Graphic file (type pdf)
 <use img/par_1.pdf>
 Package pdftex.def Info: img/par_1.pdf  used on input line 580.
-(pdftex.def)             Requested size: 184.3758pt x 184.37427pt.
+(pdftex.def)             Requested size: 162.86325pt x 162.86072pt.
 pdfTeX warning (ext4): destination with the same identifier (name{ris7}) has be
 en already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.580 \end{frame}
                  
-Overfull \vbox (3.80098pt too high) detected at line 580
+Overfull \vbox (12.28743pt too high) detected at line 580
  []
 
 [28
@@ -1455,7 +1459,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  36616 strings out of 492968
  833820 string characters out of 3117975
- 1032161 words of memory out of 3000000
+ 1032162 words of memory out of 3000000
  39715 multiletter control sequences out of 15000+200000
  26726 words of font info for 82 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1491,7 +1495,7 @@ Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfss1095.pfb><C:/Use
 rs/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
 c/cm-super/sfss1440.pfb><C:/Users/Пользователь/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/type1/public/cm-super/sfsx1095.pfb>
-Output written on slides2.pdf (29 pages, 362249 bytes).
+Output written on slides2.pdf (29 pages, 361436 bytes).
 PDF statistics:
  353 PDF objects out of 1000 (max. 8388607)
  77 named destinations out of 1000 (max. 500000)
