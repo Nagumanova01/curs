@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  5 MAY 2023 21:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  10 MAY 2023 20:21
 entering extended mode
 **./slides2.tex
 (slides2.tex
@@ -1340,48 +1340,38 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.270 \end{frame}
+l.271 \end{frame}
                   [12
 
 ]
-Overfull \vbox (12.0308pt too high) detected at line 282
+Overfull \vbox (12.0308pt too high) detected at line 283
  []
 
 [13
 
-]
-<img/m_sig.pdf, id=138, 505.89pt x 505.89pt>
-File: img/m_sig.pdf Graphic file (type pdf)
-<use img/m_sig.pdf>
-Package pdftex.def Info: img/m_sig.pdf  used on input line 301.
-(pdftex.def)             Requested size: 153.64493pt x 153.64394pt.
-
-Overfull \vbox (28.75778pt too high) detected at line 301
- []
-
-[14
-
- <./img/m_sig.pdf>] [15
+] [14
 
 ]
-<img/s_sig.pdf, id=158, 505.89pt x 505.89pt>
-File: img/s_sig.pdf Graphic file (type pdf)
-<use img/s_sig.pdf>
-Package pdftex.def Info: img/s_sig.pdf  used on input line 331.
-(pdftex.def)             Requested size: 153.64493pt x 153.64394pt.
+<img/par_new2.jpg, id=145, 426.84468pt x 417.81094pt>
+File: img/par_new2.jpg Graphic file (type jpg)
+<use img/par_new2.jpg>
+Package pdftex.def Info: img/par_new2.jpg  used on input line 312.
+(pdftex.def)             Requested size: 184.3758pt x 180.47762pt.
 
-Overfull \vbox (30.24733pt too high) detected at line 331
+Overfull \vbox (16.98721pt too high) detected at line 312
  []
 
-[16
+[15
 
- <./img/s_sig.pdf>] [17
+ <./img/par_new2.jpg>] [16
 
 ]
-Overfull \vbox (3.15172pt too high) detected at line 371
+Overfull \vbox (3.15172pt too high) detected at line 352
  []
 
-[18
+[17
+
+] [18
 
 ] [19
 
@@ -1395,44 +1385,42 @@ Overfull \vbox (3.15172pt too high) detected at line 371
 
 ] [24
 
-] [25
+]
+Overfull \vbox (4.4277pt too high) detected at line 534
+ []
+
+[25
 
 ]
-Overfull \vbox (4.4277pt too high) detected at line 549
+<img/par_2.pdf, id=221, 505.89pt x 505.89pt>
+File: img/par_2.pdf Graphic file (type pdf)
+<use img/par_2.pdf>
+Package pdftex.def Info: img/par_2.pdf  used on input line 551.
+(pdftex.def)             Requested size: 122.91406pt x 122.9136pt.
+
+Overfull \vbox (13.3142pt too high) detected at line 551
  []
 
 [26
 
-]
-<img/par_2.pdf, id=238, 505.89pt x 505.89pt>
-File: img/par_2.pdf Graphic file (type pdf)
-<use img/par_2.pdf>
-Package pdftex.def Info: img/par_2.pdf  used on input line 566.
-(pdftex.def)             Requested size: 122.91406pt x 122.9136pt.
-
-Overfull \vbox (13.3142pt too high) detected at line 566
- []
-
-[27
-
  <./img/par_2.pdf>]
-<img/par_1.pdf, id=252, 505.89pt x 505.89pt>
+<img/par_1.pdf, id=235, 505.89pt x 505.89pt>
 File: img/par_1.pdf Graphic file (type pdf)
 <use img/par_1.pdf>
-Package pdftex.def Info: img/par_1.pdf  used on input line 580.
+Package pdftex.def Info: img/par_1.pdf  used on input line 565.
 (pdftex.def)             Requested size: 162.86325pt x 162.86072pt.
 pdfTeX warning (ext4): destination with the same identifier (name{ris7}) has be
 en already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.580 \end{frame}
+l.565 \end{frame}
                  
-Overfull \vbox (12.28743pt too high) detected at line 580
+Overfull \vbox (12.28743pt too high) detected at line 565
  []
 
-[28
+[27
 
- <./img/par_1.pdf>] [29
+ <./img/par_1.pdf>] [28
 
 ]
 \tf@nav=\write6
@@ -1444,11 +1432,11 @@ Overfull \vbox (12.28743pt too high) detected at line 580
 \tf@snm=\write8
 \openout8 = `slides2.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 599.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 599.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 584.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 584.
  (slides2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 599.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 599.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 584.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 584.
 Package rerunfilecheck Info: File `slides2.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1457,10 +1445,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 36616 strings out of 492968
- 833820 string characters out of 3117975
+ 36605 strings out of 492968
+ 833650 string characters out of 3117975
  1032162 words of memory out of 3000000
- 39715 multiletter control sequences out of 15000+200000
+ 39708 multiletter control sequences out of 15000+200000
  26726 words of font info for 82 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,15n,98p,776b,628s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1495,9 +1483,9 @@ Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfss1095.pfb><C:/Use
 rs/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
 c/cm-super/sfss1440.pfb><C:/Users/Пользователь/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/type1/public/cm-super/sfsx1095.pfb>
-Output written on slides2.pdf (29 pages, 361436 bytes).
+Output written on slides2.pdf (28 pages, 351931 bytes).
 PDF statistics:
- 353 PDF objects out of 1000 (max. 8388607)
- 77 named destinations out of 1000 (max. 500000)
- 105 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 336 PDF objects out of 1000 (max. 8388607)
+ 74 named destinations out of 1000 (max. 500000)
+ 100 words of extra memory for PDF output out of 10000 (max. 10000000)
 
