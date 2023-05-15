@@ -16,6 +16,7 @@ headsep=1cm, footskip=1cm]{geometry}
 \usepackage{caption}
 \usepackage{subfig}
 
+\usepackage{multirow}
 \usepackage{import}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.9}
@@ -61,22 +62,22 @@ headsep=1cm, footskip=1cm]{geometry}
 	
 	\section{Введение}
 	
-	В практических задачах не редко требуется заменить непрерывное распределение на
+	В практических задачах нередко требуется заменить непрерывное распределение на
 	дискретное с сохранением математического ожидания и дисперсии. Одним из методов
-	нахождения такого распределения для аппроксимации нормального распределения является метод Свонсона. Однако в ряде областей, например, в нефтяной промышленности распределением, описывающим запасы нефти, общепринятым является логнормальное распределение. Соответственно, реальной задачей является аппроксимация логнормального распределения.
+	нахождения такого распределения для аппроксимации нормального распределения является метод Свонсона \cite{Swansong}. Однако в ряде областей, например, в нефтяной промышленности распределением, описывающим запасы нефти, общепринятым является логнормальное распределение. Соответственно, реальной задачей является аппроксимация логнормального распределения.
 	
 	С аппроксимируемыми случайными величинами производят сложение и умножение.
-	Например, используем площадь дренирования пласта, среднюю чистую толщину и коэффициент извлечения углеводородов. При перемножении этих параметров получаем количество резервов нефти. Или зная запасы нефти в разных скважинах, нужно оценить суммарные запасы.
+	Например, используем площадь дренирования пласта, среднюю чистую толщину и коэффициент извлечения углеводородов. При перемножении этих параметров получаем количество резервов нефти. Или, зная запасы нефти в разных скважинах, нужно оценить суммарные запасы.
 	Соответственно, возникает задача находить аппроксимацию суммы и произведения по аппроксимациям исходных случайных величин.
 	
 	Часто бывает на практике, что вместо настоящего распределения известны три его квантили, стандартно это 10-, 50- и 90-процентили. Задачей является нахождение по ним математического ожидания и дисперсии. Обычно задача решается построением весов для квантилей так, чтобы у полученного дискретного распределения были такие же математическое ожидание и дисперсия, как у исходного. Вообще говоря, иногда нужно, чтобы и более старшие моменты также аппроксимировались моментами построенного дискретного распределения с целью, чтобы для функций от распределений равенство математических ожиданий и дисперсий оставалось хотя бы приближенными.
 	
-	План работы:\\
-	Рассмотреть общий подход к трехточечной аппроксимации.\\
-	Рассмотреть трехточечную аппроксимацию нормального распределения, в целом метод Свонсона и вывод правила 30-40-30.\\
-	Рассмотреть трехточечную аппроксимацию логнормального распределения и её  свойства.\\
-	Построить алгоритм аппроксимации произведения двух логнормальных распределений.\\
-	Построить алгоритм аппроксимации суммы двух логнормальных распределений.
+	В данной работе мы рассмотрим следующие вопросы:\\
+	Общий подход к трехточечной аппроксимации.\\
+	Трехточечная аппроксимация нормального распределения, в целом метод Свонсона и вывод правила 30-40-30.\\
+	Трехточечная аппроксимация логнормального распределения и её свойства.\\
+	Алгоритм аппроксимации произведения двух логнормальных распределений.\\
+	Алгоритм аппроксимации суммы двух логнормальных распределений.
 	
 	Работа этого семестра заключена в разделе 6. В моей работе использовались статьи «Swanson's Swansong» \cite{Swansong} и «Uncertainties impacting reserves, revenue, and costs» \cite{Uncertainties}.
 	
@@ -89,18 +90,16 @@ headsep=1cm, footskip=1cm]{geometry}
 	
 	А в статье «Performance Evaluation of Swanson’s Rule for the Case of Log-Normal Populations» \cite{Performance} проводится исследование оценки эффективности метода Свонсона и сравнение с использованием равных весов. Рассмотрены различные преимущества двух методов.
 	
-	\section{Общий подход к трехточечной аппроксимации}
+	\section{Общий подход к трехточечной аппроксимации, аппроксимация нормального распределения}
 	
-	Пусть дана непрерывная случайная величина $\xi$ с функцией распределения $\F(x)$. \[m = \mathbf E(\xi), \quad\quad s^{2} = \mathbf D(\xi).\]
-	Для неё заданы квантили $x_{\pi_{1}}$, $x_{\pi_{2}}$, $x_{\pi_{3}}$. Также есть случайная дискретная величина $\tilde{\xi}$.
+	Пусть дана непрерывная случайная величина $\xi$ с функцией распределения $\F(x)$. Обозначим \[m = \mathbf E(\xi), \quad\quad s^{2} = \mathbf D(\xi).\]
+	Для неё заданы квантили $x_{\pi_{1}}$, $x_{\pi_{2}}$, $x_{\pi_{3}}$. Также есть случайная дискретная величина $\tilde{\xi}$, которая задана следующим образом
 	\[\tilde{\xi}:\quad\begin{pmatrix} 
 		x_{\pi_{1}}&x_{\pi_{2}}&x_{\pi_{3}}\\ 
 		p_{1} &  p_{2}  & p_{3}
-	\end{pmatrix}\]
-	\[\tilde{m} = \mathbf E(\tilde{\xi}), \quad\quad \tilde{s}^{2} = \mathbf D(\tilde{\xi}).\]
-	Мы хотим аппроксимировать распределение случайной величины $\xi$ дискретным распределением $\tilde{\xi}$.
-	
-	Нужно найти $p_{1}$, $p_{2}$, $p_{3}$ так, чтобы следующие равенства были верными.
+	\end{pmatrix},\]
+	для неё обозначим \[\tilde{m} = \mathbf E(\tilde{\xi}), \quad\quad \tilde{s}^{2} = \mathbf D(\tilde{\xi}).\]
+	Мы хотим аппроксимировать распределение случайной величины $\xi$ дискретным распределением $\tilde{\xi}$ с сохранением первых двух моментов. Для этого нужно найти $p_{1}$, $p_{2}$, $p_{3}$ так, чтобы следующие равенства были верными.
 	\begin{equation}
 		p_{1} + p_{2} + p_{3} = 1, \label{1}
 	\end{equation}
@@ -110,8 +109,7 @@ headsep=1cm, footskip=1cm]{geometry}
 	\begin{equation}
 		\tilde{s^{2}} = p_{1} x_{\pi_{1}}^{2} + p_{2} x_{\pi_{2}}^{2} + p_{3} x_{\pi_{3}}^{2} - m^{2} = s^{2}. \label{3}
 	\end{equation}
-	
-	Запишем уравнения \eqref{1}"---\eqref{3} в матричной форме следующим образом
+	Запишем уравнения \eqref{1}--\eqref{3} в матричной форме следующим образом
 	\[\begin{pmatrix} 
 		1&1&1\\ 
 		x_{\pi_{1}} &  x_{\pi_{2}}  & x_{\pi_{3}} \\ 
@@ -119,8 +117,7 @@ headsep=1cm, footskip=1cm]{geometry}
 	\end{pmatrix}
 	\begin{pmatrix}p_{1}\\p_{2}\\ p_{3}\end{pmatrix}= \begin{pmatrix}1\\m\\m^{2}+s^{2}\end{pmatrix}.\]
 	
-	Теперь введём более изящную форму, которая подчёркивает связь вероятностей с формой распределения путём нормализации математического ожидания и дисперсии.
-	
+	Теперь введём более изящную форму, которая подчёркивает связь вероятностей с формой распределения путём стандартизации.
 	
 	\begin{proposition}[\textbf{Swanson, 2000 год}]\label{pr1}
 		Пусть верно 
@@ -134,94 +131,56 @@ headsep=1cm, footskip=1cm]{geometry}
 		\end{equation}
 		где $\hat{x}_{\pi_{i}} = \hat{\F}^{-1}(\pi_{i})$, $\hat{\F}(y)$ "--- функция распределения $\displaystyle{\hat{\xi} = \frac{\xi-m}{s}}$. Тогда $m=\tilde{m}$ и $s^{2} = \tilde{s}^{2}$.
 	\end{proposition}
-	\begin{Proof}
-		\begin{align*}
-			\mathsf{P}(\xi \leq x_{\pi_{i}}) &= \pi_{i},\\
-			\mathsf{P}\left(\frac{\xi-m}{s}\leq \frac{x_{\pi_{i}}-m}{s}\right) &=  \hat{\F}\left(\frac{x_{\pi_{i}}-m}{s}\right)=\pi_{i},
-		\end{align*}
-		$\xi$ нормализуется так, чтобы иметь нулевое математическое ожидание и единичную дисперсию.
-		Имеем $x_{\pi_{i}} = m+s\hat{\F}^{-1}(\pi_{i})$, обозначим
-		\begin{equation}
-			\hat{x}_{\pi_{i}} = \dfrac{x_{\pi_{i}}-m}{s}=\hat{\F}^{-1}(\pi_{i}). \label{5}
-		\end{equation}
-		Предположим, что $m=\tilde{m}$ и $s^{2} = \tilde{s^{2}}$, и получим систему \eqref{4}.
-		Для этого подставим \eqref{5} в уравнение \eqref{2}, получаем
-		\begin{equation*}
-			m(p_{1} + p_{2} + p_{3})+s(p_{1}\hat{x}_{\pi_1}+p_{2}\hat{x}_{\pi_{2}}+p_{3}\hat{x}_{\pi_{3}})=m.
-		\end{equation*}
-		Используя уравнение \eqref{1}, получаем
-		\begin{equation*}
-			s(p_{1}\hat{x}_{\pi_1}+p_{2}\hat{x}_{\pi_{2}}+p_{3}\hat{x}_{\pi_{3}})=0.
-		\end{equation*}
-		Так как $s \neq 0$, то можно разделить на $s$, тогда получаем
-		\begin{equation*}
-			p_{1}\hat{x}_{\pi_1}+p_{2}\hat{x}_{\pi_{2}}+p_{3}\hat{x}_{\pi_{3}}=0.
-		\end{equation*}
-		Теперь подставим \eqref{5} в уравнение \eqref{3}, получаем
-		\begin{equation*}
-			p_{1}(m+s\hat{x}_{\pi_{1}})^{2}+p_{2}(m+s\hat{x}_{\pi_{2}})^{2}+p_{3}(m+s\hat{x}_{\pi_{3}})^{2} - m^{2} = s^{2},
-		\end{equation*}
-		\begin{equation*}
-			p_{1}\hat{x}_{\pi_{1}}^{2}+p_{2}\hat{x}_{\pi_{2}}^{2}+p_{3}\hat{x}_{\pi_{3}}^{2} = 1.
-		\end{equation*}
-		Получившиеся уравнения в матричной форме
-		\begin{equation}
-			\begin{pmatrix} 
-				1&1&1\\ 
-				\hat{x}_{\pi_{1}}~~ &  \hat{x}_{\pi_{2}}~~  & \hat{x}_{\pi_{3}} \\ 
-				\hat{x}_{\pi_{1}}^{2}~~&\hat{x}_{\pi_{2}}^{2}~~  &\hat{x}_{\pi_{3}}^{2}
-			\end{pmatrix}
-			\begin{pmatrix}p_{1}\\p_{2}\\ p_{3}\end{pmatrix}= \begin{pmatrix}1\\0\\1 \end{pmatrix}. \label{6}
-		\end{equation}
-	\end{Proof}
 	
-	\section{Аппроксимация нормального распределения}
+	\begin{zam}
+		Предложение 1 дает требуемую аппроксимацию дискретным распределением, если найденные вероятности $p_{i}$ являются неотрицательными.
+	\end{zam}
+	
+	\paragraph{Аппроксимация нормального распределения.}
 	Если $\xi\sim N(\mu, \sigma) $ имеет нормальное распределение, то
-	$\hat{\xi}$ имеет нормальное стандартное распределение, поэтому можно написать систему, которая не зависит ни от $\mu$, ни от $\sigma$.
+	$\hat{\xi}$ имеет стандартное нормальное распределение, поэтому $\hat{\xi}\sim N(0, 1)$ в Предложении 1.
 	
-	\begin{proposition}[\textbf{Swanson, 2000 год}]\label{pr7}
-		$\xi\sim N(\mu, \sigma)$, пусть верно 
+	\begin{proposition}[\textbf{Swanson, 2000 год}]\label{pr2}
+		Пусть $\xi\sim N(\mu, \sigma)$, $\pi_{3} = 1-\pi_{1}$, $\pi_{2} = 0.5$ и пусть верно 
 		\begin{equation}
 			\begin{cases}
-				p_{\pi} = \displaystyle{\frac{\delta}{2}},\\ 
-				p_{0.5}=1-\delta , \\ 
-				p_{1-\pi}=\displaystyle{\frac{\delta}{2}}.
-			\end{cases}\label{7}
+				p_{1} = \displaystyle{\frac{\delta}{2}},\\ 
+				p_{2}=1-\delta , \\ 
+				p_{3}=\displaystyle{\frac{\delta}{2}},
+			\end{cases}\label{5}
 		\end{equation}
-		где $\delta  = \displaystyle{\frac{1}{\Phi ^{-1}(\pi)^{2}}}$. Тогда $m=\tilde{m}$ и $s^{2} = \tilde{s}^{2}$.
+		где $\delta  = \displaystyle{\frac{1}{\Phi ^{-1}(\pi_{1})^{2}}}$. Тогда $m=\tilde{m}$ и $s^{2} = \tilde{s}^{2}$.
 	\end{proposition}
 	\begin{Proof}
-		Предположим, что $m=\tilde{m}$ и $s^{2} = \tilde{s}^{2}$, и получим систему \eqref{7}.
-		
-		$\Phi (y) = \mathsf{P}\left( \eta = \dfrac{\xi-m}{s}\leq y\right) $ "--- функция распределения стандартного нормального распределения, тогда система \eqref{6} записывается как
+	
+		Обозначим $\Phi (y) = \mathsf{P}\left( \eta = \dfrac{\xi-m}{s}\leq y\right) $ "--- функция распределения стандартного нормального распределения, тогда система \eqref{4} записывается как
 		\begin{equation}
 			\begin{pmatrix} 1&1&1\\ 
 				\Phi^{-1}(\pi_{1})~~ &  \Phi ^{-1}(\pi_{2})~~  & \Phi ^{-1}(\pi_{3}) \\ 
 				\Phi ^{-1}(\pi_{1})^{2}~~&\Phi ^{-1}(\pi_{2})^{2}~~  &\Phi ^{-1}(\pi_{3})^{2}
 			\end{pmatrix}
-			\begin{pmatrix}p_{1}\\p_{2}\\ p_{3}\end{pmatrix}= \begin{pmatrix}1\\0\\1\end{pmatrix}. \label{8}
+			\begin{pmatrix}p_{1}\\p_{2}\\ p_{3}\end{pmatrix}= \begin{pmatrix}1\\0\\1\end{pmatrix}. \label{6}
 		\end{equation}
-		В частном случае симметричных квантилей вида $\pi$, 0.5, $1-\pi$ получаем $\Phi ^{-1}(\pi ) = -\Phi ^{-1}(1-\pi )$, $\Phi ^{-1}(0.5) = 0$, тогда система \eqref{8} упрощается до
+		В частном случае симметричных квантилей вида $\pi_{1}=\pi$, $\pi_{2}=0.5$, $\pi_{3} = 1-\pi$ получаем $\Phi ^{-1}(\pi ) = -\Phi ^{-1}(1-\pi )$, $\Phi ^{-1}(0.5) = 0$, тогда система \eqref{6} упрощается до
 		\begin{equation*}
 			\begin{pmatrix} 1&1&1\\ 
 				\Phi^{-1}(\pi)~~ &  0~~  & -\Phi ^{-1}(\pi) \\ 
 				\Phi ^{-1}(\pi)^{2}~~& 0~~  &\Phi ^{-1}(\pi)^{2}
 			\end{pmatrix} 
-			\begin{pmatrix}p_{\pi}\\p_{0.5}\\ p_{1-\pi}\end{pmatrix}= \begin{pmatrix}1\\0\\1\end{pmatrix}.
+			\begin{pmatrix}p_{1}\\p_{2}\\ p_{3}\end{pmatrix}= \begin{pmatrix}1\\0\\1\end{pmatrix}.
 		\end{equation*}
-		
+		Запишем следующим образом 
 		\begin{equation}
 			\begin{cases}
-				p_{\pi}+p_{0.5}+p_{1-\pi} =1,\\ 
-				(p_{\pi}-p_{1-\pi})\Phi ^{-1}(\pi) =0,\\ 
-				(p_{\pi}+p_{1-\pi})\Phi ^{-1}(\pi)^{2}=1.
-			\end{cases}\label{9}
+				p_{1}+p_{2}+p_{3} =1,\\ 
+				(p_{1}-p_{3})\Phi ^{-1}(\pi) =0,\\ 
+				(p_{1}+p_{3})\Phi ^{-1}(\pi)^{2}=1.
+			\end{cases}\label{7}
 		\end{equation}
-		Обозначим $\delta  = \displaystyle{\frac{1}{\Phi ^{-1}(\pi)^{2}}}$, тогда из системы \eqref{9} получим систему \eqref{7}.
+		Обозначим $\delta  = \displaystyle{\frac{1}{\Phi ^{-1}(\pi)^{2}}}$, тогда из системы \eqref{7} получим утверждение Предложения 2.
 	\end{Proof}
 	
-	
-	Рассмотрим случай $\pi = 0.1$, имеем $\Phi ^{-1}(0.1) = -\Phi ^{-1}(0.9) \approx  -1.28$, $\Phi ^{-1}(0.5) = 0$, из уравнений системы \eqref{9} находим значения $p_{1}$, $p_{2}$, $p_{3}$.
+	Рассмотрим случай $\pi = 0.1$, имеем $\Phi ^{-1}(0.1) = -\Phi ^{-1}(0.9) \approx  -1.28$, $\Phi ^{-1}(0.5) = 0$, из уравнений системы \eqref{7} находим значения $p_{1}$, $p_{2}$, $p_{3}$.
 	\begin{equation*}
 		\begin{cases}
 			p_{1}\approx 0.305, \\ 
@@ -232,34 +191,138 @@ headsep=1cm, footskip=1cm]{geometry}
 	Эти вероятности примерно равны 0.3, 0.4, 0.3, поэтому это правило называют правилом 30-40-30 или \textbf{правилом Свонсона}.
 	
 	\section{Аппроксимация логнормального распределения}
-	\subsection{Связь логнормального распределения с нормальным}
+	\subsection{Свойства логнормального распределения}  
+	
 	Пусть случайная величина $\eta$ имеет логнормальное распределение, тогда cлучайная величина $\xi = \ln(\eta)$ имеет нормальное распределение, $\xi \sim N(\mu, \sigma)$. И поэтому для нее можно использовать формулы, полученные в предыдущих разделах.
 	
-	Параметры $m$, $s^{2}$ логнормального распределения можно найти через параметры $\mu$ и $\sigma^{2}$ соответствующего нормального распределения по следующим формулам
-	
+	Параметры $m = \mathbf E(\eta)$, $s^{2} = \mathbf D(\eta)$ логнормального распределения можно найти через параметры $\mu$ и $\sigma^{2}$ соответствующего нормального распределения по следующим формулам
 	\begin{equation}
-		m = \exp\left( \mu+\frac{\sigma ^{2}}{2}\right) ,
-	\end{equation} \label{10}
-	\begin{equation}
-		s^{2} = m^{2}(\exp(\sigma^{2})-1).
+		m = \exp\left( \mu+\frac{\sigma ^{2}}{2}\right) , \label{8}
 	\end{equation}
+	\begin{equation}
+		s^{2} = m^{2}(\exp(\sigma^{2})-1). \label{9}
+	\end{equation}
+Заметим, что математическое ожидание логнормально распределенной случайной величины всегда положительное.
 
-Параметр $\sigma$ выражается как
+Коэффициент асимметрии выражается \cite{Discretization} следующей формулой
 \begin{equation}
-	\displaystyle{\sigma = \dfrac{\log\left(\dfrac{x_{\pi_{j}}}{x_{\pi_{i}}}\right)}{\Phi ^{-1}(\pi_{j}) - \Phi ^{-1}(\pi_{i})}}, \quad \quad i\neq j.
-\end{equation} \label{13}
-При этом значение $\sigma$ одинаковое для любых пар i и j.
+	\gamma_{3} = \sqrt{\exp(\sigma^{2})-1}(\exp(\sigma^{2})+2). \label{10}
+\end{equation}
+Коэффициент эксцесса находится \cite{Discretization} как
+\begin{equation}
+	\gamma_{4} = \exp(4\sigma^{2})+2\exp(3\sigma^{2})+3\exp(2\sigma^{2})-6. \label{11}
+\end{equation}
+Обратная функция распределения имеет вид
+\begin{equation}
+	F_{\eta}^{-1}(p) = \exp(\mu+\sigma\sqrt{2}\mathrm{erf}^{-1}(2p-1)). \label{12}
+\end{equation}
+
+\subsection{Связь параметров с квантилями}
+\begin{proposition}\label{pr3}
+	Параметр $\sigma$ выражается через любые два квантиля как
+	\begin{equation}
+		\displaystyle{\sigma = \dfrac{\log\left(\dfrac{x_{\pi_{2}}}{x_{\pi_{1}}}\right)}{\Phi ^{-1}(\pi_{2}) - \Phi ^{-1}(\pi_{1})}}, \quad \quad \pi_{1}\neq \pi_{2}. \label{13}
+	\end{equation} 
+\end{proposition}
+\begin{Proof}
+	Покажем, что дисперсию логнормального распределения можно вычислить из отношения двух квантилей. Распишем вероятность 
+	\begin{equation*}
+		\mathsf{P}(\xi\leq x_{\pi}) = \pi,
+	\end{equation*}
+	\begin{equation*}
+		\displaystyle{\mathsf{P}\left(\frac{\log(\xi)-\mu }{\sigma }\leq \frac{\log(x_{\pi})-\mu}{\sigma}\right) = \pi}.
+	\end{equation*}
+	Следовательно,
+	\begin{equation*}
+		\displaystyle{\Phi \left(\frac{\log(x_{\pi})-\mu}{\sigma}\right)=\pi},
+	\end{equation*}
+	и тогда
+	\begin{equation*}
+		\log(x_{\pi})=\mu + \sigma\Phi ^{-1}(\pi).
+	\end{equation*}
+	С помощью двух квантилей мы можем исключить $\mu$ из соответствующих уравнений. Запишем
+	\begin{equation*}
+		\log\left(\frac{x_{\pi_{3}}}{x_{\pi_{1}}}\right) = \sigma(\Phi ^{-1}(\pi_{3})-\Phi ^{-1}(\pi_{1})).
+	\end{equation*}
+	И в итоге получаем
+	\begin{equation*}
+		\displaystyle{\sigma = \dfrac{\log\left(\dfrac{x_{\pi_{2}}}{x_{\pi_{1}}}\right)}{\Phi ^{-1}(\pi_{2}) - \Phi ^{-1}(\pi_{1})}}.
+	\end{equation*}
+\end{Proof}
 
 Параметр $\mu$ выражается как
 \begin{equation}
-	\mu = \log(x_{\pi_{i}}) - \sigma\Phi ^{-1}(\pi_{i})
+	\mu = \log(x_{\pi_{i}}) - \sigma\Phi ^{-1}(\pi_{i}) \label{14}
 \end{equation}
-и результат не зависит от i.
+и результат не зависит от $i$.
+
+\begin{proposition}\label{pr4}
+	В терминах Предложения 1 функция $\hat{\F}^{-1}(\pi)$ выражается через $\sigma$ как
+	\begin{equation}
+		\displaystyle{\hat{\F}^{-1}(\pi) = y = \frac{\exp\left( \sigma\Phi^{-1}(\pi) - \dfrac{\sigma^{2} }{2}\right) -1}{\sqrt{\exp(\sigma ^{2})-1}}}. \label{15}
+	\end{equation}
+\end{proposition}
+\begin{Proof}
+	Выразим $\hat{\F}(y)$ через функцию стандартного нормального распределения 
+	\begin{align*}
+		\hat{\F}(y)=\Phi \left(\frac{\log(m+sy) - \mu}{\sigma}\right),
+	\end{align*}
+ 	так как $\xi=\ln(\eta) \sim N(\mu, \sigma).$
+	Выразим $\log(m+sy)$ через $\mu$ и $\sigma$, используя формулы \eqref{8} и \eqref{9}. Получаем 
+	\begin{equation*}
+		m+sy = e^{\mu +\frac{\sigma ^{2}}{2}} + ye^{\mu +\frac{\sigma ^{2}}{2}}\sqrt{e^{\sigma ^{2}}-1} = e^{\mu +\frac{\sigma ^{2}}{2}}(1+y\sqrt{\exp(\sigma ^{2})-1}),
+	\end{equation*}
+	возьмем натуральный логарифм от обеих частей, получаем
+	\begin{align*}
+		\log(m+sy) &= \log(e^{\mu +\frac{\sigma ^{2}}{2}}(1+y\sqrt{\exp(\sigma ^{2})-1})) =\\
+		&=\mu +\frac{\sigma ^{2}}{2} + \log(1+y\sqrt{\exp(\sigma ^{2})-1}),
+	\end{align*}
+	тогда
+	\begin{equation*}
+		\displaystyle{\frac{\log(m+sy)-\mu }{\sigma } = \frac{\sigma }{2} + \frac{\log(1+y\sqrt{\exp(\sigma ^{2})-1})}{\sigma}}.
+	\end{equation*}
+	То есть можно выразить
+	\begin{equation*}
+		\displaystyle{\hat{\F}(y) = \Phi \left(\frac{\log(m+sy)-\mu }{\sigma }\right) = \Phi \left(\frac{\sigma }{2} + \frac{\log(1+y\sqrt{\exp(\sigma ^{2})-1})}{\sigma}\right)}.
+	\end{equation*}
+	Далее находим $\Phi^{-1}(\pi)$. Получаем 
+	\begin{equation*}
+		\displaystyle{\Phi \left(\frac{\sigma }{2} + \frac{\log(1+y\sqrt{\exp(\sigma ^{2})-1})}{\sigma }\right) = \pi},
+	\end{equation*}
+	\begin{equation*}
+		\displaystyle{\Phi^{-1}(\pi)=\frac{\sigma }{2} + \frac{\log(1+y\sqrt{\exp(\sigma ^{2})-1})}{\sigma}}.
+	\end{equation*}
+	Теперь можно выразить $\log(1+y\sqrt{\exp(\sigma ^{2})-1})$ как
+	\begin{equation*}
+		\displaystyle{\log(1+y\sqrt{\exp(\sigma ^{2})-1}) = \sigma\Phi^{-1}(\pi) - \frac{\sigma^{2} }{2}},
+	\end{equation*}
+	\begin{equation*}
+		1+y\sqrt{\exp(\sigma ^{2})-1} = \exp\left( \sigma\Phi^{-1}(\pi) - \frac{\sigma^{2} }{2}\right) .
+	\end{equation*}
+	В итоге получаем
+	\begin{equation*}
+		\displaystyle{\hat{\F}^{-1}(\pi) = y = \frac{\exp(\sigma\Phi^{-1}(\pi) - \frac{\sigma^{2} }{2})-1}{\sqrt{\exp(\sigma ^{2})-1}}}.
+	\end{equation*}
+\end{Proof}
+
+	\subsection{Варианты постановки задачи}
+
+\textbf{Задача:} имеются квантили $x_{\pi}$, $x_{0.5}$, $x_{1-\pi}$ логнормальной случайной величины $\eta$. Нужно уметь считать её математическое ожидание и дисперсию.
+
+Варианты решения задачи:
+\begin{enumerate}
+	\item Не переходить к аппроксимации дискретной случайной величиной, а сразу же из двух уравнений вида \eqref{14}, записанных для двух квантилей, найти значения параметров $\mu$ и $\sigma$ нормальной случайной величины $\ln(\eta)\sim N(\mu, \sigma)$. Далее по формулам \eqref{8} и \eqref{9} вычислить значения мат. ожидания $m$ и дисперсии $s^{2}$ случайной величины $\eta$.
+	\item Перейти к трехточечной аппроксимации дискретной случайной величиной $\tilde{\xi}$, у которой $\tilde{m} = m$, $\tilde{s}^{2}=s^{2}$ и считать значения $m$ и $s$ через квантили $x_{\pi}$, $x_{0.5}$, $x_{1-\pi}$ и вероятности $p_{1}$, $p_{2}$, $p_{3}$.
+	Если условие для положительных вероятностей не выполняется, можно воспринимать задачу не как поиск вероятностей для $\tilde{\xi}$, а как поиск весов для линейной комбинации $x_{\pi}$, $x_{0.5}$, $x_{1-\pi}$ таких, чтобы параметры, полученные по формулам \eqref{2} и \eqref{3}, были равны мат. ожиданию и дисперсии $\eta$. 
+\end{enumerate}
+
+В реальных задачах в нефтяной промышленности используются следующие диапазоны параметров:
+\[\mu\leq12, \quad\quad \sigma\leq1.5.\]
+Поэтому мы будем обращать на них особое внимание.
 	
-	
-	\subsection{Способ нахождения вероятностей через математическое ожидание и дисперсию нормального распределения}
+	\subsection{Способ нахождения весов для $x_{\pi}$, $x_{0.5}$, $x_{1-\pi}$ через математическое ожидание и дисперсию нормального распределения и непосредственная аппроксимация логнормального распределения}
 	Заметим, что если
-	$x_{\pi_{1}}, x_{\pi_{2}}, x_{\pi_{3}}$ "--- квантили логнормального распределения, то $\ln(x_{\pi_{1}})$, $\ln(x_{\pi_{2}})$, $\ln(x_{\pi_{3}})$ "--- квантили нормального распределения. Можно взять эти квантили и использовать в способе нахождения вероятностей для нормального распределения. 
+	$x_{\pi_{1}}, x_{\pi_{2}}, x_{\pi_{3}}$ "--- квантили логнормального распределения, то $\ln(x_{\pi_{1}})$, $\ln(x_{\pi_{2}})$, $\ln(x_{\pi_{3}})$ "--- квантили нормального распределения соответствующие тем же вероятностям. Можно взять эти квантили и использовать в способе нахождения вероятностей для нормального распределения, пользуясь Предложением 2.
 	
 	Имеем следующий алгоритм.
 	
@@ -270,126 +333,16 @@ headsep=1cm, footskip=1cm]{geometry}
 		
 		\begin{pr2}\end{pr2}
 		\begin{enumerate}
-			\item Вычисляем значения мат. ожидания $m$ и дисперсии $s^{2}$ случайной величины $\eta$, используя известные $x_{\pi_{1}}, x_{\pi_{2}}, x_{\pi_{3}}$.
-			\item Выражаем параметры $\mu$ и $\sigma$ мат. ожидание и дисперсию соответствующего нормального распределения через параметры $m$ и $s^{2}$ логнормального распределения.
 			
-			Заметим, что математическое ожидание логнормально распределенной случайной величины всегда положительное.
-			\item С помощью системы \eqref{7} находим значения вероятностей $p_{1}$, $p_{2}$, $p_{3}$.
+			\item Выражаем параметры $\mu$ и $\sigma$ мат. ожидание и дисперсию соответствующего нормального распределения через известные $x_{\pi_{1}}, x_{\pi_{2}}, x_{\pi_{3}}$ по формулам \eqref{13} и \eqref{14}. 
+			\item Вычисляем значения мат. ожидания $m$ и дисперсии $s^{2}$ случайной величины $\eta$, используя $\mu$ и $\sigma$ по формулам \eqref{8} и \eqref{9}.
+			\item С помощью \eqref{1}--\eqref{3} находим значения весов $p_{1}$, $p_{2}$, $p_{3}$, используя вычисленные $m$ и $s^{2}$.
 		\end{enumerate}
-		\begin{pr3}\end{pr3} вероятности $p_{1}$, $p_{2}$, $p_{3}$ для $x_{\pi_{1}}, x_{\pi_{2}}, x_{\pi_{3}}$ случайной величины $\tilde{\xi}$.
+		\begin{pr3}\end{pr3} веса $p_{1}$, $p_{2}$, $p_{3}$ для $x_{\pi_{1}}, x_{\pi_{2}}, x_{\pi_{3}}$ случайной величины $\tilde{\xi}$.
 		
 	\end{alg}
 	
-	\begin{ex}
-		Пусть у нас есть логнормальная случайная величина с $m = 2$, $s^{2} = 0.78125$.
-		Значения квантилей $x_{10} = 1$, $x_{50} = 2$, $x_{90} = 3$.
-		
-		По данным формулам можно найти параметры соответствующего нормального распределения.
-		\[\mu=0.69314,\] 
-		\[\sigma=0.42863.\]
-		Теперь можно найти значения $p_{1}$, $p_{2}$, $p_{3}$.
-		\[p_{10}= 0.371243,\]
-		\[p_{50}= 0.282992,\]
-		\[p_{90}= 0.345764.\]
-	\end{ex}
-	\subsection{Непосредственная аппроксимация логнормального распределения}
-	
-	Есть другой способ нахождения результата, полученного в разделе 4.2. Можно не переходить к нормальному распределению, а сразу вычислять вероятности для квантилей логнормального распределения.
-	
-	Сначала найдём $\hat{\F}(y)$ в терминах параметров распределения, затем найдём $\hat{\F}^{-1}(p)$, чтобы использовать формулу \eqref{4}.
-	
-	\begin{proposition}\label{pr2}
-		В терминах Предложения 1 функция $\hat{\F}^{-1}(\pi)$ выражается через $\sigma$ как
-		\begin{equation}
-			\displaystyle{\hat{\F}^{-1}(\pi) = y = \frac{\exp\left( \sigma\Phi^{-1}(\pi) - \dfrac{\sigma^{2} }{2}\right) -1}{\sqrt{\exp(\sigma ^{2})-1}}}.
-		\end{equation}\label{12}
-	\end{proposition}
-	\begin{Proof}
-		\begin{align*}
-			\hat{\F}(y) &= \mathsf{P}\left(\eta\leq y \right) = \mathsf{P}\left(\frac{\xi-m}{s} \leq y \right)= \\
-			&=\mathsf{P}(\log(\xi)\leq \log(m+sy))=\\
-			&=\mathsf{P}\left( \frac{\log(\xi)-\mu}{\sigma}\leq \frac{\log(m+sy)-\mu}{\sigma} \right) =\\
-			&=\Phi \left(\frac{\log(m+sy) - \mu}{\sigma}\right).
-		\end{align*}
-		Найдём $\log(m+sy)$, используя $m = e^{\mu +\frac{\sigma ^{2}}{2}}$ и $s = m\sqrt{e^{\sigma ^{2}}-1}$.
-		\begin{equation*}
-			m+sy = e^{\mu +\frac{\sigma ^{2}}{2}} + ye^{\mu +\frac{\sigma ^{2}}{2}}\sqrt{e^{\sigma ^{2}}-1} = e^{\mu +\frac{\sigma ^{2}}{2}}(1+y\sqrt{\exp(\sigma ^{2})-1}),
-		\end{equation*}
-		возьмем натуральный логарифм от обеих частей, получаем
-		\begin{align*}
-			\log(m+sy) &= \log(e^{\mu +\frac{\sigma ^{2}}{2}}(1+y\sqrt{\exp(\sigma ^{2})-1})) =\\
-			&=\mu +\frac{\sigma ^{2}}{2} + \log(1+y\sqrt{\exp(\sigma ^{2})-1}),
-		\end{align*}
-		тогда
-		\begin{equation*}
-			\displaystyle{\frac{\log(m+sy)-\mu }{\sigma } = \frac{\sigma }{2} + \frac{\log(1+y\sqrt{\exp(\sigma ^{2})-1})}{\sigma}}.
-		\end{equation*}
-		
-		То есть можно выразить
-		\begin{equation*}
-			\displaystyle{\hat{\F}(y) = \Phi \left(\frac{\log(m+sy)-\mu }{\sigma }\right) = \Phi \left(\frac{\sigma }{2} + \frac{\log(1+y\sqrt{\exp(\sigma ^{2})-1})}{\sigma}\right)}.
-		\end{equation*}
-		
-		Далее можно найти $\Phi^{-1}(\pi)$.
-		\begin{equation*}
-			\displaystyle{\Phi \left(\frac{\sigma }{2} + \frac{\log(1+y\sqrt{\exp(\sigma ^{2})-1})}{\sigma }\right) = \pi},
-		\end{equation*}
-		\begin{equation*}
-			\displaystyle{\Phi^{-1}(\pi)=\frac{\sigma }{2} + \frac{\log(1+y\sqrt{\exp(\sigma ^{2})-1})}{\sigma}}.
-		\end{equation*}
-		
-		Теперь можно найти $\log(1+y\sqrt{\exp(\sigma ^{2})-1})$.
-		\begin{equation*}
-			\displaystyle{\log(1+y\sqrt{\exp(\sigma ^{2})-1}) = \sigma\Phi^{-1}(\pi) - \frac{\sigma^{2} }{2}},
-		\end{equation*}
-		\begin{equation*}
-			1+y\sqrt{\exp(\sigma ^{2})-1} = \exp\left( \sigma\Phi^{-1}(\pi) - \frac{\sigma^{2} }{2}\right) .
-		\end{equation*}
-		
-		В итоге получаем
-		\begin{equation*}
-			\displaystyle{\hat{\F}^{-1}(\pi) = y = \frac{\exp(\sigma\Phi^{-1}(\pi) - \frac{\sigma^{2} }{2})-1}{\sqrt{\exp(\sigma ^{2})-1}}}.
-		\end{equation*}
-	\end{Proof}
-	
-	\begin{proposition}\label{pr3}
-		Параметр $\sigma$ для логнормального распределения выражается через значения квантилей, как
-		\begin{equation}
-			\displaystyle{\sigma = \dfrac{\log\left(\dfrac{x_{\pi_{2}}}{x_{\pi_{1}}}\right)}{\Phi ^{-1}(\pi_{2}) - \Phi ^{-1}(\pi_{1})}}.
-		\end{equation} \label{13}
-	\end{proposition}
-	\begin{Proof}
-		Покажем, что дисперсию логнормального распределения можно вычислить из отношения двух квантилей.
-		\begin{equation*}
-			\mathsf{P}(\xi\leq x_{\pi}) = \pi,
-		\end{equation*}
-		\begin{equation*}
-			\displaystyle{\mathsf{P}\left(\frac{\log(\xi)-\mu }{\sigma }\leq \frac{\log(x_{\pi})-\mu}{\sigma}\right) = \pi}.
-		\end{equation*}
-		Следовательно,
-		\begin{equation*}
-			\displaystyle{\Phi \left(\frac{\log(x_{\pi})-\mu}{\sigma}\right)=\pi},
-		\end{equation*}
-		и тогда
-		\begin{equation}
-			\log(x_{\pi})=\mu + \sigma\Phi ^{-1}(\pi).
-		\end{equation}
-		С помощью двух квантилей мы можем исключить $\mu$ из соответствующих уравнений. Пусть есть $\pi_{1}$-ый и $\pi_{3}$-ый квантили со значениями $x_{\pi_{1}}$ и $x_{\pi_{3}}$.
-		\begin{equation*}
-			\log(x_{\pi_{1}}) = \mu + \sigma\Phi ^{-1}(\pi_{1}),
-		\end{equation*}
-		\begin{equation*}
-			\log(x_{\pi_{3}}) = \mu + \sigma\Phi ^{-1}(\pi_{3}).
-		\end{equation*}
-		Вычтем из второго уравнения первое, получаем
-		\begin{equation*}
-			\log\left(\frac{x_{\pi_{3}}}{x_{\pi_{1}}}\right) = \sigma(\Phi ^{-1}(\pi_{3})-\Phi ^{-1}(\pi_{1})).
-		\end{equation*}
-		И в итоге получаем
-		\begin{equation*}
-			\displaystyle{\sigma = \dfrac{\log\left(\dfrac{x_{\pi_{2}}}{x_{\pi_{1}}}\right)}{\Phi ^{-1}(\pi_{2}) - \Phi ^{-1}(\pi_{1})}}.
-		\end{equation*}
-	\end{Proof}
+	Есть другой способ нахождения этого результата. Можно не переходить к нормальному распределению, а сразу вычислять вероятности для квантилей логнормального распределения.
 	
 	\begin{alg}\label{al2}
 		\begin{pr1}
@@ -398,166 +351,152 @@ headsep=1cm, footskip=1cm]{geometry}
 		
 		\begin{pr2}\end{pr2}
 		\begin{enumerate}
-			\item Выражаем параметр $\sigma$ из отношения $x_{\pi_{3}}$ к $x_{\pi_{1}}$, используя формулу (13).
-			\item Вычисляем значения $\hat{\F}^{-1}(\pi)$ для случайной величины $\eta$ по формуле (12).
-			\item С помощью системы \eqref{4} находим значения вероятностей $p_{1}$, $p_{2}$, $p_{3}$.
+			\item Выражаем параметр $\sigma$ из отношения $x_{\pi_{3}}$ к $x_{\pi_{1}}$, используя формулу \eqref{13}.
+			\item Вычисляем значения $\hat{\F}^{-1}(\pi)$ для случайной величины $\eta$ по формуле \eqref{15}.
+			\item С помощью системы \eqref{4} находим значения весов $p_{1}$, $p_{2}$, $p_{3}$.
 		\end{enumerate}
-		\begin{pr3}\end{pr3} вероятности $p_{1}$, $p_{2}$, $p_{3}$ для $x_{\pi_{1}}, x_{\pi_{2}}, x_{\pi_{3}}$ случайной величины $\tilde{\xi}$.
+		\begin{pr3}\end{pr3} веса $p_{1}$, $p_{2}$, $p_{3}$ для $x_{\pi_{1}}, x_{\pi_{2}}, x_{\pi_{3}}$ случайной величины $\tilde{\xi}$.
 		
 	\end{alg}
 	
 	\begin{zam}
-		Результаты Алгоритмов 1 и 2 совпадают.
+		Результаты Алгоритмов 1 и 2 совпадают, так как веса для аппроксимации единственны.
 	\end{zam}
 	
-	\begin{ex}
-		
-		Посчитаем пример для $\dfrac{x_{90}}{x_{10}}=3$. По формулам из этого раздела получаeм
-		
-		\[\sigma = \frac{\log\left( \dfrac{x_{90}}{x_{10}}\right) }{\phi ^{-1}(0,9)-\phi ^{-1}(0,1)}\approx 0.428626,\]
-		
-		\[\mathsf{\hat{F}}^{-1}(p)= \frac{\exp\left( \sigma \phi ^{-1}(p)-\dfrac{\sigma ^{2}}{2}\right) -1}{\sqrt{\exp(\sigma ^{2})-1}}\].
-		\[\mathsf{\hat{F}}^{-1}(0.9) \approx 1.2915826424,\]
-		\[\mathsf{\hat{F}}^{-1}(0.1)  \approx -1.0539640761,\]
-		\[\mathsf{\hat{F}}^{-1}(0.5)  \approx -0.1954343914.\]
-		
-		Из системы (4) находим вероятности $p_{10}$, $p_{50}$, $p_{90}$.
-		\[p_{10}= 0.371243,\]
-		\[p_{50}= 0.282992,\]
-		\[p_{90}= 0.345764.\]
-		
-	\end{ex}	
 	
 	\subsection{Условие на параметр $\sigma$ для существования трехточечной аппроксимации логнормального распределения }
 	
-	Мы рассмотрели способы вычисления вероятностей для квантилей при аппроксимации логнормального распределения. Но эти вероятности находятся не при любом $\sigma$. Выясним, какое должно быть ограничение на этот параметр. Докажем следующее предложение.
-	\begin{proposition}
-		Положительные вероятности $p_{1}$, $p_{2}$, $p_{3}$ для аппроксимации логнормальной случайной величины $\eta$ с квантилями вида $x_{\pi}$, $x_{0.5}$, $x_{1-\pi}$ существуют только при условии \[\exp(\sigma^{2})+\exp(-\sigma^{2})-\exp\left( \Phi^{-1}(\pi)\sigma-\dfrac{\sigma^{2}}{2}\right) -\exp\left( \Phi^{-1}(1-\pi)\sigma-\dfrac{\sigma^{2}}{2}\right) \leq 0,\]
-		\[\exp(\sigma^{2})+\exp(-\sigma^{2})-\exp\left( -\dfrac{\sigma^{2}}{2}\right) 
-		(\exp(c\sigma)+\exp(-c\sigma))\leq 0,\] 
+	Мы рассмотрели способы вычисления весов для квантилей при аппроксимации логнормального распределения. Но найденные веса являются вероятностями не при любом $\sigma$. Выясним, какое должно быть ограничение на этот параметр. Докажем следующее предложение.
+	\begin{proposition}\label{pr5}
+		Неотрицательные вероятности $p_{1}$, $p_{2}$, $p_{3}$ для аппроксимации логнормальной случайной величины $\eta$ с квантилями вида $x_{\pi}$, $x_{0.5}$, $x_{1-\pi}$ существуют только при условии
+		\begin{equation}
+			\exp(\sigma^{2})+\exp(-\sigma^{2})-\exp\left( -\dfrac{\sigma^{2}}{2}\right) (\exp(c\sigma)+\exp(-c\sigma))\leq 0, \label{16}
+		\end{equation}
 		где $c = \Phi^{-1}(\pi)$.
 	\end{proposition}
 	\begin{Proof}
-		\begin{equation*}
-			\ln(\eta) \sim N(\mu, \sigma^{2}), \quad\quad \tilde{\F}(y) = \mathsf{P}\left(\eta\leq y \right).
-		\end{equation*}
-		С помощью формулы (12) найдем $\displaystyle{\tilde{\F}^{-1}(\pi_{i})}$ и сделаем следующие обозначения
+		Рассматриваем $\ln(\eta) \sim N(\mu, \sigma^{2})$ и случай симметричныx квантилей $\pi_{1} = \pi$, $\pi_{2} = 0.5$, $\pi_{3} = 1-\pi$.
+
+		С помощью формулы \eqref{15} найдем $\displaystyle{\tilde{\F}^{-1}(\pi_{i})}$, делаем следующие обозначения
 		\[\tilde{\F}^{-1}(\pi) = t_{1}, \quad\quad\quad \tilde{\F}^{-1}(0.5) = t_{2}, \quad\quad\quad \tilde{\F}^{-1}(1-\pi) = t_{3}.\]
-		Теперь рассмотрим систему \eqref{6}, запишем ее через $t_{1}$, $t_{2}$, $t_{3}$ и выразим вероятности $p_{1}$, $p_{2}$, $p_{3}$.
+		Теперь рассмотрим систему \eqref{4}, запишем ее через $t_{1}$, $t_{2}$, $t_{3}$ и выразим вероятности $p_{1}$, $p_{2}$, $p_{3}$. Имеем 
 		\[p_{2}(t_{2}-t_{3})=p_{1}(t_{3}-t_{1})-t_{3},\]
 		\[p_{1}(t_{1}^{2}-t_{3}^{2}) + p_{2}(t_{2}^{2} - t_{3}^{2})=1-t_{3}^{2}.\]
 		Тогда получаем
 		\[p_{1}(t_{1}^{2}-t_{3}^{2}) + (t_{2}+t_{3})(p_{1}(t_{3}-t_{1})-t_{3})=1-t_{3}^{2},\]
 		\[p_{1}(t_{1}-t_{3})(t_{1}-t_{2})=1+t_{2}t_{3}.\]
+		В итоге вероятности записываются следующим образом 
 		\begin{align}
-			p_{1} &= \dfrac{1+t_{2}t_{3}}{(t_{1}-t_{3})(t_{1}-t_{2})}, \label{15}\\
-			p_{2} &= \dfrac{p_{1}(t_{3}-t_{1})-t_{3}}{t_{2}-t_{3}}=\dfrac{1+t_{1}t_{3}}{(t_{2}-t_{1})(t_{2}-t_{3})}, \label{16}\\
-			p_{3} &= 1-p_{1}-p_{2}. \label{17}
+			p_{1} &= \dfrac{1+t_{2}t_{3}}{(t_{1}-t_{3})(t_{1}-t_{2})}, \label{17}\\
+			p_{2} &= \dfrac{p_{1}(t_{3}-t_{1})-t_{3}}{t_{2}-t_{3}}=\dfrac{1+t_{1}t_{3}}{(t_{2}-t_{1})(t_{2}-t_{3})}, \label{18}\\
+			p_{3} &= 1-p_{1}-p_{2}. \label{19}
 		\end{align}
 		
-		Все вероятности должны быть положительными, подставим в формулы для вероятностей значения переменных $t_{1}$, $t_{2}$, $t_{3}$, которые ищутся по формуле (11).
-		\[p_{1}=\dfrac{1+\dfrac{\left( \exp\left( -\dfrac{\sigma^{2}}{2}\right) -1\right) \left( \exp(\Phi^{-1}(1-\pi)\sigma-\dfrac{\sigma^{2}}{2})-1\right) }{\exp(\sigma^{2})-1}}{\dfrac{\exp\left( \Phi^{-1}(\pi)\sigma-\dfrac{\sigma^{2}}{2}\right) -\exp\left( \Phi^{-1}(1-\pi)\sigma-\dfrac{\sigma^{2}}{2}\right) }{\sqrt{\exp(\sigma^{2})-1}}\dfrac{\exp\left( \Phi^{-1}(\pi)\sigma-\dfrac{\sigma^{2}}{2}\right) -\exp\left( -\dfrac{\sigma^{2}}{2}\right) }{\sqrt{\exp(\sigma^{2})-1}}}=\]
+		Все вероятности должны быть положительными, подставим в формулы для вероятностей значения переменных $t_{1}$, $t_{2}$, $t_{3}$, где $\tilde{\F}^{-1}(\pi_{i})$ ищутся по формуле \eqref{15}. Вероятность $p_{1}$ выражается как
+		\[p_{1}=\dfrac{1+\dfrac{\left( \exp\left( -\dfrac{\sigma^{2}}{2}\right) -1\right) \left( \exp\left(-c\sigma-\dfrac{\sigma^{2}}{2}\right) -1\right) }{\exp(\sigma^{2})-1}}{\dfrac{\exp\left(c\sigma-\dfrac{\sigma^{2}}{2}\right) -\exp\left( -c\sigma-\dfrac{\sigma^{2}}{2}\right) }{\sqrt{\exp(\sigma^{2})-1}}\dfrac{\exp\left( c\sigma-\dfrac{\sigma^{2}}{2}\right) -\exp\left( -\dfrac{\sigma^{2}}{2}\right) }{\sqrt{\exp(\sigma^{2})-1}}}=\]
 		
-		\[=\dfrac{\exp(\sigma^{2})+\exp(\Phi^{-1}(1-\pi)\sigma-\sigma^{2})-\exp(-\dfrac{\sigma^{2}}{2})-\exp(\Phi^{-1}(1-\pi)\sigma-\dfrac{\sigma^{2}}{2})}{\exp(\Phi^{-1}(0.1)*2\sigma-\sigma^{2})-\exp(\Phi^{-1}(\pi)\sigma-\sigma^{2})-\exp(-\sigma^{2})+\exp(\Phi^{-1}(1-\pi)\sigma-\sigma^{2})}.\]
+		\[=\dfrac{\exp(\sigma^{2})+\exp(-c\sigma-\sigma^{2})-\exp\left( -\dfrac{\sigma^{2}}{2}\right) -\exp\left( -c\sigma-\dfrac{\sigma^{2}}{2}\right) }{\exp(2c\sigma-\sigma^{2})-\exp(c\sigma-\sigma^{2})-\exp(-\sigma^{2})+\exp(-c\sigma-\sigma^{2})}.\]
 		
-		\[p_{2}=\dfrac{1+\dfrac{(\exp(\Phi^{-1}(\pi)\sigma-\dfrac{\sigma^{2}}{2})-1)(\exp(\Phi^{-1}(1-\pi)\sigma-\dfrac{\sigma^{2}}{2})-1)}{\exp(\sigma^{2})-1}}{\dfrac{\exp(-\dfrac{\sigma^{2}}{2})-\exp(\Phi^{-1}(\pi)\sigma-\dfrac{\sigma^{2}}{2})}{\sqrt{\exp(\sigma^{2})-1}}\dfrac{\exp(-\dfrac{\sigma^{2}}{2})-\exp(\Phi^{-1}(1-\pi)\sigma-\dfrac{\sigma^{2}}{2})}{\sqrt{\exp(\sigma^{2})-1}}}=\]
+		Вероятность $p_{2}$ выражается как
+		\[p_{2}=\dfrac{1+\dfrac{\left( \exp\left( с\sigma-\dfrac{\sigma^{2}}{2}\right) -1\right) \left( \exp\left( -с\sigma-\dfrac{\sigma^{2}}{2}\right) -1\right) }{\exp(\sigma^{2})-1}}{\dfrac{\exp\left( -\dfrac{\sigma^{2}}{2}\right) -\exp\left( с\sigma-\dfrac{\sigma^{2}}{2}\right) }{\sqrt{\exp(\sigma^{2})-1}}\dfrac{\exp\left( -\dfrac{\sigma^{2}}{2}\right) -\exp\left( -с\sigma-\dfrac{\sigma^{2}}{2}\right) }{\sqrt{\exp(\sigma^{2})-1}}}=\]
 		
-		\[=\dfrac{\exp(\sigma^{2})+\exp(-\sigma^{2})-\exp(\Phi^{-1}(\pi)\sigma-\dfrac{\sigma^{2}}{2})-\exp(\Phi^{-1}(1-\pi)\sigma-\dfrac{\sigma^{2}}{2})}{\exp(-\sigma^{2})-\exp(\Phi^{-1}(1-\pi)\sigma-\sigma^{2})-\exp(\Phi^{-1}(\pi)\sigma-\sigma^{2})+\exp(-\sigma^{2})}=\]
+		\[=\dfrac{\exp(\sigma^{2})+\exp(-\sigma^{2})-\exp\left( с\sigma-\dfrac{\sigma^{2}}{2}\right) -\exp\left( -с\sigma-\dfrac{\sigma^{2}}{2}\right) }{\exp(-\sigma^{2})-\exp(-с\sigma-\sigma^{2})-\exp(с\sigma-\sigma^{2})+\exp(-\sigma^{2})}=\]
 		
-		\[=\dfrac{\exp(\sigma^{2})+\exp(-\sigma^{2})-\exp\left( \dfrac{\sigma^{2}}{2}\right)\left(\exp(\Phi^{-1}(\pi)\sigma)+\exp(-\Phi^{-1}(\pi)\sigma)\right) }{2\exp(-\sigma^{2})-\exp(-\sigma^{2})\left( \exp(-\Phi^{-1}(\pi)\sigma)+\exp(\Phi^{-1}(\pi)\sigma)\right) }.\]
+		\[=\dfrac{\exp(\sigma^{2})+\exp(-\sigma^{2})-\exp\left( \dfrac{\sigma^{2}}{2}\right)\left(\exp(с\sigma)+\exp(-с\sigma)\right) }{2\exp(-\sigma^{2})-\exp(-\sigma^{2})\left( \exp(-с\sigma)+\exp(с\sigma)\right) }.\]
 		
-		Вероятности $p_{1}$ и $p_{3}$ положительные при любом параметре $\sigma$. Рассмотрим знаменатель $p_{2}$.
-		\[2\exp(-\sigma^{2})-\exp(-\sigma^{2})\left( \exp(-\Phi^{-1}(\pi)\sigma)+\exp(\Phi^{-1}(\pi)\sigma)\right)=\]
-		\[=\exp(-\sigma^{2})(2- \exp(-\Phi^{-1}(\pi)\sigma)-\exp(\Phi^{-1}(\pi)\sigma))=\]
-		\[=-\dfrac{\exp(-\sigma^{2})(\exp(\Phi^{-1}(\pi)\sigma)-1)^{2}}{\exp(\Phi^{-1}(\pi)\sigma)}.\]
-		Числитель и знаменатель дроби положительные при любом значении параметра $\sigma$. Значит, весь знаменатель $p_{2}$ отрицательный. Из условия отрицательности числителя получаем следующее ограничение на $\sigma$.
-		\[\exp(\sigma^{2})+\exp(-\sigma^{2})-\exp\left( \dfrac{\sigma^{2}}{2}\right)\left(\exp(\Phi^{-1}(\pi)\sigma)+\exp(-\Phi^{-1}(\pi)\sigma)\right) \leq 0.\]
+		Докажем, что вероятности $p_{1}$ и $p_{3}$ положительные при любом параметре $\sigma$. Сначала распишем знаменатель $p_{1}$.
+		\[\exp(2c\sigma-\sigma^{2})-\exp(c\sigma-\sigma^{2})-\exp(-\sigma^{2})+\exp(-c\sigma-\sigma^{2}) = \]
+		\[=\exp(-\sigma^{2})(\exp(2c\sigma)-\exp(c\sigma)-1+\exp(-c\sigma))=\]
+		\[=\exp(-\sigma^{2})(\exp(2c\sigma)-2\exp(c\sigma)+1+\exp(c\sigma)-2+\exp(-c\sigma))=\]
+		\[=\exp(-\sigma^{2})\left( (\exp(с\sigma)-1)^{2}+\dfrac{(\exp(с\sigma)-1)^{2}}{\exp(с\sigma)}\right) \geq 0.\]
+		Теперь анализируем числитель $p_{1}$, так как
+		\[\exp(\sigma^{2})+\exp(-c\sigma-\sigma^{2})\geq \exp\left( -\dfrac{\sigma^{2}}{2}\right) +\exp\left( -c\sigma-\dfrac{\sigma^{2}}{2}\right),\]
+		то числитель $p_{1}$ тоже всегда неотрицательный.
+		Рассмотрим знаменатель $p_{2}$. Имеем:
+		\[2\exp(-\sigma^{2})-\exp(-\sigma^{2})\left( \exp(-с\sigma)+\exp(с\sigma)\right)=\]
+		\[=\exp(-\sigma^{2})(2- \exp(-с\sigma)-\exp(с\sigma))=\]
+		\[=-\dfrac{\exp(-\sigma^{2})(\exp(с\sigma)-1)^{2}}{\exp(с\sigma)} \leq 0.\]
+		Вероятность $p_{3}$ выражается как
+		\[p_{3} = 1-\dfrac{1+t_{2}t_{3}}{(t_{1}-t_{3})(t_{1}-t_{2})}-\dfrac{1+t_{1}t_{3}}{(t_{2}-t_{1})(t_{2}-t_{3})}.\]
+		Выяснили, что $(t_{1}-t_{3})(t_{1}-t_{2}) \geq 0$, а $(t_{2}-t_{1})(t_{2}-t_{3}) \leq 0$, значит, знаменатель $p_{3}$ всегда отрицательный. Осталось показать, что числитель $p_{3}$ тоже всегда отрицательный. Для этого распишем его как
+		\[(t_{1}-t_{3})(t_{1}-t_{2})(t_{2}-t_{1})(t_{2}-t_{3})-(1+t_{2}t_{3})(t_{2}-t_{1})(t_{2}-t_{3})-(1+t_{1}t_{3})(t_{1}-t_{3})(t_{1}-t_{2})=\]
+		\[=(t_{1}^{2}-t_{1}t_{2}-t_{1}t_{3}+t_{2}t_{3})(t_{2}^{2}-t_{2}t_{3}-t_{1}t_{2}+t_{1}t_{3})-\]
+		\[-(1+t_{2}t_{3})(t_{2}^{2}-t_{2}t_{3}-t_{1}t_{2}+t_{1}t_{3})-(1+t_{1}t_{3})(t_{1}^{2}-t_{1}t_{2}-t_{1}t_{3}+t_{2}t_{3})=\]
+		\[=2t_{1}^{2}t_{2}^{2}-t_{1}^{2}t_{2}t_{3}-t_{1}^{3}t_{2}+t_{1}^{3}t_{3}-t_{1}t_{2}^{3}+t_{1}t_{2}t_{3}^{2}-t_{1}^{2}t_{3}^{2}+t_{2}^{3}t_{3}-t_{2}^{2}t_{3}^{2}-t_{1}t_{2}^{2}t_{3}+t_{1}t_{2}t_{3}^{3}-\]
+		\[-t_{2}^{2}+2t_{1}t_{2}-t_{1}^{2}-t_{2}^{3}t_{3}+t_{2}^{2}t_{3}^{2}+t_{1}t_{2}^{2}t_{3}-2t_{1}t_{2}t_{3}^{2}-t_{1}^{3}t_{3}+t_{1}^{2}t_{2}t_{3}=\]
+		\[=(2t_{1}^{2}t_{2}^{2}-t_{1}^{3}t_{2}-t_{1}t_{2}^{3})-(t_{2}^{2}-2t_{1}t_{2}+t_{1}^{2})=\]
+		\[=-(t_{1}^{\frac{1}{2}}t_{2}^{\frac{3}{2}}-t_{1}^{\frac{3}{2}}t_{2}^{\frac{1}{2}})^{2}-(t_{1}-t_{2})^{2} \leq 0.\]
+		 Из условия отрицательности числителя $p_{2}$ получаем ограничение \eqref{16}.
 	\end{Proof}
 	
 	\begin{proposition}
-		При уменьшении значения $\pi$ ограничение на $\sigma$ становится слабее, то есть диапазон значений $\sigma$ увеличивается.
+		Пусть $Г(\pi) = \left\lbrace \sigma: \eqref{16}\quad выполнено\right\rbrace $. Тогда из $\pi \leq \tilde{\pi}$ следует, что $Г(\pi)\supset  Г(\tilde{\pi})$.
 	\end{proposition}
 	\begin{Proof}
-		Имеем следующее неравенство
-		\[\exp(\sigma^{2})+\exp(-\sigma^{2})-\exp\left( \dfrac{\sigma^{2}}{2}\right)\left(\exp(\Phi^{-1}(\pi)\sigma)+\exp(-\Phi^{-1}(\pi)\sigma)\right) \leq 0.\] 
-		Рассмотрим 
-		\[\exp(\Phi^{-1}(\pi)\sigma)+\exp(-\Phi^{-1}(\pi)\sigma).\]
-		Эта сумма увеличивается при уменьшении $\pi$ и фиксированной $\sigma$, так как увеличивается по модулю значение $\Phi^{-1}(\pi)$.
+		Имеем неравенство \eqref{16}, рассмотрим $\exp(с\sigma)+\exp(-с\sigma)$.
+		Эта сумма увеличивается при уменьшении $\pi$ и фиксированной $\sigma$, так как увеличивается по модулю значение $с = \Phi^{-1}(\pi)$.
 		Значит, вычитаемое
-		\[\exp\left( \dfrac{\sigma^{2}}{2}\right)\left(\exp(\Phi^{-1}(\pi)\sigma)+\exp(-\Phi^{-1}(\pi)\sigma)\right)\]
-		становится все больше, а ограничение на $\sigma$ слабее.
+		\[\exp\left( \dfrac{\sigma^{2}}{2}\right)\left(\exp(с\sigma)+\exp(-с\sigma)\right)\]
+		становится все больше, и неравенство \eqref{16} выполняется для большего множества значений $\sigma$.
 		
 		
 	\end{Proof}
 	
-	Например, для $\pi=0.1$ получаем ограничение $\sigma\leq 0.6913$. 
-	Посмотрим, какому коэффициенту асимметрии соответствует это значение $\sigma$.
-	\[\gamma_{3} = \sqrt{\exp(\sigma^{2})-1}(\exp(\sigma^{2})+2),\]
-	\[\gamma_{3} = 2.82778.\]
+	Например, для $\pi=0.1$ получаем ограничение $\sigma\leq 0.6913$, $\sigma^{2}\leq 0.4779$.
+	Посмотрим, какому коэффициенту асимметрии соответствует это значение $\sigma$. По формуле \eqref{10} находим $\gamma_{3} = 2.82778$.
 	
-	Рассмотрим $\pi = 0.05$, получаем ограничение $\sigma \leq 1.04585$.
-	\[\gamma_{3} = 7.02529.\]
+	Рассмотрим $\pi = 0.05$, получаем ограничение $\sigma \leq 1.04585$ и значение коэффициента асимметрии $\gamma_{3} = 7.02529$.
+	
+	Вычислим, при каком значении $\pi$ получается ограничение $\sigma \leq 1.5$, имеем
+	\[\exp(1.5^{2})+\exp(-1.5^{2})-\exp\left( -\dfrac{1.5^{2}}{2}\right) (\exp(1.5c)+\exp(-1.5c)) = 0,\]
+	\[9.4877+0.1054-0.3247(\exp(1.5c)+\exp(-1.5c))=0,\]
+	\[(\exp(1.5c)+\exp(-1.5c))=29.5491,\]
+	\[(\exp(3c)-29.5491\exp(1.5c))+1=0,\]
+	\[\exp(1.5c)=0.0678, \quad\quad c=\dfrac{\ln(0.0678)}{1.5}=-1.794522,\]
+	\[\pi=\Phi(-1.794522) \approx 3.636\%.\]
 	
 	
-	\subsection{Варианты постановки задачи}
+	\subsection{Точность неправильной аппроксимации на основе дискретной аппроксимации нормального распределения}
 	
-	\textbf{Задача:} имеются квантили $x_{\pi}$, $x_{0.5}$, $x_{1-\pi}$ логнормальной случайной величины $\eta$. Нужно уметь считать её математическое ожидание и дисперсию.
+	Предлагаемые методы аппроксимации трехточечным дискретным распределением логнормального распределения не работают при $\sigma \leq 0.6913$. На практике часто используют правило 30-40-30 выведенное для аппроксимации нормального распределения, значения весов вычисляются с помощью системы \eqref{5}. Посмотрим на точность правила 30-40-30, особенно это важно при $\sigma \geq 0.6913$.
 	
-	Варианты решения задачи:
-	\begin{enumerate}
-		\item Не переходить к аппроксимации дискретной случайной величиной, а сразу же из двух уравнений вида (14), записанных для двух квантилей, найти значения параметров $\mu$ и $\sigma$ нормальной случайной величины $\ln(\eta)\sim N(\mu, \sigma)$. Далее по формулам (10) и (11) вычислить значения мат. ожидания $m$ и дисперсии $s^{2}$ случайной величины $\eta$.
-		\item Перейти к трехточечной аппроксимации дискретной случайной величиной $\tilde{\xi}$, у которой $\tilde{m} = m$ и $\tilde{s}^{2}=s^{2}$. И считать значения $m$ и $s$ через квантили $x_{\pi}$, $x_{0.5}$, $x_{1-\pi}$ и вероятности $p_{1}$, $p_{2}$, $p_{3}$.
-		Если условие для положительных вероятностей не выполняется, можно воспринимать задачу не как поиск вероятностей для $\tilde{\xi}$, а как поиск коэффициентов для $x_{\pi}$, $x_{0.5}$, $x_{1-\pi}$ таких, чтобы параметры, полученные по формулам (2) и (3), были равны мат. ожиданию и дисперсии $\eta$. 
-	\end{enumerate}
-	
-	\subsection{Точность аппроксимации}
-	
-	Предлагаемые методы аппроксимации логнормального распределения не работают при $\sigma \leq 0.6913$. На практике часто используют правило 30-40-30 для аппроксимации логнормального распределения, поэтому посмотрим на точность 30-40-30. Особенно это важно при $\sigma \geq 0.6913$.
-	
-	\begin{proposition}\label{pr5}
-		1. Ошибка аппроксимации мат. ожидания логнормального распределения по методу Свонсона, применяемому к нормальному распределению, равна
+	\begin{proposition}\label{pr7}
+		Пусть $p_{1} = \pi$, $p_{2} = 0.5$, $p_{3} = 1-\pi$ и значения вероятностей аппроксимации равны $p_{1} = \delta/2$, $p_{2} = 1-\delta$, $p_{3} = \delta/2$, тогда
+		
+		1. Ошибка аппроксимации мат. ожидания равна
 		\[\dfrac{\mid m - \widetilde{m} \mid}{m}  = \dfrac{\left|\exp\left(\dfrac{\sigma^{2}}{2}\right) - \dfrac{1}{2c^{2}}\left(\exp(\sigma c)-1 +\exp(-\sigma c)\right) + 1\right|}{\exp\left(\dfrac{\sigma^{2}}{2}\right)},\]
 		где $c = \Phi^{-1}(\pi)$, и не зависит от параметра $\mu$.
 		
-		2. Ошибка аппроксимации дисперсии логнормального распределения по методу Свонсона, применяемому к нормальному распределению, равна
+		2. Ошибка аппроксимации дисперсии равна
 		\[\dfrac{\mid s^{2} - \widetilde{s^{2}} \mid}{s^{2}} = \biggl|\exp(\sigma^{2})(\exp(\sigma^{2}-1)) -\]\[- \dfrac{1}{2c^{2}}\exp(-2c\sigma)- \left( 1- \dfrac{1}{c^{2}}\right) \exp(2c\sigma)+\]\[+ \left( \dfrac{1}{2c^{2}}(\exp(c\sigma)-1+\exp(-c\sigma)) + 1\right) ^{2}\biggr| /\exp(\sigma^{2})(\exp(\sigma^{2}-1)),\]
 		где $c = \Phi^{-1}(\pi)$, и не зависит от параметра $\mu$.
 		
-		
 	\end{proposition}
 	\begin{Proof}
-		1. Выразим ошибку аппроксимации мат. ожидания логнормального распределения через параметры $\mu$ и $\sigma$.
-		\[m = \exp\left(\mu+\dfrac{\sigma^{2}}{2}\right).\]
-		Имеем следующие квантили
-		\[x_{\pi} = \exp(\mu+\sigma\Phi^{-1}(\pi)),\]
-		Точные значения вероятностей
-		\[p_{1} = p_{3} = \dfrac{1}{2(\Phi^{-1}(\pi))^{2}},\]
-		\[p_{2} = 1 - \dfrac{1}{(\Phi^{-1}(\pi))^{2}}.\]
-		
-		Тогда мат. ожидание аппроксимации равно
-		\[\tilde{m} = \dfrac{1}{2(\Phi^{-1}(\pi))^{2}}\exp(\mu+\sigma\Phi^{-1}(\pi))+\]
-		\[+\left(1 - \dfrac{1}{(\Phi^{-1}(\pi))^{2}}\right)\exp(\mu+\sigma\Phi^{-1}(0.5))+ \dfrac{1}{2(\Phi^{-1}(\pi))^{2}}\exp(\mu-\sigma\Phi^{-1}(\pi))=\]
-		\[= \dfrac{1}{2(\Phi^{-1}(\pi))^{2}} \exp(\mu)(\exp(\sigma\Phi^{-1}(\pi))-1-\exp(\sigma\Phi^{-1}(\pi))) + \exp(\mu). \]
+		1. Выразим ошибку аппроксимации мат. ожидания логнормального распределения через параметры $\mu$ и $\sigma$, используя формулы \eqref{8} и \eqref{9}. Значения вероятностей $p_{1}$, $p_{2}$, $p_{3}$ находятся из системы \eqref{5} Предложения 2. Тогда математическое ожидание аппроксимации равно
+		\[\tilde{m} = \dfrac{1}{2с^{2}}\exp(\mu+\sigma с)+\left(1 - \dfrac{1}{с^{2}}\right)\exp(\mu)+ \dfrac{1}{2с^{2}}\exp(\mu-\sigma с)=\]
+		\[= \dfrac{1}{2с^{2}} \exp(\mu)(\exp(\sigma с)-1-\exp(\sigma с)) + \exp(\mu). \]
 		
 		Получили ошибку
-		\[\dfrac{\mid m - \widetilde{m} \mid}{m} = \]\[=\dfrac{\left| \exp\left(\mu+\dfrac{\sigma^{2}}{2}\right) - \dfrac{1}{2(\Phi^{-1}(\pi))^{2}} \exp(\mu)(\exp(\sigma\Phi^{-1}(\pi))-1 -\exp(\sigma\Phi^{-1}(\pi))) + \exp(\mu) \right|}{\exp\left(\mu+\dfrac{\sigma^{2}}{2}\right)}=\]
-		\[=\dfrac{\left| \exp\left(\dfrac{\sigma^{2}}{2}\right) - \dfrac{1}{2(\Phi^{-1}(\pi))^{2}} (\exp(\sigma\Phi^{-1}(\pi))-1 -\exp(\sigma\Phi^{-1}(\pi))) + 1 \right|}{\exp\left(\dfrac{\sigma^{2}}{2}\right)}.\]
+		\[\dfrac{\mid m - \widetilde{m} \mid}{m} = \]\[=\dfrac{\left| \exp\left(\mu+\dfrac{\sigma^{2}}{2}\right) - \dfrac{1}{2с^{2}} \exp(\mu)(\exp(\sigma с)-1 -\exp(\sigma с)) + \exp(\mu) \right|}{\exp\left(\mu+\dfrac{\sigma^{2}}{2}\right)}=\]
+		\[=\dfrac{\left| \exp\left(\dfrac{\sigma^{2}}{2}\right) - \dfrac{1}{2с^{2}} \bigg(\exp(\sigma с)-1 -\exp(\sigma с)\bigg) + 1 \right|}{\exp\left(\dfrac{\sigma^{2}}{2}\right)}.\]
 		
 		2. Выразим аппроксимации дисперсии через параметры распределения.
-		\[s^{2} = \exp(2\mu+\sigma^{2})(\exp(\sigma^{2}-1)).\]
-		\[\tilde{s^{2}} = \dfrac{1}{2(\Phi^{-1}(\pi))^{2}}\exp(2\mu+2\sigma\Phi^{-1}(\pi))+ \]
-		\[+\left(1 - \dfrac{1}{(\Phi^{-1}(\pi))^{2}}\right)\exp(2\mu+2\sigma\Phi^{-1}(0.5))+ \dfrac{1}{2(\Phi^{-1}(\pi))^{2}}\exp(2\mu-2\sigma\Phi^{-1}(\pi)) - \tilde{m^{2}}.\]
+		\[s^{2} = \exp(2\mu+\sigma^{2})(\exp(\sigma^{2}-1)),\]
+		\[\tilde{s}^{2} = \dfrac{1}{2с^{2}}\exp(2\mu+2\sigma с)+\left(1 - \dfrac{1}{с^{2}}\right)\exp(2\mu)+ \dfrac{1}{2с^{2}}\exp(2\mu-2\sigma с) - \tilde{m}^{2}.\]
 		
 		Получили ошибку
-		\[\dfrac{\mid s^{2} - \widetilde{s^{2}} \mid}{s^{2}} = \biggl| \exp(2\mu+\sigma^{2})(\exp(\sigma^{2}-1)) - \dfrac{1}{2(\Phi^{-1}(\pi))^{2}}\exp(2\mu+2\sigma\Phi^{-1}(\pi))-\]
-		\[- \left(1 - \dfrac{1}{(\Phi^{-1}(\pi))^{2}}\right)\exp(2\mu+2\sigma\Phi^{-1}(0.5))-\]
-		\[-\dfrac{1}{2(\Phi^{-1}(\pi))^{2}}\exp(2\mu-2\sigma\Phi^{-1}(\pi)) + \tilde{ m^{2}}\biggr|/\exp(2\mu+\sigma^{2})(\exp(\sigma^{2}-1))=\]
-		\[=\biggl| \exp(\sigma^{2})(\exp(\sigma^{2}-1)) - \dfrac{1}{2(\Phi^{-1}(\pi))^{2}}\exp(2\sigma\Phi^{-1}(\pi))-\]
-		\[- \left(1 - \dfrac{1}{(\Phi^{-1}(\pi))^{2}}\right)\exp(2\sigma\Phi^{-1}(0.5))-\]
-		\[+\dfrac{1}{2(\Phi^{-1}(\pi))^{2}}\exp(2\sigma\Phi^{-1}(\pi)) + \tilde{ m^{2}}/2\mu\biggr|/\exp(\sigma^{2})(\exp(\sigma^{2}-1)).\]
+		\[\dfrac{\mid s^{2} - \widetilde{s}^{2} \mid}{s^{2}} = \biggl| \exp(2\mu+\sigma^{2})(\exp(\sigma^{2}-1)) - \dfrac{1}{2c^{2}}\exp(2\mu+2\sigma c)- \left(1 - \dfrac{1}{c^{2}}\right)\exp(2\mu)-\]
+		\[-\dfrac{1}{2c^{2}}\exp(2\mu-2\sigma c) + \tilde{ m}^{2}\biggr|/\exp(2\mu+\sigma^{2})(\exp(\sigma^{2}-1))=\]
+		\[=\biggl| \exp(\sigma^{2})(\exp(\sigma^{2}-1)) - \dfrac{1}{2c^{2}}\exp(2\sigma c)- \left(1 - \dfrac{1}{c^{2}}\right)+\]
+		\[+\dfrac{1}{2c^{2}}\exp(2\sigma c) + \tilde{ m}^{2}/2\mu\biggr|/\exp(\sigma^{2})(\exp(\sigma^{2}-1)).\]
 	\end{Proof}
+
+\begin{zam}
+	При уменьшении значения $\pi$ ошибки аппроксимации мат. ожидания и дисперсии становятся меньше.
+\end{zam}
 	
-	Построим график зависимости от $\sigma$.
+	Построим график зависимости от $\sigma$. Видим, что при $\sigma\leq1.5$, взятых из нашего диапазона, ошибка аппроксимации мат.ожидания меньше $12\%$, а ошибка аппроксимации дисперсии может достигать $80\%$. Для $\sigma\geq 0.69$, когда условие \eqref{16} не выполнено, ошибка мат. ожидания может быть как маленькой, так и очень большой. Ошибка дисперсии при этом точно больше $25\%$.
 	
 	\begin{figure}[h]
 		\begin{center}
@@ -570,12 +509,10 @@ headsep=1cm, footskip=1cm]{geometry}
 		\end{center}
 	\end{figure}
 	
-	Видим, что при $\sigma\leq1.5$ ошибка аппроксимации мат.ожидания меньше $12\%$, а ошибка аппроксимации дисперсии может достигать $80\%$. 
-	
 	\section{Произведение двух логнормальных распределений}
-	Нам доступен метод объединения любых логнормально распределенных случайных величин. Эта процедура применяется в нефтяной промышленности, она выполняется быстро и может быть выполнена вручную. Например, используем площадь дренирования пласта, среднюю чистую толщину и коэффициент извлечения углеводородов. При перемножении этих параметров получаем количество резервов нефти.
+	Рассмотрим произведение логнормально распределенных случайных величин. Эта процедура применяется в нефтяной промышленности, например, используем площадь дренирования пласта, среднюю чистую толщину и коэффициент извлечения углеводородов. При перемножении этих параметров получаем количество резервов нефти.
 	
-	Рассмотрим произведение любых двух логнормально распределенных случайных величин.
+	Мы рассмотрим произведение двух логнормально распределенных случайных величин 
 	\begin{equation*}
 		\ln(\xi_{1}) \sim N(\mu_{1}, \sigma _{1}^{2}),
 	\end{equation*}
@@ -587,59 +524,22 @@ headsep=1cm, footskip=1cm]{geometry}
 	$x_{\pi}$, $x_{0.5}$, $x_{1-\pi}$ "--- квантили случайной величины $\xi_{1}$,\\
 	$y_{\pi}$, $y_{0.5}$, $y_{1-\pi}$ "--- квантили случайной величины $\xi_{2}$.
 	
+	\subsection{Произведение квантилей}
 	\begin{proposition}
-		При перемножении квантилей $x_{\pi}$ и $y_{\pi}$ двух логнормальных случайных величин $\xi_{1}$ и $\xi_{2}$ получается квантиль случайной величины $\xi_{1}\xi_{2}$ вида $z_{q}$, где
+		Величина $x_{\pi}y_{\pi}$ является q-квантилью случайной величины $\xi_{1}\xi_{2}$, где
 		
 		\begin{equation}
-			q = \mathsf{P}(\xi_{1}\xi_{2}< x_{\pi}y_{\pi}) =\Phi\left(\frac{\Phi^{-1}(\pi)(\ln(x_{0.5})+\ln(y_{0.5})-\ln(x_{\pi})-\ln(y_{\pi}))}{\sqrt{(\ln(x_{0.5})-\ln(x_{\pi}))^{2}+(\ln(y_{0.5})-\ln(y_{\pi}))^{2}}}\right).
+			q = \mathsf{P}(\xi_{1}\xi_{2}< x_{\pi}y_{\pi}) =\Phi\left(\frac{\Phi^{-1}(\pi)(\ln(x_{0.5})+\ln(y_{0.5})-\ln(x_{\pi})-\ln(y_{\pi}))}{\sqrt{(\ln(x_{0.5})-\ln(x_{\pi}))^{2}+(\ln(y_{0.5})-\ln(y_{\pi}))^{2}}}\right). \label{20}
 		\end{equation} 
 	\end{proposition}
 	\begin{Proof}
-		Выразим параметры распределений $\mu_{1}$, $\mu_{2}$, $\sigma_{1}$, $\sigma_{2}$ через квантили.
-		По определению квантиля $\mathsf{P}(\xi_{1}<x_{\pi}) = \pi$.
-		
-		Преобразуем эту вероятность так, чтобы ее можно было записать через функцию распределения стандартного нормального распределения, следующим образом:
-		\begin{equation*}
-			\mathsf{P}(\xi_{1}<x_{\pi}) = \mathsf{P}(\ln(\xi_{1})<\ln(x_{\pi})) = \mathsf{P}\left(\dfrac{\ln(\xi_{1})-\mu_{1}}{\sigma_{1}} < \frac{\ln(x_{\pi})-\mu_{1}}{\sigma_{1}}\right).
-		\end{equation*}
-		Так как $\xi_{1}$ распределена логнормально с параметрами $\mu_{1}$ и $\sigma_{1}^{2}$, то \[\dfrac{\ln(\xi_{1})-\mu_{1}}{\sigma_{1}} \sim N(0,1).\]
-		
-		Следовательно, можно записать логарифм квантиля, как:
-		\begin{equation}
-			\ln(x_{\pi})=\sigma_{1}\Phi^{-1}(\pi)+\mu_{1}.\label{12}
-		\end{equation}
-		
-		Аналогично для $x_{50}$, получаем, что 
-		\begin{equation}
-			\mu_{1}=\ln(x_{0.5}).\label{13}
-		\end{equation}
-		Используя формулы \eqref{12} и \eqref{13} можно выразить значение $\sigma_{1}$.
-		\begin{equation}
-			\sigma_{1}=\frac{\ln(x_{\pi})-\ln(x_{0.5})}{\Phi^{-1}(\pi)}.\label{14}
-		\end{equation}
-		Аналогичные действия проводим для $\xi_{2}$ и тогда получаем
-		\begin{equation}
-			\frac{\ln(y_{\pi})-\mu_{2}}{\sigma_{2}}=\Phi^{-1}(\pi),\label{15}
-		\end{equation}
-		\begin{equation}
-			\mu_{2}=\ln(y_{0.5}).\label{16}
-		\end{equation}
-		
-		Используя формулы \eqref{15} и \eqref{16} можно выразить значение $\sigma_{2}$,
-		\begin{equation}
-			\displaystyle{\sigma_{2}=\frac{\ln(y_{\pi})-\ln(y_{0.5})}{\Phi^{-1}(\pi)}.\label{17}}
-		\end{equation}
-		
-		Теперь рассмотрим случайную величину $\eta = \xi_{1}\xi_{2}$. Мы хотим вычислить, каким квантилем для $\eta$ является произведение квантилей $x_{\pi}$ и $y_{\pi}$. 
-		
-		Для этого надо найти, чему равна вероятность $\mathsf{P}(\xi_{1}\xi_{2}< x_{\pi}y_{\pi})$.
+		Выразим параметры распределений $\mu_{1}$, $\mu_{2}$, $\sigma_{1}$, $\sigma_{2}$ через квантили, используя формулу \eqref{14}. Теперь рассмотрим случайную величину $\eta = \xi_{1}\xi_{2}$. Мы хотим вычислить, каким квантилем для $\eta$ является произведение квантилей $x_{\pi}$ и $y_{\pi}$. Для этого надо найти, чему равна вероятность $\mathsf{P}(\xi_{1}\xi_{2}< x_{\pi}y_{\pi})$. Получаем
 		\begin{equation*}
 			\mathsf{P}(\xi_{1}\xi_{2}< x_{\pi}y_{\pi}) = \mathsf{P}(\ln(\xi_{1})+\ln(\xi_{2})<\ln(x_{\pi})+\ln(y_{\pi}))=
 		\end{equation*}
 		\begin{equation*}
 			=\mathsf{P}\left(\displaystyle{\frac{\ln(\xi_{1})+\ln(\xi_{2})-(\mu_{1}+\mu_{2})}{\sqrt{\sigma_{1}^{2}+\sigma_{2}^{2}}}}<\displaystyle{\frac{\ln(x_{\pi})+\ln(y_{\pi})-(\mu_{1}+\mu_{2})}{\sqrt{\sigma_{1}^{2}+\sigma_{2}^{2}}}}\right).
 		\end{equation*}
-		
 		Так как $\xi_{1}$ распределена логнормально с параметрами $\mu_{1}$ и $\sigma_{1}^{2}$, а $\xi_{2}$ распределена логнормально с параметрами $\mu_{2}$ и $\sigma_{2}^{2}$, то
 		\begin{equation*} 
 			\ln(\xi_{1})+\ln(\xi_{2})\sim N(\mu_{1}+\mu_{2}, \sigma_{1}^{2}+\sigma_{2}^{2}),
@@ -647,15 +547,6 @@ headsep=1cm, footskip=1cm]{geometry}
 		\begin{equation*}
 			\frac{\ln(\xi_{1})+\ln(\xi_{2})-(\mu_{1}+\mu_{2})}{\sqrt{\sigma_{1}^{2}+\sigma_{2}^{2}}} \sim N(0,1).
 		\end{equation*}
-		
-		Используя формулы \eqref{12} и \eqref{14}, выразим $\ln(x_{\pi})$ и $\ln(y_{\pi})$.
-		\begin{equation*}
-			\ln(x_{\pi})=\mu_{1}+\Phi^{-1}(\pi)\sigma_{1},
-		\end{equation*}
-		\begin{equation*}
-			\ln(y_{\pi})=\mu_{2}+\Phi^{-1}(\pi)\sigma_{2}.
-		\end{equation*}
-		
 		Тогда можно записать
 		\begin{equation*}
 			\mathsf{P}(\xi_{1}\xi_{2}< x_{\pi}y_{\pi}) =
@@ -670,14 +561,11 @@ headsep=1cm, footskip=1cm]{geometry}
 		\begin{equation*}
 			=\Phi\left(\frac{\Phi^{-1}(\pi)(\sigma_{1}+\sigma_{2})}{\sqrt{\sigma_{1}^{2}+\sigma_{2}^{2}}}\right).
 		\end{equation*}
-		
-		
-		Используя формулы \eqref{14} и \eqref{17}, перепишем эту дробь через значения кванилей.
+		Перепишем эту дробь через значения квантилей, получаем
 		\begin{align*}
 			\frac{\Phi^{-1}(\pi)(\sigma_{1}+\sigma_{2})}{\sqrt{\sigma_{1}^{2}+\sigma_{2}^{2}}} &= \frac{\Phi^{-1}(\pi)\left(\displaystyle{\frac{(\ln(x_{0.5})-\ln(x_{\pi}))+(\ln(y_{0.5})-\ln(y_{\pi}))}{-\Phi^{-1}(\pi)}}\right)}{\sqrt{\dfrac{(\ln(x_{0.5})-\ln(x_{\pi}))^{2}+(\ln(y_{0.5})-\ln(y_{\pi}))^{2}}{(\Phi^{-1}(\pi))^{2}}}}=\\\\
 			&=\dfrac{(\ln(x_{0.5})-\ln(x_{\pi}))+(\ln(y_{0.5})-\ln(y_{\pi}))}{\dfrac{\sqrt{(\ln(x_{0.5})-\ln(x_{\pi}))^{2}+(\ln(y_{0.5})-\ln(y_{\pi}))^{2}}}{\Phi^{-1}(\pi)}}.
 		\end{align*}
-		
 		Тогда получаем следующую формулу
 		\begin{equation*}
 			\mathsf{P}(\xi_{1}\xi_{2}< x_{\pi}y_{\pi}) =\Phi\left(\frac{\Phi^{-1}(\pi)(\ln(x_{0.5})+\ln(y_{0.5})-\ln(x_{\pi})-\ln(y_{\pi}))}{\sqrt{(\ln(x_{0.5})-\ln(x_{\pi}))^{2}+(\ln(y_{0.5})-\ln(y_{\pi}))^{2}}}\right).
@@ -685,40 +573,35 @@ headsep=1cm, footskip=1cm]{geometry}
 		
 	\end{Proof}
 	
-	Таким образом, с помощью формулы (18) можно посчитать, какой квантиль получается при перемножении $\pi$-ых квантилей.
-	
 	\begin{corollary}
 		При перемножение квантилей $x_{0.5}$ и $y_{0.5}$ получается снова 0.5-ый квантиль.   
 	\end{corollary}
 	\begin{Proof}
-		Из раздела 4.2 знаем, что $\mathsf{P}(\xi_{1} \xi_{2} < x_{0.5}y_{0.5})$ можно написать следующим образом:
+		Запишем вероятность $\mathsf{P}(\xi_{1} \xi_{2} < x_{0.5}y_{0.5})$ следующим образом:
 		\begin{equation*}
 			\mathsf{P}(\xi_{1} \xi_{2} < x_{0.5}y_{0.5}) =\Phi\left( \dfrac{\ln(x_{0.5})+\ln(y_{0.5}) - (\mu_{1}+\mu_{2})}{\sqrt{\sigma_{1}^{2}+\sigma_{2}^{2}}}\right).
 		\end{equation*}
-		Но по формуле (14) в числителе получается 0.\\
-		Значит,
+		Но в числителе получается 0, значит,
 		\begin{equation*}
 			\mathsf{P}(\xi_{1} \xi_{2} < x_{0.5}y_{0.5}) = \Phi(0) = 0.5.
 		\end{equation*} 
 	\end{Proof}
 	
+	\subsection{q-Квантили произведения логнормальных случайных величин для $q=\pi$, $q=0.5$, $q=1-\pi$}	
+	Как по каким-то произвольным получившимся квантилям, полученным при перемножении данных квантилей для двух логнормальных случайных величин, найти нужные нам, такие же, как исходные $\pi$, $0.5$, $1-\pi$ квантили произведения этих двух случайных величин? Cначала нужно понять, на какой прямой лежат точки вида ($x_{\pi}$; $\Phi^{-1}(\pi)$).
 	
+	Нужно выяснить, как связаны параметры нормального распределения, квантили которого откладываются по оси $X$, и параметры прямой, на которой лежат точки QQ плота.
 	
-	\subsection{Квантили вида $\pi$, $0.5$, $1-\pi$ произведения логнормальных случайных величин}
-	
-	Как по каким-то произвольным получившимся квантилям, полученным при перемножении данных квантилей для двух логнормальных случайных величин, найти нужные нам, такие же, как исходные $\pi$, $0.5$, $1-\pi$ квантили произведения этих двух случайных величин? Cначала нужно понять на какой прямой лежат точки вида ($x_{\pi}$; $\Phi^{-1}(\pi)$).
-	
-	Для этого рассмотрим следующий QQ-плот:
-	\[\left\{x_{i},\mathsf{F}_{\eta}^{-1}(\mathsf{F}_{\xi}(x_{i}))\right\}_{i=1}^{n}.\]
-	
-	Как связаны параметры нормального распределения, квантили которого откладываются по оси $X$, и параметры прямой, на которой лежат точки этого QQ плота?\\\\
-	Ось $X$: $\xi \sim N(a, b^{2})$.\\
-	Ось $Y$: $\eta \sim N(0, 1)$.
-	
-	Возьмем две точки и построим по ним уравнение прямой.\\
+	\begin{proposition}
+	Точки QQ-плота: $\left\{x_{i},\mathsf{F}_{\eta}^{-1}(\mathsf{F}_{\xi}(x_{i}))\right\}_{i=1}^{n}$, где
+	ось $X$: $\xi \sim N(a, b^{2})$, ось $Y$: $\eta \sim N(0, 1)$
+	лежат на прямой $y = \dfrac{x-a}{b}$.
+	\end{proposition}
+	\begin{Proof}
+	Возьмем две точки и построим по ним уравнение прямой. Например, точки
 	\[(\mathsf{F}_{\xi}^{-1}(0.1), \mathsf{F}_{\eta}^{-1}(0.1)),\]
 	\[(\mathsf{F}_{\xi}^{-1}(0.5), \mathsf{F}_{\eta}^{-1}(0.5)).\]
-	
+	Имеем
 	\begin{equation*}
 		\Phi\left(\dfrac{x_{p}-a}{b}\right)=p\quad\quad \Rightarrow \quad\quad \dfrac{x_{p}-a}{b}=\Phi^{-1}(p).
 	\end{equation*}
@@ -726,28 +609,24 @@ headsep=1cm, footskip=1cm]{geometry}
 	\begin{equation*}
 		x_{p}=a+b\Phi^{-1}(p).
 	\end{equation*}
-	
-	Для первой точки возьмем $p = 0.1$.
+	Для первой точки возьмем $p = 0.1$, тогда
 	\[(a+b\Phi^{-1}(0.1); \Phi^{-1}(0.1)).\]
-	
-	Для второй точки возьмем $p = 0.5$.
+	Для второй точки возьмем $p = 0.5$, тогда
 	\[(a+b\Phi^{-1}(0.5); \Phi^{-1}(0.5)) \quad\quad \Rightarrow \quad\quad (a;0). \]
 	Составим уравнение прямой:
 	\[\dfrac{x-a}{(a+\Phi^{-1}(0.1)b)-a} = \dfrac{y}{\Phi^{-1}(0.1)}, \quad\quad\quad\quad \dfrac{x-a}{\Phi^{-1}(0.1)b} = \dfrac{y}{\Phi^{-1}(0.1)}.\]
-	
 	Следовательно,
 	\begin{equation*} 
 		by = x-a,
 	\end{equation*}
-	
 	Получили уравнение прямой на которой лежат точки данного QQ-плота:
-	\begin{equation}
-		y = \dfrac{x-a}{b}.\label{19}
-	\end{equation}
-	\\
+	\begin{equation*}
+		y = \dfrac{x-a}{b}.
+	\end{equation*}
+\end{Proof}
 	
 	\begin{proposition}[\textbf{Swanson, 2000 год}]
-		Зная квантили $x_{\pi}$, $x_{0.5}$, $x_{1-\pi}$ случайной величины $\xi_{1}$ и квантили $y_{\pi}$, $y_{0.5}$, $y_{1-\pi}$ случайной величины $\xi_{2}$ можно найти квантили $z_{\pi}$, $z_{0.5}$, $z_{1-\pi}$ случайной величины $\xi_{1}\xi_{2}$, как
+		Зная квантили $x_{\pi}$, $x_{0.5}$, $x_{1-\pi}$ случайной величины $\xi_{1}$ и квантили $y_{\pi}$, $y_{0.5}$, $y_{1-\pi}$ случайной величины $\xi_{2}$, можно найти квантили $z_{\pi}$, $z_{0.5}$, $z_{1-\pi}$ случайной величины $\xi_{1}\xi_{2}$ как
 		\begin{equation*}
 			z_{\pi}=\exp(b\Phi^{-1}(\pi)+a),
 		\end{equation*}
@@ -757,23 +636,19 @@ headsep=1cm, footskip=1cm]{geometry}
 		\begin{equation*}
 			z_{1-\pi}=\exp(b\Phi^{-1}(1-\pi)+a),
 		\end{equation*}
-		где $a$ и $b$ такие, что прямая $y=\dfrac{x-a}{b}$ проходит через точки $(\ln(x_{\pi}y_{\pi}), t)$ и $(\ln(x_{0.5}y_{0.5}),0)$, где
+		где $a$ и $b$ такие, что прямая $y=\dfrac{x-a}{b}$ проходит через точки $(\ln(x_{\pi}y_{\pi}), t)$ и $(\ln(x_{0.5}y_{0.5}),0)$ при
 		\begin{equation*}
 			t = \frac{\Phi^{-1}(\pi)((\ln(x_{0.5})+\ln(y_{0.5}))-(\ln(x_{\pi})+\ln(y_{\pi})))}{\sqrt{(\ln(x_{0.5})-\ln(x_{\pi}))^{2}+(\ln(y_{0.5})-\ln(y_{\pi}))^{2}}}. 
 		\end{equation*}
 	\end{proposition}
 	\begin{Proof}
-		С помощью формулы (18) можно посчитать, какой получается квантиль для случайной величины $\xi_{1}\xi_{2}$, если перемножить квантили $x_{\pi}$ и $y_{\pi}$ исходных случайных величин.
-		
-		Обозначим $z_{\pi}$, $z_{0.5}$, $z_{1-\pi}$ "--- квантили случайной величины $\eta$.
-		Тогда по Следствию 1 имеем $x_{0.5}y_{0.5} = z_{0.5}$.
+		С помощью формулы \eqref{19} можно посчитать, какой получается квантиль для случайной величины $\xi_{1}\xi_{2}$, если перемножить квантили $x_{\pi}$ и $y_{\pi}$ исходных случайных величин. Обозначим $z_{\pi}$, $z_{0.5}$, $z_{1-\pi}$ "--- квантили случайной величины $\eta$. Тогда по Следствию 1 имеем $x_{0.5}y_{0.5} = z_{0.5}$.
 		
 		Нужно вычислить значения $z_{\pi}$ и $z_{1-\pi}$. Введем обозначение:
 		\begin{equation*}
 			t = \frac{\Phi^{-1}(\pi)((\ln(x_{0.5})+\ln(y_{0.5}))-(\ln(x_{\pi})+\ln(y_{\pi})))}{\sqrt{(\ln(x_{0.5})-\ln(x_{\pi}))^{2}+(\ln(y_{0.5})-\ln(y_{\pi}))^{2}}}. 
 		\end{equation*}
-		
-		Тогда с помощью точек $(\ln(x_{\pi}y_{\pi}), t)$ и $(\ln(x_{0.5}y_{0.5}),0)$  можно найти параметры $a$ и $b$ прямой, на которой они лежат, по формуле \eqref{19}.
+		Тогда по Предложению 9 с помощью точек $(\ln(x_{\pi}y_{\pi}), t)$ и $(\ln(x_{0.5}y_{0.5}),0)$  можно найти параметры $a$ и $b$ прямой, на которой они лежат.
 		
 		\begin{equation*}
 			\dfrac{\ln(x_{0.5}y_{0.5})-a}{b}=0 \quad\quad \Rightarrow \quad\quad a=\ln(x_{0.5}y_{0.5}),
@@ -786,7 +661,6 @@ headsep=1cm, footskip=1cm]{geometry}
 		\begin{equation*}
 			b=\dfrac{\ln(x_{\pi}y_{\pi})-a}{t}=\dfrac{\ln(x_{\pi}y_{\pi})-\ln(x_{0.5}y_{0.5})}{t}.
 		\end{equation*}
-		
 		Так как точки $(\ln(z_{\pi}), \Phi^{-1}(\pi))$ и $(\ln(z_{1-\pi}), \Phi^{-1}(1-\pi))$ тоже лежат на этой прямой, то мы можем вычислить значения $\ln(z_{\pi})$ и $\ln(z_{0.5})$, зная уравнение прямой, следующим образом:
 		\begin{equation*}
 			\dfrac{\ln(z_{\pi})-a}{b}=\Phi^{-1}(\pi),
@@ -801,7 +675,6 @@ headsep=1cm, footskip=1cm]{geometry}
 		\begin{equation*}
 			\ln(z_{1-\pi})=b\Phi^{-1}(1-\pi)+a.
 		\end{equation*}
-		
 		И, наконец, находим $z_{\pi}$ и $z_{1-\pi}$.
 		\begin{equation*}
 			z_{\pi}=\exp(b\Phi^{-1}(\pi)+a),
@@ -811,19 +684,7 @@ headsep=1cm, footskip=1cm]{geometry}
 		\end{equation*}
 	\end{Proof}
 	
-	
-	
-	Как теперь найти математическое ожидание $\eta = \xi_{1}\xi_{2}$?
-	Случайные величины $\xi_{1}$ и $\xi_{2}$ распределены логнормально. Их произведение "--- случайная величина $\eta$ тоже имеет логнормальное распределение, поэтому
-	\begin{equation*}
-		\ln(\eta) = \ln(\xi_{1}\xi_{2}) = \ln(\xi_{1}) + \ln(\xi_{2}) \sim N(\mu_{1} + \mu_{2}, \sigma _{1}^{2} + \sigma _{2}^{2}).
-	\end{equation*}
-	
-	В разделе 3 было описано, как искать математическое ожидание и дисперсию.
-	Можно использовать метод Свонсона аппроксимации нормального распределения для $\ln(\eta)$. Для этого надо взять не сами квантили $z_{\pi}$, $z_{0.5}$ и  $z_{1-\pi}$, а их логарифмы. 
-	Соответствующие вероятности $p_{1}$, $p_{2}$, $p_{3}$
-	можно найти с помощью системы (7), так как данные квантили симметричны.
-	
+	По Алгоритму 1, используя найденные $z_{\pi}$, $z_{0.5}$, $z_{1-\pi}$ , можно вычислить значения весов $p_{1}$, $p_{2}$, $p_{3}$ дискретной аппроксимации.
 	
 	\section{Сумма двух логнормальных распределений}
 	
@@ -835,14 +696,14 @@ headsep=1cm, footskip=1cm]{geometry}
 		\ln(\xi_{2}) \sim N(\mu_{2}, \sigma _{2}^{2}),
 	\end{equation*}
 	\begin{equation*}
-		\eta = \xi_{1}+\xi_{2}.
+		\xi = \xi_{1}+\xi_{2}.
 	\end{equation*}
 	
 	Дано: квантили $x_{\pi}$, $x_{0.5}$, $x_{1-\pi}$ случайной величины $\xi_1$ и  квантили $y_{\pi}$, $y_{0.5}$, $y_{1-\pi}$ случайной величины $\xi_2$.
 	
-	Нужно найти квантили $z_{\pi}$, $z_{0.5}$, $z_{1-\pi}$ случайной величины $\eta$, а также вычислить вероятности $p_{1}$, $p_{2}$, $p_{3}$ такие, что $m = \tilde{m}$  и $s^{2} = \tilde{s}^{2}$.
+	Поставим задачу аппроксимации суммы логнормальным распределением $\ln(\eta) \sim N(\mu, \sigma^{2})$, так как нужно рассматривать сумму не обязательно двух, а произвольного числа случайных величин.
 	
-	Берем симметричные квантили, а именно $\pi = 0.1$. 	Не умеем находить точное решение, поэтому чтобы найти $z_{10}$, $z_{50}$, $z_{90}$ будем использовать аппроксимацию суммы логнормальных распределений логнормальным распределением. $\ln(\eta)\sim N(\mu, \sigma)$.
+	Нужно найти квантили $z_{\pi}$, $z_{0.5}$, $z_{1-\pi}$ случайной величины $\eta$. По известным квантилям уже знаем, как вычислять вероятности $p_{1}$, $p_{2}$, $p_{3}$ такие, что $m = \tilde{m}$  и $s^{2} = \tilde{s}^{2}$.
 	
 	У нас есть следующие ограничения на параметры: $\mu_{1}, \mu_{2} < 12$, $\sigma_{1}, \sigma_{2} < 1.5$. Пусть мы нашли аппроксимацию суммы двух логнормальных величин, тогда с учетом этих ограничений её значения $\mu$ и $\sigma$ тоже будут иметь свои ограничения. При этом, чтобы найти значения вероятностей $p_{1}$, $p_{2}$, $p_{3}$ нужно, чтобы выполнялось то же условие, что в разделе 4.3. А именно, $\sigma < 0.6913.$
 	
@@ -855,13 +716,13 @@ headsep=1cm, footskip=1cm]{geometry}
 		\begin{enumerate}
 			\item $x_{\pi}$, $x_{0.5}$, $x_{1-\pi}$ $\rightarrow$  $\mu_{1}$, $\sigma_{1}$
 			
-			По набору квантилей $\xi_{1}$ находим параметры $\mu_{1}$, $\sigma_{1}$ нормального распределения по формулам (12) и (13).
+			По набору квантилей $\xi_{1}$ находим параметры $\mu_{1}$, $\sigma_{1}$ нормального распределения по формулам \eqref{13} и \eqref{14}.
 			\item $y_{\pi}$, $y_{0.5}$, $y_{1-\pi}$ $\rightarrow$ $\mu_{2}$, $\sigma_{2}$
 			
-			По набору квантилей $\xi_{2}$ находим параметры $\mu_{2}$, $\sigma_{2}$ нормального распределения по формулам (12) и (13).
+			По набору квантилей $\xi_{2}$ находим параметры $\mu_{2}$, $\sigma_{2}$ нормального распределения по формулам \eqref{13} и \eqref{14}.
 			\item $\mu_{i}$, $\sigma_{i}$ $\rightarrow$ $m_{i}$, $s_{i}^{2}$
 			
-			С помощью формул (10) и (11) находим мат. ожидания и дисперсии $\xi_{1}$ и $\xi_{2}.$
+			С помощью формул \eqref{8} и \eqref{9} находим мат. ожидания и дисперсии $\xi_{1}$ и $\xi_{2}.$
 			\item $m = m_{1}+m_{2}$
 			
 			Вычисляем мат.ожидание $\xi_{1}+\xi_{2}.$
@@ -870,111 +731,101 @@ headsep=1cm, footskip=1cm]{geometry}
 			Вычисляем дисперсию $\xi_{1}+\xi_{2}.$
 			\item $m$, $s^{2}$ $\rightarrow$ $\mu$, $\sigma$
 			
-			С помощью формул (10) и (11) находим параметры нормального распределения.
+			С помощью формул \eqref{8} и \eqref{9} находим параметры нормального распределения.
 			\item $\mu$, $\sigma$ $\rightarrow$ $z_{\pi}$, $z_{0.5}$, $z_{1-\pi}$
 			
-			С помощью формулы (13) находим значения квантилей через $\mu$ и $\sigma$.
+			С помощью формулы \eqref{14} находим значения квантилей через $\mu$ и $\sigma$.
 			\item $z_{\pi}$, $z_{0.5}$, $z_{1-\pi}$ $\rightarrow$ $p_{1}$, $p_{2}$, $p_{3}$
 			
 			По Алгоритму 1 находим значения вероятностей $p_{1}$, $p_{2}$, $p_{3}$.
 		\end{enumerate}
 		
-		\begin{pr3}\end{pr3} вероятности $p_{1}$, $p_{2}$, $p_{3}$ для квантилей $z_{\pi_{1}}, z_{\pi_{2}}, z_{\pi_{3}}$ случайной величины $\xi_{1} + \xi_{2}$.
+		\begin{pr3}\end{pr3} вероятности $p_{1}$, $p_{2}$, $p_{3}$ для квантилей $z_{\pi_{1}}, z_{\pi_{2}}, z_{\pi_{3}}$ случайной величины $\eta$, которая является дискретной аппроксимацией аппроксимации суммы логнормальным распределением.
 		
 	\end{alg}
 	
-	\subsection{Точность аппроксимации}
+	\paragraph{Точность аппроксимации.}
 	
-	Выразим ошибки аппроксимации квантилей $q_{10}$, $q_{50}$, $q_{90}$ случайной величины $\xi$ через параметры $\mu_{1}$, $\mu_{2}$, $\sigma_{1}^{2}$, $\sigma_{2}^{2}$.
+	Выразим ошибки аппроксимации квантилей $q_{\pi}$, $q_{0.5}$, $q_{1-\pi}$ случайной величины $\xi$ через параметры $\mu_{1}$, $\mu_{2}$, $\sigma_{1}^{2}$, $\sigma_{2}^{2}$.
 	
-	\[\dfrac{\left| q_{10} - z_{10}\right|}{q_{10}}, \quad\quad \dfrac{\left| q_{50} - z_{50}\right|}{q_{50}}, \quad\quad \dfrac{\left| q_{90} - z_{90}\right|}{q_{90}}.\]
+	\[\dfrac{\left| q_{\pi} - z_{\pi}\right|}{q_{\pi}}, \quad\quad \dfrac{\left| q_{0.5} - z_{0.5}\right|}{q_{0.5}}, \quad\quad \dfrac{\left| q_{1-\pi} - z_{1-\pi}\right|}{q_{1-\pi}}.\]
 	
-	\[z_{10} = F_{\eta}^{-1}(0.1), \quad\quad z_{50} = \exp(\mu), \quad\quad z_{90} = F_{\eta}^{-1}(0.9), \quad где\]
+	\[z_{\pi} = F_{\eta}^{-1}(\pi), \quad\quad z_{0.5} = \exp(\mu), \quad\quad z_{1-\pi} = F_{\eta}^{-1}(1-\pi), \quad где\]
 	\[F_{\eta}^{-1}(p) = \exp(\mu+\sigma\sqrt{2}\mathrm{erf}^{-1}(2p-1)).\]
-	Параметры $\mu$, $\sigma$ можно найти через параметры случайных величин $\xi_{1}$, $\xi_{2}$.
-	
+	Параметры $\mu$, $\sigma$ можно найти через параметры случайных величин $\xi_{1}$, $\xi_{2}$, используя формулы \eqref{11}, \eqref{12} и вычисленные значения
+	\[m = \exp\left( \mu_{1}+\frac{\sigma_{1}^{2}}{2}\right) + \exp\left( \mu_{2}+\frac{\sigma_{2} ^{2}}{2}\right),\]
+	\[s^{2} = m_{1}^{2}(\exp(\sigma_{1}^{2})-1)+m_{2}^{2}(\exp(\sigma_{2}^{2})-1).\]
 	Квантили $\eta$ выражаются как
-	\[q_{10} = F_{\xi}^{-1}(0.1), \quad\quad q_{50} = F_{\xi}^{-1}(0.5), \quad\quad q_{90} = F_{\xi}^{-1}(0.9), \quad где\]
-	\[F_{\xi}(x) = \int_{0}^{x}\left( \dfrac{1}{2}+\dfrac{1}{2} \mathrm{erf}\left( \dfrac{\ln(x-y)-\mu_{1}}{\sigma_{1}\sqrt{2}}\right) \right) \left( \dfrac{1}{\sqrt{2\pi}y\sigma_{2}}\exp\left( -\left( \dfrac{\ln(y)-\mu_{2}}{\sqrt{2}\sigma_{2}}\right) ^{2}\right) \right) dy \]
+	\[q_{\pi} = F_{\xi}^{-1}(\pi), \quad\quad q_{0.5} = F_{\xi}^{-1}(0.5), \quad\quad q_{1-\pi} = F_{\xi}^{-1}(1-\pi), \quad где\]
+	\[F_{\xi}(x) = \int_{0}^{x}\left( \dfrac{1}{2}+\dfrac{1}{2} \mathrm{erf}\left( \dfrac{\ln(x-y)-\mu_{1}}{\sigma_{1}\sqrt{2}}\right) \right) \left( \dfrac{1}{\sqrt{2\pi}y\sigma_{2}}\exp\left( -\left( \dfrac{\ln(y)-\mu_{2}}{\sqrt{2}\sigma_{2}}\right) ^{2}\right) \right) dy. \]
+	Здесь $F_{\xi}(x)$ "--- функция распределения $\xi = \xi_{1}+\xi_{2}$, найденная с помощью формулы свертки.
 	
-	В таблицах \ref{tab1}, \ref{tab2} и \ref{tab3} представлены ошибки для $\ln(\xi_{1}) \sim N(4, \sigma _{1}^{2})$, $\ln(\xi_{2}) \sim N(6, \sigma _{1}^{2})$, полученные с помощью моделирования, объемы выборок равны $10^{6}$.
+	В таблицах \ref{tab1}, \ref{tab2} и \ref{tab3} представлены ошибки для $\ln(\xi_{1}) \sim N(4, \sigma _{1}^{2})$, $\ln(\xi_{2}) \sim N(4, \sigma_{2}^{2})$ при $\pi=0.1$, полученные с помощью моделирования, объемы выборок равны $10^{6}$. По построению аппроксимации суммы двух логнормальных распределений логнормальным распределением ошибки мат. ожидания и дисперсии равны 0, то есть $m=\tilde{m}$ и $s^{2} = \tilde{s}^{2}$. Но если для каких-либо расчетов понадобятся квантили $\eta$, то ошибка медианы может достигать 21\%, ошибка  квантиля $q_{10}$ достигает 67\%, ошибка квантиля $q_{90}$ достигает 20\%.
 	
 	%\centering
 	%\textbf{$\sigma_{1}^{2}$, $\sigma_{2}^{2}$}
 	%\backslashbox{два}{один} 
 	
 	\begin{table}[!hhh]
+		\centering
 		\caption{Ошибка аппроксимации медианы ($\%$) в зависимости от $\sigma_{1}^{2}$ (строка) и $\sigma_{2}^{2}$ (столбец)}
 		\label{tab1}
-		
-		\begin{tabular}{|c|ccclcccccccc}
+		\begin{tabular}{rrrrrr}
 			\hline
-			\textbf{}                         & \multicolumn{1}{c|}{\textbf{0.05}} & \multicolumn{1}{c|}{\textbf{0.25}} & \multicolumn{1}{c|}{\textbf{0.45}} & \multicolumn{1}{l|}{\textbf{0.65}} & \multicolumn{1}{c|}{\textbf{0.85}} & \multicolumn{1}{c|}{\textbf{1.05}} & \multicolumn{1}{c|}{\textbf{1.25}} & \multicolumn{1}{c|}{\textbf{1.45}} & \multicolumn{1}{c|}{\textbf{1.65}} & \multicolumn{1}{c|}{\textbf{1.85}} & \multicolumn{1}{c|}{\textbf{2.05}} & \multicolumn{1}{c|}{\textbf{2.25}} \\ \hline
-			\textbf{0.05}                       & 0.06                               & 0.95                               & 1.22                               & \multicolumn{1}{c}{0.32}           & 0.04                               & 0.20                               & 0.56                               & 2.74                               & 3.21                               & 2.71                               & 3.47                               & 4.68                               \\ \cline{1-1}
-			\textbf{0.25}                       & 0.03                               & 0.18                               & 0.58                               & 0.8                                & 0.85                               & 0.92                               & 0.71                               & 1.86                               & 2.74                               & 4.65                               & 3.29                               & 4.85                               \\ \cline{1-1}
-			\textbf{0.45}                       & 0.02                               & 0.63                               & 0.47                               & 0.74                               & 0.66                               & 1.27                               & 2.17                               & 2.56                               & 3.31                               & 4.29                               & 5.72                               & 5.16                               \\ \cline{1-1}
-			\textbf{0.65}                       & 0.36                               & 0.16                               & 0.01                               & 0.12                               & 0.10                               & 1.36                               & 2.19                               & 4.00                               & 4.23                               & 6.65                               & 7.41                               & 7.49                               \\ \cline{1-1}
-			\textbf{0.85}                       & 0.70                               & 0.01                               & 0.16                               & 0.69                               & 0.63                               & 1.50                               & 1.48                               & 3.46                               & 5.32                               & 5.95                               & 6.40                               & 7.41                               \\ \cline{1-1}
-			\textbf{1.05}                       & 0.55                               & 0.62                               & 0.09                               & 0.24                               & 0.79                               & 2.81                               & 3.62                               & 4.48                               & 5.89                               & 6.15                               & 6.77                               & 9.56                               \\ \cline{1-1}
-			\textbf{1.25}                       & 0.77                               & 0.06                               & 0.21                               & 0.50                               & 1.58                               & 2.47                               & 3.16                               & 4.37                               & 5.85                               & 7.26                               & 8.63                               & 11.14                              \\ \cline{1-1}
-			\textbf{1.45}                       & 0.34                               & 0.56                               & 0.08                               & 0.15                               & 0.80                               & 1.66                               & 2.71                               & 4.51                               & 5.71                               & 7.43                               & 9.92                               & 10.75                              \\ \cline{1-1}
-			\textbf{1.65}                       & 0.87                               & 0.86                               & 1.00                               & 0.18                               & 1.07                               & 2.56                               & 2.27                               & 3.70                               & 6.61                               & 7.30                               & 8.84                               & 9.58                               \\ \cline{1-1}
-			\textbf{1.85}                       & 2.58                               & 3.09                               & 3.14                               & 1.17                               & 1.51                               & 1.51                               & 2.30                               & 3.33                               & 6.02                               & 8.01                               & 8.38                               & 10.46                              \\ \cline{1-1}
-			\textbf{2.05}                       & 6.11                               & 5.33                               & 3.50                               & 2.42                               & 1.89                               & 1.64                               & 1.74                               & 3.86                               & 5.80                               & 6.96                               & 9.54                               & 10.32                              \\ \cline{1-1}
-			\multicolumn{1}{|l|}{\textbf{2.25}} & \multicolumn{1}{l}{10.30}          & \multicolumn{1}{l}{8.88}           & \multicolumn{1}{l}{6.63}           & 3.95                               & \multicolumn{1}{l}{2.76}           & \multicolumn{1}{l}{2.32}           & \multicolumn{1}{l}{2.65}           & \multicolumn{1}{l}{4.43}           & \multicolumn{1}{l}{4.72}           & \multicolumn{1}{l}{7.12}           & \multicolumn{1}{l}{9.41}           & \multicolumn{1}{l}{9.79}           \\ \cline{1-1}
+			& \textbf{0.25} & \textbf{0.75} & \textbf{1.25} & \textbf{1.75} & \textbf{2.25} \\ 
+			\hline
+			\textbf{0.25} & 0.24 & 0.46 & 4.19 & 11.67 & 21.10 \\ 
+			\textbf{0.75} & 0.74 & 0.40 & 3.06 & 11.46 & 20.99 \\ 
+			\textbf{1.25} & 4.25 & 3.27 & 2.48 & 6.18 & 16.15 \\ 
+			\textbf{1.75} & 12.18 & 10.12 & 5.57 & 5.24 & 9.92 \\ 
+			\textbf{2.25} & 20.94 & 20.20 & 16.29 & 9.59 & 8.47 \\ 
+			\hline
 		\end{tabular}
 	\end{table}
-	\begin{table}[!hhh]
-		\caption{Ошибка аппроксимации $q_{10}$ ($\%$) в зависимости от $\sigma_{1}^{2}$ (строка) и $\sigma_{2}^{2}$ (столбец)}
-		\label{tab2}
-		\begin{tabular}{|c|ccclcccccccc}
-			\hline
-			\textbf{\%}                         & \multicolumn{1}{c|}{\textbf{0.05}} & \multicolumn{1}{c|}{\textbf{0.25}} & \multicolumn{1}{c|}{\textbf{0.45}} & \multicolumn{1}{l|}{\textbf{0.65}} & \multicolumn{1}{c|}{\textbf{0.85}} & \multicolumn{1}{c|}{\textbf{1.05}} & \multicolumn{1}{c|}{\textbf{1.25}} & \multicolumn{1}{c|}{\textbf{1.45}} & \multicolumn{1}{c|}{\textbf{1.65}} & \multicolumn{1}{c|}{\textbf{1.85}} & \multicolumn{1}{c|}{\textbf{2.05}} & \multicolumn{1}{c|}{\textbf{2.25}} \\ \hline
-			\textbf{0.05}                       & 0.29                               & 3.21                               & 6.64                               & \multicolumn{1}{c}{11.28}          & 15.38                              & 19.50                              & 25.37                              & 27.79                              & 31.84                              & 35.50                              & 39.09                              & 43.19                              \\ \cline{1-1}
-			\textbf{0.25}                       & 0.07                               & 2.17                               & 6.77                               & 11.41                              & 15.20                              & 19.33                              & 23.98                              & 28.43                              & 33.34                              & 36.47                              & 39.64                              & 43.31                              \\ \cline{1-1}
-			\textbf{0.45}                       & 0.28                               & 1.62                               & 5.61                               & 9.05                               & 14.57                              & 20.02                              & 24.05                              & 28.87                              & 30.94                              & 37.01                              & 40.78                              & 43.25                              \\ \cline{1-1}
-			\textbf{0.65}                       & 1.44                               & 1.06                               & 4.32                               & 7.67                               & 13.61                              & 17.95                              & 23.09                              & 27.89                              & 31.71                              & 35.92                              & 39.40                              & 44.31                              \\ \cline{1-1}
-			\textbf{0.85}                       & 3.66                               & 1.01                               & 3.65                               & 7.28                               & 12.09                              & 15.96                              & 21.70                              & 26.81                              & 30.61                              & 34.64                              & 38.94                              & 41.14                              \\ \cline{1-1}
-			\textbf{1.05}                       & 7.42                               & 1.16                               & 2.85                               & 5.64                               & 9.79                               & 15.37                              & 20.81                              & 24.61                              & 29.50                              & 33.56                              & 36.72                              & 41.47                              \\ \cline{1-1}
-			\textbf{1.25}                       & 12.47                              & 3.36                               & 2.79                               & 4.52                               & 9.10                               & 15.08                              & 17.86                              & 22.97                              & 28.23                              & 33.01                              & 35.56                              & 40.66                              \\ \cline{1-1}
-			\textbf{1.45}                       & 18.58                              & 6.54                               & 2.92                               & 4.72                               & 7.22                               & 13.10                              & 17.09                              & 21.39                              & 26.54                              & 31.45                              & 36.12                              & 39.89                              \\ \cline{1-1}
-			\textbf{1.65}                       & 26.09                              & 11.20                              & 4.86                               & 5.04                               & 7.16                               & 10.48                              & 14.75                              & 20.15                              & 25.34                              & 30.42                              & 34.27                              & 38.21                              \\ \cline{1-1}
-			\textbf{1.85}                       & 34.03                              & 17.14                              & 9.86                               & 5.71                               & 6.87                               & 10.39                              & 12.88                              & 18.25                              & 22.77                              & 28.30                              & 32.65                              & 36.24                              \\ \cline{1-1}
-			\textbf{2.05}                       & 42.73                              & 25.26                              & 15.55                              & 10.11                              & 7.60                               & 10.02                              & 11.56                              & 16.74                              & 21.26                              & 26.40                              & 30.68                              & 33.90                              \\ \cline{1-1}
-			\multicolumn{1}{|l|}{\textbf{2.25}} & \multicolumn{1}{l}{51.35}          & \multicolumn{1}{l}{34.75}          & \multicolumn{1}{l}{22.83}          & 16.23                              & \multicolumn{1}{l}{11.85}          & \multicolumn{1}{l}{10.83}          & \multicolumn{1}{l}{11.84}          & \multicolumn{1}{l}{16.45}          & \multicolumn{1}{l}{20.34}          & \multicolumn{1}{l}{24.44}          & \multicolumn{1}{l}{27.66}          & \multicolumn{1}{l}{33.35}          \\ \cline{1-1}
-		\end{tabular}
-	\end{table}
+
+\begin{table}[!hhh]
+	\centering
+	\caption{Ошибка аппроксимации $q_{10}$ ($\%$) в зависимости от $\sigma_{1}^{2}$ (строка) и $\sigma_{2}^{2}$ (столбец)}
+	\label{tab2}
+	\begin{tabular}{rrrrrr}
+		\hline
+		& \textbf{0.25} & \textbf{0.75} & \textbf{1.25} & \textbf{1.75} & \textbf{2.25} \\ 
+		\hline
+		\textbf{0.25} & 0.72 & 12.75 & 33.79 & 52.58 & 66.98 \\ 
+		\textbf{0.75} & 12.30 & 3.81 & 15.13 & 35.85 & 53.91 \\ 
+		\textbf{1.25} & 33.42 & 14.81 & 10.81 & 22.58 & 40.49 \\ 
+		\textbf{1.75} & 52.84 & 35.57 & 19.95 & 18.15 & 27.68 \\ 
+		\textbf{2.25} & 66.40 & 53.63 & 41.42 & 26.75 & 24.57 \\ 
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[!hhh]
+	\centering
+	\caption{Ошибка аппроксимации $q_{90}$ ($\%$) в зависимости от $\sigma_{1}^{2}$ (строка) и $\sigma_{2}^{2}$ (столбец)}
+	\label{tab3}
+	\begin{tabular}{rrrrrr}
+		\hline
+		& \textbf{0.25} & \textbf{0.75} & \textbf{1.25} & \textbf{1.75} & \textbf{2.25} \\ 
+		\hline
+		\textbf{0.25} & 0.16 & 5.03 & 13.69 & 17.74 & 19.37 \\ 
+		\textbf{0.75} & 5.63 & 1.89 & 5.77 & 10.70 & 16.03 \\ 
+		\textbf{1.25} & 13.55 & 5.75 & 2.52 & 6.00 & 9.79 \\ 
+		\textbf{1.75} & 19.95 & 11.88 & 5.77 & 3.50 & 4.89 \\ 
+		\textbf{2.25} & 18.47 & 15.44 & 9.42 & 5.50 & 5.27 \\ 
+		\hline
+	\end{tabular}
+\end{table}
 	
-	\begin{table}[!hhh]
-		\caption{Ошибка аппроксимации $q_{90}$ ($\%$) в зависимости от $\sigma_{1}^{2}$ (строка) и $\sigma_{2}^{2}$ (столбец)}
-		\label{tab3}
-		\begin{tabular}{|c|ccclcccccccc}
-			\hline
-			\textbf{\%}                         & \multicolumn{1}{c|}{\textbf{0.05}} & \multicolumn{1}{c|}{\textbf{0.25}} & \multicolumn{1}{c|}{\textbf{0.45}} & \multicolumn{1}{l|}{\textbf{0.65}} & \multicolumn{1}{c|}{\textbf{0.85}} & \multicolumn{1}{c|}{\textbf{1.05}} & \multicolumn{1}{c|}{\textbf{1.25}} & \multicolumn{1}{c|}{\textbf{1.45}} & \multicolumn{1}{c|}{\textbf{1.65}} & \multicolumn{1}{c|}{\textbf{1.85}} & \multicolumn{1}{c|}{\textbf{2.05}} & \multicolumn{1}{c|}{\textbf{2.25}} \\ \hline
-			\textbf{0.05}                       & 0.25                               & 0.59                               & 1.83                               & \multicolumn{1}{c}{2.66}           & 2.14                               & 4.40                               & 2.93                               & 2.84                               & 3.33                               & 3.95                               & 2.25                               & 2.43                               \\ \cline{1-1}
-			\textbf{0.25}                       & 0.14                               & 1.24                               & 0.64                               & 1.12                               & 3.49                               & 4.09                               & 2.95                               & 4.19                               & 4.22                               & 3.59                               & 3.83                               & 1.13                               \\ \cline{1-1}
-			\textbf{0.45}                       & 0.01                               & 0.31                               & 1.44                               & 3.29                               & 2.49                               & 2.82                               & 3.29                               & 3.76                               & 4.44                               & 5.32                               & 3.63                               & 3.03                               \\ \cline{1-1}
-			\textbf{0.65}                       & 0.74                               & 0.70                               & 0.76                               & 2.00                               & 2.09                               & 4.08                               & 4.16                               & 4.08                               & 3.60                               & 4.91                               & 3.71                               & 4.66                               \\ \cline{1-1}
-			\textbf{0.85}                       & 2.81                               & 0.12                               & 1.58                               & 1.87                               & 2.91                               & 3.69                               & 5.60                               & 1.86                               & 3.90                               & 4.10                               & 3.07                               & 5.48                               \\ \cline{1-1}
-			\textbf{1.05}                       & 5.31                               & 0.45                               & 0.33                               & 1.79                               & 3.10                               & 3.99                               & 4.83                               & 4.46                               & 3.24                               & 4.95                               & 3.51                               & 4.93                               \\ \cline{1-1}
-			\textbf{1.25}                       & 9.32                               & 1.32                               & 0.83                               & 2.63                               & 2.18                               & 3.19                               & 3.26                               & 4.12                               & 4.91                               & 4.30                               & 4.85                               & 3.18                               \\ \cline{1-1}
-			\textbf{1.45}                       & 13.38                              & 3.43                               & 1.42                               & 1.22                               & 1.17                               & 3.15                               & 4.02                               & 2.75                               & 3.99                               & 3.88                               & 6.42                               & 4.46                               \\ \cline{1-1}
-			\textbf{1.65}                       & 20.50                              & 5.13                               & 2.79                               & 1.00                               & 2.17                               & 2.78                               & 2.77                               & 4.27                               & 7.01                               & 3.80                               & 5.30                               & 5.16                               \\ \cline{1-1}
-			\textbf{1.85}                       & 25.68                              & 9.55                               & 4.75                               & 1.31                               & 1.80                               & 1.79                               & 2.55                               & 3.24                               & 5.15                               & 4.30                               & 5.37                               & 7.36                               \\ \cline{1-1}
-			\textbf{2.05}                       & 32.89                              & 14.44                              & 6.58                               & 3.86                               & 1.57                               & 2.80                               & 3.51                               & 2.94                               & 3.97                               & 4.51                               & 3.76                               & 3.23                               \\ \cline{1-1}
-			\multicolumn{1}{|l|}{\textbf{2.25}} & \multicolumn{1}{l}{40.04}          & \multicolumn{1}{l}{18.64}          & \multicolumn{1}{l}{9.22}           & 4.64                               & \multicolumn{1}{l}{0.85}           & \multicolumn{1}{l}{2.30}           & \multicolumn{1}{l}{3.72}           & \multicolumn{1}{l}{1.54}           & \multicolumn{1}{l}{4.11}           & \multicolumn{1}{l}{5.22}           & \multicolumn{1}{l}{4.12}           & \multicolumn{1}{l}{4.57}           \\ \cline{1-1}
-		\end{tabular}
-	\end{table}
 	
-	Таким образом, при аппроксимации суммы двух логнормальных распределений логнормальным распределением ошибки мат. ожидания и дисперсии равны 0, то есть $m=\tilde{m}$ и $s^{2} = \tilde{s}^{2}$. Но если для каких-либо расчетов понадобятся квантили $\eta$, то ошибка медианы может достигать 11\%, ошибка  квантиля $q_{10}$ достигает 51\%, ошибка квантиля $q_{90}$ достигает 40\%.
 	
 	Построим графики 2, 3 и 4 зависимости ошибки аппроксимации квантилей от $\sigma_{2}^{2}$ при фиксированной $\sigma_{1}^{2} = 0.45$. При моделировании объемы выборок равны $10^{6}$.
 	
 	\begin{figure}[!hhh]
 		\begin{center}
 			\begin{minipage}[h]{0.8\linewidth}
-				\includegraphics[width=1\linewidth]{img/gr_new_1.pdf}
-				\caption{Ошибка аппроксимации медианы при $\sigma_{1}^{2} = 0.45$.} %% подпись к рисунку
+				\includegraphics[width=1\linewidth]{img/gr_neww_1.pdf}
+				\caption{Ошибка аппроксимации медианы при $\sigma_{1}^{2} = 0.75$.} %% подпись к рисунку
 				\label{ris7} %% метка рисунка для ссылки на него
 			\end{minipage}	
 		\end{center}
@@ -983,8 +834,8 @@ headsep=1cm, footskip=1cm]{geometry}
 \begin{figure}[!hhh]
 	\begin{center}
 		\begin{minipage}[h]{0.8\linewidth}
-			\includegraphics[width=1\linewidth]{img/gr_new_2.pdf}
-			\caption{Ошибка аппроксимации $q_{10}$ при $\sigma_{1}^{2} = 0.45$.} %% подпись к рисунку
+			\includegraphics[width=1\linewidth]{img/gr_neww_2.pdf}
+			\caption{Ошибка аппроксимации $q_{10}$ при $\sigma_{1}^{2} = 0.75$.} %% подпись к рисунку
 			\label{ris8} %% метка рисунка для ссылки на него
 		\end{minipage}	
 	\end{center}
@@ -993,8 +844,8 @@ headsep=1cm, footskip=1cm]{geometry}
 \begin{figure}[!hhh]
 	\begin{center}
 		\begin{minipage}[h]{0.8\linewidth}
-			\includegraphics[width=1\linewidth]{img/gr_new_3.pdf}
-			\caption{Ошибка аппроксимации $q_{90}$ при $\sigma_{1}^{2} = 0.45$.} %% подпись к рисунку
+			\includegraphics[width=1\linewidth]{img/gr_neww_3.pdf}
+			\caption{Ошибка аппроксимации $q_{90}$ при $\sigma_{1}^{2} = 0.75$.} %% подпись к рисунку
 			\label{ris9} %% метка рисунка для ссылки на него
 		\end{minipage}	
 	\end{center}
@@ -1003,51 +854,54 @@ headsep=1cm, footskip=1cm]{geometry}
 	
 	\begin{table}[!hhh]
 		\centering
-		\caption{$F_{\eta}(z_{50})$ в зависимости от $\sigma_{1}^{2}$ (строка) и $\sigma_{2}^{2}$ (столбец)  }
+		\caption{$F_{\eta}(z_{50})$ ($\%$) в зависимости от $\sigma_{1}^{2}$ (строка) и $\sigma_{2}^{2}$ (столбец) }
 		\label{tab4}
-		\begin{tabular}{rrrrr}
+		\begin{tabular}{rrrrrr}
 			\hline
-			& \textbf{0.15} & \textbf{0.85} & \textbf{1.55} & \textbf{2.25} \\
+			& \textbf{0.25} & \textbf{0.75} & \textbf{1.25} & \textbf{1.75} & \textbf{2.25} \\ 
 			\hline
-			\textbf{0.15} & 0.51 & 0.50 & 0.49 & 0.48 \\ 
-			\textbf{0.85} & 0.50 & 0.50 & 0.48 & 0.47 \\ 
-			\textbf{1.55} & 0.49 & 0.50 & 0.48 & 0.46 \\ 
-			\textbf{2.25} & 0.40 & 0.49 & 0.48 & 0.46 \\ 
-			\hline
-		\end{tabular}
-	\end{table}
-	
-	\begin{table}[!hhh]
-		\centering
-		\caption{$F_{\eta}(z_{10})$ в зависимости от $\sigma_{1}^{2}$ (строка) и $\sigma_{2}^{2}$ (столбец) }
-		\label{tab5}
-		\begin{tabular}{rrrrr}
-			\hline
-			& \textbf{0.15} & \textbf{0.85} & \textbf{1.55} & \textbf{2.25} \\
-			\hline
-			\textbf{0.15} & 0.09 & 0.06 & 0.04 & 0.02 \\ 
-			\textbf{0.85} & 0.10 & 0.07 & 0.05 & 0.03 \\ 
-			\textbf{1.55} & 0.05 & 0.08 & 0.06 & 0.04 \\ 
-			\textbf{2.25} & 0.00 & 0.08 & 0.07 & 0.05 \\ 
+			\textbf{0.25} & 50.10 & 49.87 & 46.96 & 42.18 & 36.95 \\ 
+			\textbf{0.75} & 49.87 & 49.82 & 48.30 & 44.55 & 39.74 \\ 
+			\textbf{1.25} & 46.96 & 48.30 & 49.00 & 47.19 & 43.31 \\ 
+			\textbf{1.75} & 42.18 & 44.55 & 47.19 & 47.91 & 46.03 \\ 
+			\textbf{2.25} & 36.95 & 39.74 & 43.31 & 46.03 & 46.73 \\ 
 			\hline
 		\end{tabular}
 	\end{table}
-	
-	\begin{table}[!hhh]
-		\centering
-		\caption{$F_{\eta}(z_{90})$ в зависимости от $\sigma_{1}^{2}$ (строка) и $\sigma_{2}^{2}$ (столбец) }
-		\label{tab6}
-		\begin{tabular}{rrrrr}
-			\hline
-			& \textbf{0.15} & \textbf{0.85} & \textbf{1.55} & \textbf{2.25} \\
-			\hline
-			\textbf{0.15} & 0.90 & 0.90 & 0.90 & 0.90 \\ 
-			\textbf{0.85} & 0.90 & 0.91 & 0.91 & 0.90 \\ 
-			\textbf{1.55} & 0.93 & 0.90 & 0.91 & 0.91 \\ 
-			\textbf{2.25} & 0.95 & 0.91 & 0.90 & 0.91 \\ 
-			\hline
-		\end{tabular}
-	\end{table}
+
+\begin{table}[!hhh]
+	\centering
+	\caption{$F_{\eta}(z_{10})$ ($\%$) в зависимости от $\sigma_{1}^{2}$ (строка) и $\sigma_{2}^{2}$ (столбец) }
+	\label{tab5}
+	\begin{tabular}{rrrrrr}
+		\hline
+		& \textbf{0.25} & \textbf{0.75} & \textbf{1.25} & \textbf{1.75} & \textbf{2.25} \\ 
+		\hline
+		\textbf{0.25} & 9.79 & 5.84 & 1.82 & 0.32 & 0.04 \\ 
+		\textbf{0.75} & 5.84 & 8.89 & 6.45 & 3.14 & 1.19 \\ 
+		\textbf{1.25} & 1.82 & 6.45 & 7.85 & 6.00 & 3.35 \\ 
+		\textbf{1.75} & 0.32 & 3.14 & 6.00 & 6.89 & 5.43 \\ 
+		\textbf{2.25} & 0.04 & 1.19 & 3.35 & 5.43 & 6.08 \\ 
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[!hhh]
+	\centering
+	\caption{$F_{\eta}(z_{90})$ ($\%$) в зависимости от $\sigma_{1}^{2}$ (строка) и $\sigma_{2}^{2}$ (столбец) }
+	\label{tab6}
+	\begin{tabular}{rrrrrr}
+		\hline
+		& \textbf{0.25} & \textbf{0.75} & \textbf{1.25} & \textbf{1.75} & \textbf{2.25} \\
+		\hline
+		\textbf{0.25} & 90.08 & 91.47 & 92.31 & 92.42 & 92.19 \\ 
+		\textbf{0.75} & 91.47 & 90.38 & 91.11 & 91.83 & 92.02 \\ 
+		\textbf{1.25} & 92.31 & 91.11 & 90.57 & 90.93 & 91.31 \\ 
+		\textbf{1.75} & 92.42 & 91.83 & 90.93 & 90.62 & 90.75 \\ 
+		\textbf{2.25} & 92.19 & 92.02 & 91.31 & 90.75 & 90.56 \\ 
+		\hline
+	\end{tabular}
+\end{table}	
 	
 	Теперь посчитаем значения функции $F_{\xi}(x)$ от квантилей $z_{10}$, $z_{50}$, $z_{90}$ случайной величины $\eta$. Они показывают, каким квантилем для $\xi$ являются квантили $z_{i}$. Результаты приведены в таблицаx \ref{tab4}, \ref{tab5} и \ref{tab6}.
 	
@@ -1056,9 +910,9 @@ headsep=1cm, footskip=1cm]{geometry}
 	\begin{figure}[!hhh]
 		\begin{center}
 			\begin{minipage}[h]{0.95\linewidth}
-				\includegraphics[width=1\linewidth]{img/par_2.pdf}
-				\caption{$\sigma_{1}^{2} = 1.05$, $\sigma_{2}^{2} = 0.45$, $err_{med}$ = 0.09\%,  $err_{q_{10}} = 2.4\%$,  $err_{q_{90}} = 1.1\%$. } %% подпись к рисунку
-				\label{ris7} %% метка рисунка для ссылки на него
+				\includegraphics[width=1\linewidth]{img/sr1.pdf}
+				\caption{$\sigma_{1}^{2} = 0.25$, $\sigma_{2}^{2} = 0.25$, $err_{med}$ = 0.17\%,  $err_{q_{10}} = 0.35\%$,  $err_{q_{90}} = 0.12\%$. } %% подпись к рисунку
+				\label{ris5} %% метка рисунка для ссылки на него
 			\end{minipage}
 			
 		\end{center}
@@ -1067,13 +921,54 @@ headsep=1cm, footskip=1cm]{geometry}
 \begin{figure}[!hhh]
 	\begin{center}
 		\begin{minipage}[h]{0.95\linewidth}
-			\includegraphics[width=1\linewidth]{img/par_1.pdf}
-			\caption{$\sigma_{1}^{2} = 2.25$, $\sigma_{2}^{2} = 0.05$, $err_{med}$ = 9.92\%,  $err_{q_{10}} = 51.34\%$,  $err_{q_{90}} = 39.88\%$. } %% подпись к рисунку
-			\label{ris7} %% метка рисунка для ссылки на него
+			\includegraphics[width=1\linewidth]{img/sr2.pdf}
+			\caption{$\sigma_{1}^{2} = 2.25$, $\sigma_{2}^{2} = 0.75$, $err_{med}$ = 20.4\%,  $err_{q_{10}} = 54.13\%$,  $err_{q_{90}} = 15.54\%$. } %% подпись к рисунку
+			\label{ris6} %% метка рисунка для ссылки на него
 		\end{minipage}
 		
 	\end{center}
 \end{figure}
+
+Также посмотрим на таблицы с коэффициентами асимметрии и эксцесса.
+
+\begin{table}[!hhh]
+	\centering
+	\caption{Коэффициент асимметрии суммы (голубой) и аппроксимации (розовый) в зависимости от $\sigma_{1}^{2}$ (строка) и $\sigma_{2}^{2}$ (столбец) }
+	\begin{tabular}{|c|l|l|l|l|l|}
+		\hline
+		& \textbf{0.25} & \textbf{0.75} & \textbf{1.25} & \textbf{1.75} & \textbf{2.5} \\ \hline
+		\multirow{2}{*}{\textbf{0.25}} & \textcolor{cyan}{1.77}          & \textcolor{cyan}{4.23}          & \textcolor{cyan}{6.71}          & \textcolor{cyan}{15.59}         & \textcolor{cyan}{16.68}        \\ \cline{2-6} 
+		& \textcolor{magenta}{1.53}          & \textcolor{magenta}{3.75}          & \textcolor{magenta}{7.48}          & \textcolor{magenta}{14.76}         & \textcolor{magenta}{29.70}        \\ \hline
+		\multirow{2}{*}{\textbf{0.75}} & \textcolor{cyan}{1.66}          & \textcolor{cyan}{3.86}          & \textcolor{cyan}{7.39}          & \textcolor{cyan}{11.43}         & \textcolor{cyan}{54.43}        \\ \cline{2-6} 
+		& \textcolor{magenta}{1.55}          & \textcolor{magenta}{3.65}          & \textcolor{magenta}{7.22}          & \textcolor{magenta}{14.25}         & \textcolor{magenta}{28.77}        \\ \hline
+		\multirow{2}{*}{\textbf{1.25}} & \textcolor{cyan}{2.13}          & \textcolor{cyan}{3.68}          & \textcolor{cyan}{8.73}          & \textcolor{cyan}{13.76}         & \textcolor{cyan}{29.28}        \\ \cline{2-6} 
+		& \textcolor{magenta}{1.71}          & \textcolor{magenta}{3.60}          & \textcolor{magenta}{6.97}          & \textcolor{magenta}{13.68}         & \textcolor{magenta}{27.66}        \\ \hline
+		\multirow{2}{*}{\textbf{1.75}} & \textcolor{cyan}{5.88}          & \textcolor{cyan}{4.06}          & \textcolor{cyan}{7.50}          & \textcolor{cyan}{31.50}         & \textcolor{cyan}{24.89}        \\ \cline{2-6} 
+		& \textcolor{magenta}{2.17}          & \textcolor{magenta}{3.71}          & \textcolor{magenta}{6.79}          & \textcolor{magenta}{13.09}         & \textcolor{magenta}{26.41}        \\ \hline
+		\multirow{2}{*}{\textbf{2.5}}  & \textcolor{cyan}{11.18}         & \textcolor{cyan}{8.85}          & \textcolor{cyan}{8.55}          & \textcolor{cyan}{10.34}         & \textcolor{cyan}{23.61}        \\ \cline{2-6} 
+		& \textcolor{magenta}{3.30}          & \textcolor{magenta}{4.29}          & \textcolor{magenta}{6.90}          & \textcolor{magenta}{12.66}         & \textcolor{magenta}{25.13}        \\ \hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[!hhh]
+	\centering
+	\caption{Коэффициент эксцесса суммы (голубой) и аппроксимации (розовый) в зависимости от $\sigma_{1}^{2}$ (строка) и $\sigma_{2}^{2}$ (столбец) }
+	\begin{tabular}{|c|l|l|l|l|l|}
+		\hline
+		& \textbf{0.25} & \textbf{0.75} & \textbf{1.25} & \textbf{1.75} & \textbf{2.5} \\ \hline
+		\multirow{2}{*}{\textbf{0.25}} & \textcolor{cyan}{6.54}          & \textcolor{cyan}{51.70}         & \textcolor{cyan}{227.68}        & \textcolor{cyan}{408.58}        & \textcolor{cyan}{734.47}       \\ \cline{2-6} 
+		& \textcolor{magenta}{4.42}          & \textcolor{magenta}{32.60}         & \textcolor{magenta}{180.39}        & \textcolor{magenta}{1088.57}       & \textcolor{magenta}{7274.56}      \\ \hline
+		\multirow{2}{*}{\textbf{0.75}} & \textcolor{cyan}{6.21}          & \textcolor{cyan}{61.66}         & \textcolor{cyan}{144.59}        & \textcolor{cyan}{201.69}        & \textcolor{cyan}{1304.88}      \\ \cline{2-6} 
+		& \textcolor{magenta}{4.56}          & \textcolor{magenta}{30.53}         & \textcolor{magenta}{164.86}        & \textcolor{magenta}{990.42}        & \textcolor{magenta}{6666.16}      \\ \hline
+		\multirow{2}{*}{\textbf{1.25}} & \textcolor{cyan}{11.47}         & \textcolor{cyan}{27.75}         & \textcolor{cyan}{179.22}        & \textcolor{cyan}{193.95}        & \textcolor{cyan}{546.57}       \\ \cline{2-6} 
+		& \textcolor{magenta}{5.61}          & \textcolor{magenta}{29.53}         & \textcolor{magenta}{150.21}        & \textcolor{magenta}{886.71}        & \textcolor{magenta}{5989.44}      \\ \hline
+		\multirow{2}{*}{\textbf{1.75}} & \textcolor{cyan}{122.65}        & \textcolor{cyan}{46.01}         & \textcolor{cyan}{110.03}        & \textcolor{cyan}{276.24}        & \textcolor{cyan}{14081.05}     \\ \cline{2-6} 
+		& \textcolor{magenta}{9.44}          & \textcolor{magenta}{31.88}         & \textcolor{magenta}{140.69}        & \textcolor{magenta}{788.78}        & \textcolor{magenta}{5280.07}      \\ \hline
+		\multirow{2}{*}{\textbf{2.5}}  & \textcolor{cyan}{195.77}        & \textcolor{cyan}{283.81}        & \textcolor{cyan}{344.56}        & \textcolor{cyan}{4837.85}       & \textcolor{cyan}{1292.23}      \\ \cline{2-6} 
+		& \textcolor{magenta}{24.08}         & \textcolor{magenta}{44.88}         & \textcolor{magenta}{146.68}        & \textcolor{magenta}{720.26}        & \textcolor{magenta}{4612.33}      \\ \hline
+	\end{tabular}
+\end{table}
+
 
 
 	
@@ -1086,7 +981,7 @@ headsep=1cm, footskip=1cm]{geometry}
 	Построен алгоритм для нахождения трехточечной симметричной аппроксимации суммы логнормальных распределений.
 	Численно оценена точность трехточечной аппроксимации суммы логнормальных распределений.
 	
-
+	\addcontentsline{toc}{section}{8\quad Список литературы}
 	\begin{thebibliography}{1}
 		\bibitem{Swansong} Keith G. Swanson's Swansong."--- Текст: электронный // stochastic: [сайт]."--- URL: https://www.stochastic.dk/post/swanson-s-swansong (дата обращения: 23.12.2021).
 		
@@ -1101,244 +996,7 @@ headsep=1cm, footskip=1cm]{geometry}
 		
 	\end{thebibliography}
 	
-	\section{Приложение}
 	
-	На  С++ были реализованы следующие полезные на практике функции.
-	
-	$\bullet$ 
-	
-	Дано:
-	значения квантилей $x_{\pi_{i}}$, математическое ожидание $m$, дисперсия $s^2$ непрерывной случайной величины.
-	
-	Задача:
-	найти вероятности $p_{i}$ такие, что непрерывное распределение можно заменить дискретным с данными квантилями и полученными весами с сохранением математического ожидания и дисперсии.
-	
-	Решение описано в разделе 2.
-	
-	Система:
-	
-	\begin{equation*}
-		\begin{pmatrix} 
-			1&1&1\\ 
-			x_{\pi_{1}} &  x_{\pi_{2}}  & x_{\pi_{3}} \\ 
-			x_{\pi_{1}}^2~~&x_{\pi_{2}}^2  &x_{\pi_{3}}^2
-		\end{pmatrix}
-		\begin{pmatrix}p_{1}\\p_{2}\\ p_{3}\end{pmatrix}= \begin{pmatrix}1\\m\\m^{2}+s^{2}\end{pmatrix}.
-	\end{equation*}
-	
-	Функция:
-	
-	vector<double> P (double $m$, double $s$, double $x_{\pi_{1}}$, double $x_{\pi_{2}}$, double $x_{\pi_{3}}$).
-	
-	
-	$\bullet$
-	
-	Дано:
-	вероятности $\pi_{i}$.
-	
-	Задача:
-	найти вероятности $p_{i}$ для дискретного распределения, заменяющего исходное нормальное распределение, с любыми тремя квантилями $x_{\pi_{1}}$, $x_{\pi_{2}}$ и $x_{\pi_{3}}$.
-	
-	Решение описано в разделе 3.
-	
-	Система:
-	
-	\begin{equation*}
-		\begin{pmatrix} 1&1&1\\ 
-			\Phi^{-1}(\pi_{1})~~ &  \Phi ^{-1}(\pi_{2})~~  & \Phi ^{-1}(\pi_{3}) \\ 
-			\Phi ^{-1}(\pi_{1})^{2}~~&\Phi ^{-1}(\pi_{2})^{2}~~  &\Phi ^{-1}(\pi_{3})^{2}
-		\end{pmatrix}
-		\begin{pmatrix}p_{1}\\p_{2}\\ p_{3}\end{pmatrix}= \begin{pmatrix}1\\0\\1\end{pmatrix}.
-	\end{equation*}
-	
-	Функция:
-	
-	vector<double> PNormal (double $\pi_{1}$, double $\pi_{2}$, double $\pi_{3}$).
-	
-	$\bullet$
-	
-	Дано:
-	вероятность $\pi$.
-	
-	Задача:
-	найти вероятности $p_{i}$ для дискретного распределения, заменяющего исходное нормальное распределение, в случае симметричных квантилей вида  $\pi$, $0.5$ и $1-\pi$.
-	
-	Решение описано в разделе 3 с помощью системы \eqref{10}.
-	
-	Формулы:
-	
-	\begin{equation*}
-		\begin{cases}
-			p_{\pi} = \displaystyle{\dfrac{1}{2\Phi ^{-1}(\pi)^{2}}},\\ 
-			p_{0.5}=\displaystyle{1-\dfrac{1}{\Phi ^{-1}(\pi)^{2}}} , \\ 
-			p_{1-\pi}=\displaystyle{\dfrac{1}{2\Phi ^{-1}(\pi)^{2}}}.
-		\end{cases}
-	\end{equation*}
-	
-	Функция:
-	
-	vector<double> PNormalSim (double $\pi$).
-	
-	$\bullet$
-	
-	Дано:
-	параметры нормального распределения $\mu$ и $\sigma$, соответствующего логнормальному распределению.
-	
-	Задача:
-	найти параметры этого логнормального распределения $m$ и $s$. 
-	
-	Решение получено из определений логнормального распределения и соответствующего ему нормального распределения.
-	
-	Формулы:
-	\begin{equation*}
-		m = \exp(\mu+\frac{\sigma ^{2}}{2}),
-	\end{equation*}
-	\begin{equation*}
-		s^{2} = m^{2}(\exp(\sigma^{2})-1).
-	\end{equation*}
-	
-	Функции:
-	
-	double M (double $\mu$, double $\sigma$),
-	
-	double S (double $\mu$, double $\sigma$).
-	
-	$\bullet$
-	
-	Дано:
-	вероятности $\pi_{1}$, $\pi_{2}$, значения квантилей $x_{\pi_{1}}$, $x_{\pi_{2}}$.
-	
-	Задача:
-	найти дисперсию логарифмически нормального распределения через квантили дискретного распределения, которое его заменяет.
-	
-	Решение описано в разделе 4.2, получена формула \eqref{11}.
-	
-	Формула:
-	\begin{equation*}
-		\displaystyle{\sigma = \dfrac{\log\left(\dfrac{x_{\pi_{2}}}{x_{\pi_{1}}}\right)}{\Phi ^{-1}(\pi_{2}) - \Phi ^{-1}(\pi_{1})}}.
-	\end{equation*}
-	
-	Функция:
-	
-	double Sig (double $\pi_{1}$, double $\pi_{2}$, double $x_{\pi_{1}}$, double $x_{\pi_{2}}$).
-	
-	$\bullet$
-	
-	Дано:
-	вероятность $\pi$, значения квантилей $x_{\pi}$, $x_{0.5}$.
-	
-	Задача:
-	найти дисперсию логарифмически нормального распределения через квантили дискретного распределения, которое его заменяет в случае симметричных кванилей.
-	
-	Решение получено как частый случай формулы \eqref{11}.
-	
-	Формула:
-	\begin{equation*}
-		\sigma=\frac{\ln(x_{\pi})-\ln(x_{0.5})}{\Phi^{-1}(\pi)}.
-	\end{equation*}
-	
-	Функция:
-	
-	double SigSim (double $\pi$, double $x_{\pi}$, double $x_{0.5}$).
-	
-	
-	$\bullet$
-	
-	Дано:
-	вероятность $\pi$, параметры нормального распределения $\mu$, $\sigma$.
-	
-	Задача:
-	найти квантили логнормальной случайной величины, зная параметры соответствующего нормального распределения в случае симметричных квантилей. 
-	
-	Решение описано в разделе 5.
-	
-	Формулы:
-	\begin{equation*}
-		\ln(x_{\pi})=\mu+\Phi^{-1}(\pi)\sigma,
-	\end{equation*}
-	\begin{equation*}
-		\ln(x_{0.5})=\mu,
-	\end{equation*}
-	\begin{equation*}
-		\ln(x_{1-\pi})=\mu+\Phi^{-1}(1-\pi)\sigma.
-	\end{equation*}
-	
-	Функция:
-	
-	double lnX (double $\pi$, double $\mu$, double $\sigma$).
-	
-	$\bullet$
-	
-	Дано:
-	вероятность $\pi$, дисперсии $\sigma_{1}$ и $\sigma_{2}$ нормальных случайных величин.
-	
-	Задача:
-	понять, какой квантиль получается при перемножении квантилей логнормальных случайных величин, через дисперсии соответствующих нормальных случайных величин в случае симметричных квантилей.
-	
-	Решение описано в разделе 5.
-	
-	Формулы:
-	
-	\begin{equation*}
-		\mathsf{P}(\xi_{1}\xi_{2}< x_{\pi}y_{\pi}) = \Phi\left(\frac{\Phi^{-1}(\pi)(\sigma_{1}+\sigma_{2})}{\sqrt{\sigma_{1}^{2}+\sigma_{2}^{2}}}\right),
-	\end{equation*}
-	
-	\begin{equation*}
-		q =\frac{\Phi^{-1}(\pi)(\sigma_{1}+\sigma_{2})}{\sqrt{\sigma_{1}^{2}+\sigma_{2}^{2}}}.
-	\end{equation*}
-	
-	Функция:
-	
-	double ProbPr (double $\pi$, double $\sigma_{1}$, double $\sigma_{2}$).
-	
-	$\bullet$
-	
-	Дано:
-	вероятность $\pi$, квантили $x_{\pi}$, $x_{0.5}$ и $y_{\pi}$, $y_{0.5}$.
-	
-	Задача:
-	понять, какой квантиль получается при перемножении $\pi$-ых квантилей логнормальных случайных величин, через логарифмы $\pi$-го и $0.5$-го квантилей.
-	
-	Решение описано в разделе 5, получена формула \eqref{18}.
-	
-	Формулы:
-	
-	\begin{equation*}
-		\mathsf{P}(\xi_{1}\xi_{2}< x_{\pi}y_{\pi}) =\Phi\left(\frac{\Phi^{-1}(\pi)(\ln(x_{0.5})+\ln(y_{0.5})-\ln(x_{\pi})-\ln(y_{\pi}))}{\sqrt{(\ln(x_{0.5})-\ln(x_{\pi}))^{2}+(\ln(y_{0.5})-\ln(y_{\pi}))^{2}}}\right),
-	\end{equation*}
-	
-	\begin{equation*}
-		q =\frac{\Phi^{-1}(\pi)(\ln(x_{0.5})+\ln(y_{0.5})-\ln(x_{\pi})-\ln(y_{\pi}))}{\sqrt{(\ln(x_{0.5})-\ln(x_{\pi}))^{2}+(\ln(y_{0.5})-\ln(y_{\pi}))^{2}}}.
-	\end{equation*}
-	
-	Функция:
-	
-	double ProbPrX (double $\pi$, double $x_{\pi}$, double $x_{0.5}$, double $y_{\pi}$, double $y_{0.5}$).
-	
-	
-	$\bullet$
-	
-	Дано:
-	вероятность $\pi$, квантили $x_{\pi}$, $x_{0.5}$ и $y_{\pi}$, $y_{0.5}$.
-	
-	Задача:
-	найти значения $\pi$-го квантиля для произведения двух логнормально распределенных случайных величин через их квантили.
-	
-	Решение описано в разделе 7.
-	
-	Формулы:
-	
-	\begin{equation*}
-		z_{\pi}=\exp\left(\dfrac{\ln(x_{\pi}y_{\pi})-\ln(x_{0.5}y_{0.5})}{q}\Phi^{-1}(\pi)+\ln(x_{0.5}y_{0.5})\right),
-	\end{equation*}
-	
-	\begin{equation*}
-		q=\Phi^{-1}(\mathsf{P}(\xi_{1}\xi_{2}< x_{\pi}y_{\pi})).
-	\end{equation*}
-	
-	Функция:
-	
-	double Q (double $\pi$, double $x_{\pi}$, double $x_{0.5}$, double $y_{\pi}$, double $y_{0.5}$).
 	
 	
 	

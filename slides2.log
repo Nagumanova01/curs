@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  10 MAY 2023 20:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  11 MAY 2023 13:53
 entering extended mode
 **./slides2.tex
 (slides2.tex
@@ -983,8 +983,16 @@ Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
 \RaggedRightParindent=\skip72
 \JustifyingParindent=\skip73
 )
-\c@theorem=\count175
-\c@lemma=\count176
+("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\latex
+\multirow\multirow.sty"
+Package: multirow 2018/08/03 v2.3 Span multiple rows of a table
+\multirow@colwidth=\skip74
+\multirow@cntb=\count175
+\multirow@dima=\skip75
+\bigstrutjot=\dimen259
+)
+\c@theorem=\count176
+\c@lemma=\count177
 
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\latex
 \tools\bm.sty"
@@ -1013,9 +1021,9 @@ ic\pgfplots\pgfplotscore.code.tex"
 \t@pgfplots@toka=\toks50
 \t@pgfplots@tokb=\toks51
 \t@pgfplots@tokc=\toks52
-\pgfplots@tmpa=\dimen259
-\c@pgfplots@coordindex=\count177
-\c@pgfplots@scanlineindex=\count178
+\pgfplots@tmpa=\dimen260
+\c@pgfplots@coordindex=\count178
+\c@pgfplots@scanlineindex=\count179
 
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\gener
 ic\pgfplots\sys\pgfplotssysgeneric.code.tex"))
@@ -1031,7 +1039,7 @@ Package pgfplots: loading complementary arithmetics for your pgf version...
 ic\pgfplots\oldpgfcompatib\pgfplotsoldpgfsupp_pgflibraryfpu.code.tex")
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\gener
 ic\pgfplots\oldpgfcompatib\pgfplotsoldpgfsupp_pgfmathfloat.code.tex"
-\c@pgfmathroundto@lastzeros=\count179
+\c@pgfmathroundto@lastzeros=\count180
 )
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\gener
 ic\pgfplots\oldpgfcompatib\pgfplotsoldpgfsupp_leq.code.tex"))
@@ -1043,13 +1051,13 @@ ic\pgfplots\liststructure\pgfplotsliststructure.code.tex")
 ic\pgfplots\liststructure\pgfplotsliststructureext.code.tex")
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\gener
 ic\pgfplots\liststructure\pgfplotsarray.code.tex"
-\c@pgfplotsarray@tmp=\count180
+\c@pgfplotsarray@tmp=\count181
 )
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\gener
 ic\pgfplots\liststructure\pgfplotsmatrix.code.tex")
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\gener
 ic\pgfplots\numtable\pgfplotstableshared.code.tex"
-\c@pgfplotstable@counta=\count181
+\c@pgfplotstable@counta=\count182
 \t@pgfplotstable@a=\toks53
 )
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\gener
@@ -1062,7 +1070,7 @@ ic\pgfplots\util\pgfplotsbinary.data.code.tex"))
 ic\pgfplots\util\pgfplotsutil.verb.code.tex")
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\gener
 ic\pgfplots\libs\pgflibrarypgfplots.surfshading.code.tex"
-\c@pgfplotslibrarysurf@no=\count182
+\c@pgfplotslibrarysurf@no=\count183
 
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\gener
 ic\pgfplots\sys\pgflibrarypgfplots.surfshading.pgfsys-pdftex.def")))
@@ -1094,14 +1102,14 @@ ic\pgfplots\pgfplots.paths.code.tex")
 ic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.code.tex"
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\gener
 ic\pgf\modules\pgfmoduledecorations.code.tex"
-\pgfdecoratedcompleteddistance=\dimen260
-\pgfdecoratedremainingdistance=\dimen261
-\pgfdecoratedinputsegmentcompleteddistance=\dimen262
-\pgfdecoratedinputsegmentremainingdistance=\dimen263
-\pgf@decorate@distancetomove=\dimen264
-\pgf@decorate@repeatstate=\count183
-\pgfdecorationsegmentamplitude=\dimen265
-\pgfdecorationsegmentlength=\dimen266
+\pgfdecoratedcompleteddistance=\dimen261
+\pgfdecoratedremainingdistance=\dimen262
+\pgfdecoratedinputsegmentcompleteddistance=\dimen263
+\pgfdecoratedinputsegmentremainingdistance=\dimen264
+\pgf@decorate@distancetomove=\dimen265
+\pgf@decorate@repeatstate=\count184
+\pgfdecorationsegmentamplitude=\dimen266
+\pgfdecorationsegmentlength=\dimen267
 )
 \tikz@lib@dec@box=\box59
 )
@@ -1115,13 +1123,13 @@ ic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.pathreplacing.code.t
 ex"
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\gener
 ic\pgf\libraries\decorations\pgflibrarydecorations.pathreplacing.code.tex"))
-\pgfplots@numplots=\count184
-\pgfplots@xmin@reg=\dimen267
-\pgfplots@xmax@reg=\dimen268
-\pgfplots@ymin@reg=\dimen269
-\pgfplots@ymax@reg=\dimen270
-\pgfplots@zmin@reg=\dimen271
-\pgfplots@zmax@reg=\dimen272
+\pgfplots@numplots=\count185
+\pgfplots@xmin@reg=\dimen268
+\pgfplots@xmax@reg=\dimen269
+\pgfplots@ymin@reg=\dimen270
+\pgfplots@ymax@reg=\dimen271
+\pgfplots@zmin@reg=\dimen272
+\pgfplots@zmax@reg=\dimen273
 )
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\gener
 ic\pgf\frontendlayer\tikz\libraries\tikzlibraryplotmarks.code.tex"
@@ -1131,9 +1139,9 @@ File: tikzlibraryplotmarks.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
 ic\pgf\libraries\pgflibraryplotmarks.code.tex"
 File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
 )))
-\c@alg=\count185
-\c@zam=\count186
-\c@example=\count187
+\c@alg=\count186
+\c@zam=\count187
+\c@example=\count188
 
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\latex
 \ucs\uni-4.def"
@@ -1148,30 +1156,30 @@ LaTeX Warning: Label `ris7' multiply defined.
 )
 \openout1 = `slides2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 71.
-LaTeX Font Info:    Try loading font information for T2A+cmr on input line 71.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 75.
+LaTeX Font Info:    Try loading font information for T2A+cmr on input line 75.
 
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\latex
 \cyrillic\t2acmr.fd"
 File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
-LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    ... okay on input line 75.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1211,16 +1219,16 @@ LaTeX Font Info:    ... okay on input line 71.
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\conte
 xt\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count188
-\scratchdimen=\dimen273
+\scratchcounter=\count189
+\scratchdimen=\dimen274
 \scratchbox=\box60
-\nofMPsegments=\count189
-\nofMParguments=\count190
+\nofMPsegments=\count190
+\nofMParguments=\count191
 \everyMPshowfont=\toks54
-\MPscratchCnt=\count191
-\MPscratchDim=\dimen274
-\MPnumerator=\count192
-\makeMPintoPDFobject=\count193
+\MPscratchCnt=\count192
+\MPscratchDim=\dimen275
+\MPnumerator=\count193
+\makeMPintoPDFobject=\count194
 \everyMPtoPDFconversion=\toks55
 )
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\latex
@@ -1239,7 +1247,7 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 ) ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box61
-Package hyperref Info: Link coloring OFF on input line 71.
+Package hyperref Info: Link coloring OFF on input line 75.
 
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\latex
 \hyperref\nameref.sty"
@@ -1249,11 +1257,11 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 ic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count194
+\c@section@level=\count195
 )
-LaTeX Info: Redefining \ref on input line 71.
-LaTeX Info: Redefining \pageref on input line 71.
-LaTeX Info: Redefining \nameref on input line 71.
+LaTeX Info: Redefining \ref on input line 75.
+LaTeX Info: Redefining \pageref on input line 75.
+LaTeX Info: Redefining \nameref on input line 75.
  (slides2.out) (slides2.out)
 \@outlinefile=\write5
 \openout5 = `slides2.out'.
@@ -1296,7 +1304,7 @@ Dictionary: translator-numbers-dictionary, Language: English
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 71.
+LaTeX Info: Redefining \selectfont on input line 75.
 
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.16} (current compat level: 1.9).
@@ -1311,13 +1319,13 @@ x.map}] [2
 ] [4
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 144.
+LaTeX Font Info:    Try loading font information for U+msa on input line 148.
 
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\latex
 \amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 144.
+LaTeX Font Info:    Try loading font information for U+msb on input line 148.
 
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\latex
 \amsfonts\umsb.fd"
@@ -1340,11 +1348,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.271 \end{frame}
+l.275 \end{frame}
                   [12
 
 ]
-Overfull \vbox (12.0308pt too high) detected at line 283
+Overfull \vbox (12.0308pt too high) detected at line 287
  []
 
 [13
@@ -1355,10 +1363,10 @@ Overfull \vbox (12.0308pt too high) detected at line 283
 <img/par_new2.jpg, id=145, 426.84468pt x 417.81094pt>
 File: img/par_new2.jpg Graphic file (type jpg)
 <use img/par_new2.jpg>
-Package pdftex.def Info: img/par_new2.jpg  used on input line 312.
+Package pdftex.def Info: img/par_new2.jpg  used on input line 316.
 (pdftex.def)             Requested size: 184.3758pt x 180.47762pt.
 
-Overfull \vbox (16.98721pt too high) detected at line 312
+Overfull \vbox (16.98721pt too high) detected at line 316
  []
 
 [15
@@ -1366,7 +1374,7 @@ Overfull \vbox (16.98721pt too high) detected at line 312
  <./img/par_new2.jpg>] [16
 
 ]
-Overfull \vbox (3.15172pt too high) detected at line 352
+Overfull \vbox (3.15172pt too high) detected at line 356
  []
 
 [17
@@ -1383,44 +1391,52 @@ Overfull \vbox (3.15172pt too high) detected at line 352
 
 ] [23
 
-] [24
-
 ]
-Overfull \vbox (4.4277pt too high) detected at line 534
+Overfull \vbox (1.46487pt too high) detected at line 501
  []
 
-[25
+[24
+
+] [25
+
+] [26
 
 ]
-<img/par_2.pdf, id=221, 505.89pt x 505.89pt>
+Overfull \vbox (4.4277pt too high) detected at line 580
+ []
+
+[27
+
+]
+<img/par_2.pdf, id=233, 505.89pt x 505.89pt>
 File: img/par_2.pdf Graphic file (type pdf)
 <use img/par_2.pdf>
-Package pdftex.def Info: img/par_2.pdf  used on input line 551.
+Package pdftex.def Info: img/par_2.pdf  used on input line 597.
 (pdftex.def)             Requested size: 122.91406pt x 122.9136pt.
 
-Overfull \vbox (13.3142pt too high) detected at line 551
+Overfull \vbox (13.3142pt too high) detected at line 597
  []
 
-[26
+[28
 
  <./img/par_2.pdf>]
-<img/par_1.pdf, id=235, 505.89pt x 505.89pt>
+<img/par_1.pdf, id=247, 505.89pt x 505.89pt>
 File: img/par_1.pdf Graphic file (type pdf)
 <use img/par_1.pdf>
-Package pdftex.def Info: img/par_1.pdf  used on input line 565.
+Package pdftex.def Info: img/par_1.pdf  used on input line 611.
 (pdftex.def)             Requested size: 162.86325pt x 162.86072pt.
 pdfTeX warning (ext4): destination with the same identifier (name{ris7}) has be
 en already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.565 \end{frame}
+l.611 \end{frame}
                  
-Overfull \vbox (12.28743pt too high) detected at line 565
+Overfull \vbox (12.28743pt too high) detected at line 611
  []
 
-[27
+[29
 
- <./img/par_1.pdf>] [28
+ <./img/par_1.pdf>] [30
 
 ]
 \tf@nav=\write6
@@ -1432,11 +1448,11 @@ Overfull \vbox (12.28743pt too high) detected at line 565
 \tf@snm=\write8
 \openout8 = `slides2.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 584.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 584.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 630.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 630.
  (slides2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 584.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 584.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 630.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 630.
 Package rerunfilecheck Info: File `slides2.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1445,10 +1461,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 36605 strings out of 492968
- 833650 string characters out of 3117975
- 1032162 words of memory out of 3000000
- 39708 multiletter control sequences out of 15000+200000
+ 36665 strings out of 492968
+ 834645 string characters out of 3117975
+ 1039678 words of memory out of 3000000
+ 39760 multiletter control sequences out of 15000+200000
  26726 words of font info for 82 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,15n,98p,776b,628s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1483,9 +1499,9 @@ Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfss1095.pfb><C:/Use
 rs/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
 c/cm-super/sfss1440.pfb><C:/Users/Пользователь/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/type1/public/cm-super/sfsx1095.pfb>
-Output written on slides2.pdf (28 pages, 351931 bytes).
+Output written on slides2.pdf (30 pages, 357810 bytes).
 PDF statistics:
- 336 PDF objects out of 1000 (max. 8388607)
- 74 named destinations out of 1000 (max. 500000)
+ 348 PDF objects out of 1000 (max. 8388607)
+ 78 named destinations out of 1000 (max. 500000)
  100 words of extra memory for PDF output out of 10000 (max. 10000000)
 

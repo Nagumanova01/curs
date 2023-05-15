@@ -19,6 +19,10 @@
 \usepackage{tikz}
 \usepackage{ragged2e}
 
+\usepackage{multirow}
+%\usepackage{multirow}
+%\usepackage[table,xcdraw]{xcolor}
+
 \newtheorem{theorem}{Теорема}
 \newtheorem*{definition}{Определение}
 \newtheorem{lemma}{Лемма}
@@ -464,7 +468,7 @@
 			\hline
 			& \textbf{0.25} & \textbf{0.75} & \textbf{1.25} & \textbf{1.75} & \textbf{2.5} \\
 			\hline
-			\textbf{0.25} & 1.01 & 3.00 & 4.24 & 4.10 & 3.40 \\ 
+			\textbf{0.25} &1.01 & 3.00 & 4.24 & 4.10 & 3.40 \\ 
 			\textbf{0.75} & 0.04 & 2.51 & 4.11 & 3.26 & 5.45 \\ 
 			\textbf{1.25} & 1.44 & 1.81 & 3.29 & 3.93 & 5.82 \\ 
 			\textbf{1.75} & 8.25 & 2.60 & 2.93 & 3.60 & 4.49 \\ 
@@ -475,6 +479,48 @@
 	
 \end{frame}
 
+\begin{frame}{Часть 5: Сумма двух логнормальных распределений. Точность аппроксимации}
+	
+	\begin{table}[]
+		\caption{Коэффициент асимметрии суммы (голубой) и аппроксимации (розовый) в зависимости от $\sigma_{1}^{2}$ (строка) и $\sigma_{2}^{2}$ (столбец) }
+		\begin{tabular}{|c|l|l|l|l|l|}
+			\hline
+			& \textbf{0.25} & \textbf{0.75} & \textbf{1.25} & \textbf{1.75} & \textbf{2.5} \\ \hline
+			\multirow{2}{*}{\textbf{0.25}} & \textcolor{cyan}{1.77}          & \textcolor{cyan}{4.23}          & \textcolor{cyan}{6.71}          & \textcolor{cyan}{15.59}         & \textcolor{cyan}{16.68}        \\ \cline{2-6} 
+			& \textcolor{magenta}{1.53}          & \textcolor{magenta}{3.75}          & \textcolor{magenta}{7.48}          & \textcolor{magenta}{14.76}         & \textcolor{magenta}{29.70}        \\ \hline
+			\multirow{2}{*}{\textbf{0.75}} & \textcolor{cyan}{1.66}          & \textcolor{cyan}{3.86}          & \textcolor{cyan}{7.39}          & \textcolor{cyan}{11.43}         & \textcolor{cyan}{54.43}        \\ \cline{2-6} 
+			& \textcolor{magenta}{1.55}          & \textcolor{magenta}{3.65}          & \textcolor{magenta}{7.22}          & \textcolor{magenta}{14.25}         & \textcolor{magenta}{28.77}        \\ \hline
+			\multirow{2}{*}{\textbf{1.25}} & \textcolor{cyan}{2.13}          & \textcolor{cyan}{3.68}          & \textcolor{cyan}{8.73}          & \textcolor{cyan}{13.76}         & \textcolor{cyan}{29.28}        \\ \cline{2-6} 
+			& \textcolor{magenta}{1.71}          & \textcolor{magenta}{3.60}          & \textcolor{magenta}{6.97}          & \textcolor{magenta}{13.68}         & \textcolor{magenta}{27.66}        \\ \hline
+			\multirow{2}{*}{\textbf{1.75}} & \textcolor{cyan}{5.88}          & \textcolor{cyan}{4.06}          & \textcolor{cyan}{7.50}          & \textcolor{cyan}{31.50}         & \textcolor{cyan}{24.89}        \\ \cline{2-6} 
+			& \textcolor{magenta}{2.17}          & \textcolor{magenta}{3.71}          & \textcolor{magenta}{6.79}          & \textcolor{magenta}{13.09}         & \textcolor{magenta}{26.41}        \\ \hline
+			\multirow{2}{*}{\textbf{2.5}}  & \textcolor{cyan}{11.18}         & \textcolor{cyan}{8.85}          & \textcolor{cyan}{8.55}          & \textcolor{cyan}{10.34}         & \textcolor{cyan}{23.61}        \\ \cline{2-6} 
+			& \textcolor{magenta}{3.30}          & \textcolor{magenta}{4.29}          & \textcolor{magenta}{6.90}          & \textcolor{magenta}{12.66}         & \textcolor{magenta}{25.13}        \\ \hline
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\begin{frame}{Часть 5: Сумма двух логнормальных распределений. Точность аппроксимации}
+	
+	\begin{table}[]
+		\centering
+		\caption{Коэффициент эксцесса суммы (голубой) и аппроксимации (розовый) в зависимости от $\sigma_{1}^{2}$ (строка) и $\sigma_{2}^{2}$ (столбец) }
+		\begin{tabular}{|c|l|l|l|l|l|}
+			\hline
+			& \textbf{0.25} & \textbf{0.75} & \textbf{1.25} & \textbf{1.75} & \textbf{2.5} \\ \hline
+			\multirow{2}{*}{\textbf{0.25}} & \textcolor{cyan}{6.54}          & \textcolor{cyan}{51.70}         & \textcolor{cyan}{227.68}        & \textcolor{cyan}{408.58}        & \textcolor{cyan}{734.47}       \\ \cline{2-6} 
+			& \textcolor{magenta}{4.42}          & \textcolor{magenta}{32.60}         & \textcolor{magenta}{180.39}        & \textcolor{magenta}{1088.57}       & \textcolor{magenta}{7274.56}      \\ \hline
+			\multirow{2}{*}{\textbf{0.75}} & \textcolor{cyan}{6.21}          & \textcolor{cyan}{61.66}         & \textcolor{cyan}{144.59}        & \textcolor{cyan}{201.69}        & \textcolor{cyan}{1304.88}      \\ \cline{2-6} 
+			& \textcolor{magenta}{4.56}          & \textcolor{magenta}{30.53}         & \textcolor{magenta}{164.86}        & \textcolor{magenta}{990.42}        & \textcolor{magenta}{6666.16}      \\ \hline
+			\multirow{2}{*}{\textbf{1.25}} & \textcolor{cyan}{11.47}         & \textcolor{cyan}{27.75}         & \textcolor{cyan}{179.22}        & \textcolor{cyan}{193.95}        & \textcolor{cyan}{546.57}       \\ \cline{2-6} 
+			& \textcolor{magenta}{5.61}          & \textcolor{magenta}{29.53}         & \textcolor{magenta}{150.21}        & \textcolor{magenta}{886.71}        & \textcolor{magenta}{5989.44}      \\ \hline
+			\multirow{2}{*}{\textbf{1.75}} & \textcolor{cyan}{122.65}        & \textcolor{cyan}{46.01}         & \textcolor{cyan}{110.03}        & \textcolor{cyan}{276.24}        & \textcolor{cyan}{14081.05}     \\ \cline{2-6} 
+			& \textcolor{magenta}{9.44}          & \textcolor{magenta}{31.88}         & \textcolor{magenta}{140.69}        & \textcolor{magenta}{788.78}        & \textcolor{magenta}{5280.07}      \\ \hline
+			\multirow{2}{*}{\textbf{2.5}}  & \textcolor{cyan}{195.77}        & \textcolor{cyan}{283.81}        & \textcolor{cyan}{344.56}        & \textcolor{cyan}{4837.85}       & \textcolor{cyan}{1292.23}      \\ \cline{2-6} 
+			& \textcolor{magenta}{24.08}         & \textcolor{magenta}{44.88}         & \textcolor{magenta}{146.68}        & \textcolor{magenta}{720.26}        & \textcolor{magenta}{4612.33}      \\ \hline
+		\end{tabular}
+	\end{table}
+\end{frame}
 
 
 \begin{frame}{Часть 5: Сумма двух логнормальных распределений. Точность аппроксимации}
