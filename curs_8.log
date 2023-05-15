@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  15 MAY 2023 10:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  15 MAY 2023 16:10
 entering extended mode
 **./curs_8.tex
 (curs_8.tex
@@ -1180,7 +1180,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  [2
 
 ] [3] [4] [5] [6] [7] [8]
-Overfull \hbox (10.62225pt too wide) in paragraph at lines 330--333
+Overfull \hbox (10.62225pt too wide) in paragraph at lines 325--328
 []\T2A/cmr/bx/n/12 �������� 1. []��-��: \T2A/cmr/m/it/12 ����-��-�� $\OML/cmm/m
 /it/12 x[]; x[]; x[]$ \T2A/cmr/m/it/12 ��-����-����-��� ���-���-��� ��-��-��-��
  $\OML/cmm/m/it/12 $\T2A/cmr/m/it/12 , $[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 \
@@ -1188,7 +1188,7 @@ OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 
  []
 
 
-Overfull \hbox (10.62225pt too wide) in paragraph at lines 348--351
+Overfull \hbox (10.62225pt too wide) in paragraph at lines 343--346
 []\T2A/cmr/bx/n/12 �������� 2. []��-��: \T2A/cmr/m/it/12 ����-��-�� $\OML/cmm/m
 /it/12 x[]; x[]; x[]$ \T2A/cmr/m/it/12 ��-����-����-��� ���-���-��� ��-��-��-��
  $\OML/cmm/m/it/12 $\T2A/cmr/m/it/12 , $[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 \
@@ -1199,14 +1199,14 @@ OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 
 <img/par_new2.jpg, id=70, 426.84468pt x 417.81094pt>
 File: img/par_new2.jpg Graphic file (type jpg)
 <use img/par_new2.jpg>
-Package pdftex.def Info: img/par_new2.jpg  used on input line 504.
+Package pdftex.def Info: img/par_new2.jpg  used on input line 502.
 (pdftex.def)             Requested size: 281.68515pt x 275.74332pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [14] [15 <./img/par_new2.jpg>] [16]
-Overfull \hbox (8.84772pt too wide) in paragraph at lines 638--640
+Overfull \hbox (8.84772pt too wide) in paragraph at lines 636--638
 \T2A/cmr/m/it/12 ��� $\OML/cmm/m/it/12 a$ \T2A/cmr/m/it/12 � $\OML/cmm/m/it/12 
 b$ \T2A/cmr/m/it/12 ��-���, ��� ���-��� $\OML/cmm/m/it/12 y \OT1/cmr/m/n/12 = [
 ]$ \T2A/cmr/m/it/12 ���-��-��� ��-��� ���-�� $\OT1/cmr/m/n/12 ([](\OML/cmm/m/it
@@ -1219,7 +1219,7 @@ t/12 ; \OT1/cmr/m/n/12 0)$
 <img/gr_neww_1.pdf, id=94, 505.89pt x 505.89pt>
 File: img/gr_neww_1.pdf Graphic file (type pdf)
 <use img/gr_neww_1.pdf>
-Package pdftex.def Info: img/gr_neww_1.pdf  used on input line 827.
+Package pdftex.def Info: img/gr_neww_1.pdf  used on input line 825.
 (pdftex.def)             Requested size: 375.57782pt x 375.5878pt.
 
 
@@ -1228,7 +1228,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <img/gr_neww_2.pdf, id=95, 505.89pt x 505.89pt>
 File: img/gr_neww_2.pdf Graphic file (type pdf)
 <use img/gr_neww_2.pdf>
-Package pdftex.def Info: img/gr_neww_2.pdf  used on input line 837.
+Package pdftex.def Info: img/gr_neww_2.pdf  used on input line 835.
 (pdftex.def)             Requested size: 375.57782pt x 375.5878pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1236,7 +1236,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <img/gr_neww_3.pdf, id=96, 505.89pt x 505.89pt>
 File: img/gr_neww_3.pdf Graphic file (type pdf)
 <use img/gr_neww_3.pdf>
-Package pdftex.def Info: img/gr_neww_3.pdf  used on input line 847.
+Package pdftex.def Info: img/gr_neww_3.pdf  used on input line 845.
 (pdftex.def)             Requested size: 375.57782pt x 375.5878pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1253,7 +1253,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <img/sr1.pdf, id=97, 505.89pt x 505.89pt>
 File: img/sr1.pdf Graphic file (type pdf)
 <use img/sr1.pdf>
-Package pdftex.def Info: img/sr1.pdf  used on input line 913.
+Package pdftex.def Info: img/sr1.pdf  used on input line 911.
 (pdftex.def)             Requested size: 445.99553pt x 446.0028pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1261,14 +1261,8 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <img/sr2.pdf, id=98, 505.89pt x 505.89pt>
 File: img/sr2.pdf Graphic file (type pdf)
 <use img/sr2.pdf>
-Package pdftex.def Info: img/sr2.pdf  used on input line 924.
+Package pdftex.def Info: img/sr2.pdf  used on input line 922.
 (pdftex.def)             Requested size: 445.99553pt x 446.0028pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1276,58 +1270,67 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: Text page 22 contains only floats.
 
-[22 <./img/gr_neww_1.pdf>] [23 <./img/gr_neww_2.pdf>] [24 <./img/gr_neww_3.pdf>
-]
-Underfull \hbox (badness 1028) in paragraph at lines 990--991
+[22 <./img/gr_neww_1.pdf>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[23 <./img/gr_neww_2.pdf>] [24 <./img/gr_neww_3.pdf>] [25 <./img/sr1.pdf>]
+[26 <./img/sr2.pdf>]
+Underfull \hbox (badness 1028) in paragraph at lines 988--989
 []\T2A/cmr/m/n/12 Bickel, J. Eric, Lake, Larry W., and John Lehman. "Discretiza
 tion, Simulation,
  []
 
 
-Underfull \hbox (badness 4072) in paragraph at lines 990--991
+Underfull \hbox (badness 4072) in paragraph at lines 988--989
 \T2A/cmr/m/n/12 and Swanson's (Inaccurate) Mean."SPE Econ Mgmt 3 (2011): 12814
 0. doi:
  []
 
-[25 <./img/sr1.pdf>] [26 <./img/sr2.pdf>] [27] (curs_8.aux) ) 
+[27
+
+] (curs_8.aux) ) 
 Here is how much of TeX's memory you used:
  25711 strings out of 492968
  641920 string characters out of 3117975
- 857135 words of memory out of 3000000
+ 852135 words of memory out of 3000000
  29023 multiletter control sequences out of 15000+200000
  25253 words of font info for 68 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,13n,96p,2019b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Поль
-зователь/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-
-super-t2a.enc}<C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Пользовател�
-�/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmmi10.pfb><C:/Users/Пользователь/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Пол
+{C:/Users/Пользователь/AppData/Local/Programs/MiKTe
+X 2.9/fonts/enc/dvips/cm-super/cm-super-t2a.enc}<C:/Users/Пользовате�
+�ь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmex10.pfb><C:/Users/Пользователь/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/По
+льзователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmmi12.pfb><C:/Users/Пользователь/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Пользовате
+ль/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmr10.pfb><C:/Users/Пользователь/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Пол
 ьзователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmmi6.pfb><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Пользовател�
-�/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C
-:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmr12.pfb><C:/Users/Пользователь/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Польз
-ователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmr8.pfb><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/Пользователь/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/U
-sers/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmsy8.pfb><C:/Users/Пользователь/AppData/Local/Prog
-rams/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Пол
+s/cm/cmr6.pfb><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Пользователь/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:
+/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb><C:/Users/Пользователь/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Поль�
+�ователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/s
+ymbols/msam10.pfb><C:/Users/Пользователь/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/cm-super/sfbx1200.pfb><C:/Users/Пользовате
+ль/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1440.pfb
+><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/cm-super/sfbx1728.pfb><C:/Users/Пользователь/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1200.pfb><C:/Users/Пол
 ьзователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-supe
-r/sfbx1200.pfb><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/cm-super/sfbx1440.pfb><C:/Users/Пользовател�
-�/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1728.pfb><C
-:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/cm-super/sfrm1200.pfb><C:/Users/Пользователь/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on curs_8.pdf (27 pages, 418210 bytes).
+r/sfti1200.pfb>
+Output written on curs_8.pdf (27 pages, 417928 bytes).
 PDF statistics:
  206 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
