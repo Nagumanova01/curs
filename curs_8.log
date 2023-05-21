@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  15 MAY 2023 16:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  21 MAY 2023 16:19
 entering extended mode
 **./curs_8.tex
 (curs_8.tex
@@ -1049,7 +1049,11 @@ G,.JBIG2,.JB2,.eps]
 \c@alg=\count144
 \c@zam=\count145
 \c@example=\count146
- (curs_8.aux)
+ (curs_8.aux
+
+LaTeX Warning: Label `ris11' multiply defined.
+
+)
 \openout1 = `curs_8.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
@@ -1173,7 +1177,13 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 6.
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\latex
 \amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+)
+Overfull \hbox (3.62639pt too wide) in paragraph at lines 17--17
+ [] []\T2A/cmr/bx/n/12 ������������ �����-���-���-��� ��-����-��-��-��� ��-����
+-����-��-�� ���-���- 
+ []
+
+)
 \tf@toc=\write4
 \openout4 = `curs_8.toc'.
 
@@ -1277,62 +1287,100 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[23 <./img/gr_neww_2.pdf>] [24 <./img/gr_neww_3.pdf>] [25 <./img/sr1.pdf>]
-[26 <./img/sr2.pdf>]
-Underfull \hbox (badness 1028) in paragraph at lines 988--989
+<img/p123_1.pdf, id=110, 505.89pt x 505.89pt>
+File: img/p123_1.pdf Graphic file (type pdf)
+<use img/p123_1.pdf>
+Package pdftex.def Info: img/p123_1.pdf  used on input line 976.
+(pdftex.def)             Requested size: 445.99553pt x 446.0028pt.
+[23 <./img/gr_neww_2.pdf>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<img/p123_2.pdf, id=119, 505.89pt x 505.89pt>
+File: img/p123_2.pdf Graphic file (type pdf)
+<use img/p123_2.pdf>
+Package pdftex.def Info: img/p123_2.pdf  used on input line 989.
+(pdftex.def)             Requested size: 445.99553pt x 446.0028pt.
+[24 <./img/gr_neww_3.pdf>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<img/p123_3.pdf, id=128, 505.89pt x 505.89pt>
+File: img/p123_3.pdf Graphic file (type pdf)
+<use img/p123_3.pdf>
+Package pdftex.def Info: img/p123_3.pdf  used on input line 1001.
+(pdftex.def)             Requested size: 445.99553pt x 446.0028pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<img/sigma_12.pdf, id=129, 505.89pt x 505.89pt>
+File: img/sigma_12.pdf Graphic file (type pdf)
+<use img/sigma_12.pdf>
+Package pdftex.def Info: img/sigma_12.pdf  used on input line 1013.
+(pdftex.def)             Requested size: 445.99553pt x 446.0028pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[25 <./img/sr1.pdf>] [26 <./img/sr2.pdf>] [27 <./img/p123_1.pdf>] [28 <./img/p1
+23_2.pdf>] [29 <./img/p123_3.pdf>] [30 <./img/sigma_12.pdf>]
+Underfull \hbox (badness 1028) in paragraph at lines 1037--1038
 []\T2A/cmr/m/n/12 Bickel, J. Eric, Lake, Larry W., and John Lehman. "Discretiza
 tion, Simulation,
  []
 
 
-Underfull \hbox (badness 4072) in paragraph at lines 988--989
+Underfull \hbox (badness 4072) in paragraph at lines 1037--1038
 \T2A/cmr/m/n/12 and Swanson's (Inaccurate) Mean."SPE Econ Mgmt 3 (2011): 12814
 0. doi:
  []
 
-[27
+[31
 
-] (curs_8.aux) ) 
+] (curs_8.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 25711 strings out of 492968
- 641920 string characters out of 3117975
+ 25734 strings out of 492968
+ 642387 string characters out of 3117975
  852135 words of memory out of 3000000
- 29023 multiletter control sequences out of 15000+200000
+ 29042 multiletter control sequences out of 15000+200000
  25253 words of font info for 68 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,13n,96p,2019b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Пользователь/AppData/Local/Programs/MiKTe
-X 2.9/fonts/enc/dvips/cm-super/cm-super-t2a.enc}<C:/Users/Пользовате�
-�ь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmex10.pfb><C:/Users/Пользователь/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/По
-льзователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmmi12.pfb><C:/Users/Пользователь/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Пользовате
-ль/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb
-><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmr10.pfb><C:/Users/Пользователь/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Пол
-ьзователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmr6.pfb><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Пользователь/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:
-/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmsy10.pfb><C:/Users/Пользователь/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Поль�
-�ователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/s
-ymbols/msam10.pfb><C:/Users/Пользователь/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/cm-super/sfbx1200.pfb><C:/Users/Пользовате
-ль/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1440.pfb
-><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/cm-super/sfbx1728.pfb><C:/Users/Пользователь/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1200.pfb><C:/Users/Пол
-ьзователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-supe
-r/sfti1200.pfb>
-Output written on curs_8.pdf (27 pages, 417928 bytes).
+{C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/en
+c/dvips/cm-super/cm-super-t2a.enc}<C:/Users/Пользователь/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/П�
+�льзователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmex10.pfb><C:/Users/Пользователь/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Пользоват
+ель/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.
+pfb><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Пользователь/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/П�
+�льзователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmr10.pfb><C:/Users/Пользователь/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Пользовате
+ль/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb>
+<C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmr8.pfb><C:/Users/Пользователь/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/Пол�
+�зователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Пользовател�
+�/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.
+pfb><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/cm-super/sfbx1200.pfb><C:/Users/Пользователь/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1440.pfb><C:/Users/П�
+�льзователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-s
+uper/sfbx1728.pfb><C:/Users/Пользователь/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/cm-super/sfrm1200.pfb><C:/Users/Пользовате
+ль/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfti1200.pfb
+>
+Output written on curs_8.pdf (31 pages, 455086 bytes).
 PDF statistics:
- 206 PDF objects out of 1000 (max. 8388607)
+ 243 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 63 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 83 words of extra memory for PDF output out of 10000 (max. 10000000)
 
