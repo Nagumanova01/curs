@@ -1,0 +1,98 @@
+\documentclass[specialist,
+substylefile = spbu.rtx,
+               subf,href,colorlinks=true, 12pt]{disser}
+
+\usepackage[a4paper,
+            mag=1000, includefoot,
+            left=3cm, right=1.5cm, top=2cm, bottom=2cm, headsep=1cm, footskip=1cm]{geometry}
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+\usepackage[english,russian]{babel}
+\ifpdf\usepackage{epstopdf}\fi
+
+% Точка с запятой в качестве разделителя между номерами цитирований
+%\setcitestyle{semicolon}
+
+% Использовать полужирное начертание для векторов
+\let\vec=\mathbf
+
+% Включать подсекции в оглавление
+\setcounter{tocdepth}{2}
+
+\graphicspath{{fig/}}
+
+%----------------------------------------------------------------
+\begin{document}
+
+%
+% Титульный лист на русском языке
+%
+
+% Название организации
+\institution{%
+    Санкт-Петербургский государственный университет
+}
+
+\title{Выпускная квалификационная работа}
+
+% Тема
+\topic{Замена непрерывных распределений на дискретные для применения на практике}
+
+% Автор
+\author{\textsc{Нагуманова} Карина Илнуровна}
+
+\group{%
+    Уровень образования: бакалавриат\\
+    Направление 01.03.02 <<Прикладная математика и информатика>>\\
+    Основная образовательная программа СВ.5004.2019 <<Прикладная математика и информатика>>
+}
+
+% Научный руководитель
+\sa       {Н.\,Э.~Голяндина}
+\sastatus {Доцент, кафедра статистического моделирования\,\\
+           к.\,ф.-м.\,н., доцент}
+
+
+% Рецензент
+\rev      {А.\,Н.~Пепелышев}
+\revstatus{Лектор Кардиффский Университет}
+
+% Город и год
+\city{Санкт-Петербург}
+\date{\number\year}
+
+\maketitle
+
+%%
+%% Titlepage in English
+%%
+%
+\institution{%
+    Saint Petersburg State University
+}
+%
+\title{Graduation Project}
+%
+%% Topic
+\topic{Replacing continuous distributions with discrete ones for practical applications}
+%
+%% Author
+\author{\textsc{Nagumanova} Karina Ilnurovna} % Full Name
+\group{}
+
+%% Scientific Advisor
+\sa       {N.\,E.~Golyandina}
+\sastatus {Docent, Department of Statistical Modelling}
+%
+%% Reviewer
+\rev      {A.\,N.~Pepelyshev}
+\revstatus{Lecturer Cardiff University}
+%
+%% City & Year
+\city{Saint Petersburg}
+\date{\number\year}
+
+\maketitle[en]
+
+\end{document}
+
