@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  24 MAY 2023 00:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  24 MAY 2023 02:28
 entering extended mode
 **./VKR.tex
 (VKR.tex
@@ -1657,44 +1657,42 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [31 <./img/gr_neww_2.pdf>] [32 <./img/gr_neww_3.pdf>] [33 <./img/sr1.pdf>]
-[34 <./img/sr2.pdf>] [35] [36
+[34 <./img/sr2.pdf>] [35] (VKR.bbl [36
 
 ]
-Underfull \hbox (badness 1281) in paragraph at lines 997--998
-[]\T2A/cmr/m/n/12 Bickel, J. Eric, Lake, Larry W., and John Lehman. "Discretiza
-tion, Simulation,
+Overfull \hbox (26.03941pt too wide) in paragraph at lines 12--16
+[]\T2A/cmr/m/n/12 Keith G. Swanson's Swansong.  2020.  url: https://www.stochas
+tic.dk/post/swanson-s-swansong
  []
 
 
-Underfull \hbox (badness 4765) in paragraph at lines 997--998
-\T2A/cmr/m/n/12 and Swanson's (Inaccurate) Mean."SPE Econ Mgmt 3 (2011): 12814
-0. doi:
+Underfull \hbox (badness 10000) in paragraph at lines 32--35
+[]\T2A/cmr/m/n/12 Uncertainties impacting reserves, revenue, and costs.  url:
  []
 
 
-Underfull \hbox (badness 1122) in paragraph at lines 999--1000
-[]\T2A/cmr/m/n/12 Bickel, J. Eric. "Discretization, Simulation, and the Value o
-f Information."Paper
+Underfull \hbox (badness 3646) in paragraph at lines 32--35
+\T2A/cmr/m/n/12 https://wiki.aapg.org/Uncertainties impacting reserves, revenue
+, and costs (����
  []
 
-[37
+) [37
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1007.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1007.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 995.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 995.
  (VKR.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1007.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1007.
-
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 995.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 995.
 Package rerunfilecheck Info: File `VKR.out' has not changed.
 (rerunfilecheck)             Checksum: 88D0BEFF884258AA48C6FBF9943217E6;10462.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1007.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 995.
  ) 
 Here is how much of TeX's memory you used:
  32430 strings out of 492968
- 739233 string characters out of 3117975
- 957342 words of memory out of 3000000
- 35541 multiletter control sequences out of 15000+200000
+ 739255 string characters out of 3117975
+ 957343 words of memory out of 3000000
+ 35539 multiletter control sequences out of 15000+200000
  31673 words of font info for 90 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,13n,96p,2038b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1728,9 +1726,9 @@ frm1095.pfb><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.
 ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1728.pfb><C:/U
 sers/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
 lic/cm-super/sfti1200.pfb>
-Output written on VKR.pdf (37 pages, 601519 bytes).
+Output written on VKR.pdf (37 pages, 599606 bytes).
 PDF statistics:
- 606 PDF objects out of 1000 (max. 8388607)
- 140 named destinations out of 1000 (max. 500000)
+ 605 PDF objects out of 1000 (max. 8388607)
+ 139 named destinations out of 1000 (max. 500000)
  266 words of extra memory for PDF output out of 10000 (max. 10000000)
 
