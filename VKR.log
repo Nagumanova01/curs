@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  23 MAY 2023 16:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  23 MAY 2023 23:59
 entering extended mode
 **./VKR.tex
 (VKR.tex
@@ -1274,59 +1274,76 @@ Overfull \hbox (7.27995pt too wide) in paragraph at lines 140--141
 [6] [7] [8
 
 ] [9] [10]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 310.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 310.
+<img_new/density1.pdf, id=234, 505.89pt x 505.89pt>
+File: img_new/density1.pdf Graphic file (type pdf)
+<use img_new/density1.pdf>
+Package pdftex.def Info: img_new/density1.pdf  used on input line 315.
+(pdftex.def)             Requested size: 375.57782pt x 375.5878pt.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\pi' on input line 310.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+<img_new/density2.pdf, id=235, 505.89pt x 505.89pt>
+File: img_new/density2.pdf Graphic file (type pdf)
+<use img_new/density2.pdf>
+Package pdftex.def Info: img_new/density2.pdf  used on input line 325.
+(pdftex.def)             Requested size: 375.57782pt x 375.5878pt.
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 310.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 310.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 310.
+(hyperref)                removing `math shift' on input line 333.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 310.
+(hyperref)                removing `subscript' on input line 333.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 310.
+(hyperref)                removing `\pi' on input line 333.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 310.
+(hyperref)                removing `math shift' on input line 333.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\pi' on input line 310.
+(hyperref)                removing `math shift' on input line 333.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 310.
+(hyperref)                removing `subscript' on input line 333.
 
 
-Overfull \hbox (7.99835pt too wide) in paragraph at lines 311--313
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 333.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 333.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 333.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\pi' on input line 333.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 333.
+
+
+Overfull \hbox (7.99835pt too wide) in paragraph at lines 334--336
 []\T2A/cmr/m/n/12 Заметим, что если $\OML/cmm/m/it/12 x[]; x[]; x[]$ \T2A/cmr/
 m/n/12  квантили логнормального распределения, то $[]\OT1/cmr/m/n/12
  (\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )$\T2A/cmr/m/n/12 ,
  []
 
 
-Overfull \hbox (10.62225pt too wide) in paragraph at lines 316--319
+Overfull \hbox (10.62225pt too wide) in paragraph at lines 339--342
 [][]\T2A/cmr/bx/n/12 Алгоритм 1. []Дано: \T2A/cmr/m/it/12 квантили $\OML/cmm
 /m/it/12 x[]; x[]; x[]$ \T2A/cmr/m/it/12 логнормальной случайной величи
 ны $\OML/cmm/m/it/12 $\T2A/cmr/m/it/12 , $[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
@@ -1334,118 +1351,86 @@ Overfull \hbox (10.62225pt too wide) in paragraph at lines 316--319
  []
 
 [11]
-Overfull \hbox (10.62225pt too wide) in paragraph at lines 334--337
+Overfull \hbox (10.62225pt too wide) in paragraph at lines 357--360
 [][]\T2A/cmr/bx/n/12 Алгоритм 2. []Дано: \T2A/cmr/m/it/12 квантили $\OML/cmm
 /m/it/12 x[]; x[]; x[]$ \T2A/cmr/m/it/12 логнормальной случайной величи
 ны $\OML/cmm/m/it/12 $\T2A/cmr/m/it/12 , $[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
 \OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 
  []
 
+[12 <./img_new/density1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 353.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 353.
+(hyperref)                removing `math shift' on input line 376.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 353.
-
-[12]
-
-LaTeX Warning: Command \cyrs invalid in math mode on input line 387.
+(hyperref)                removing `\sigma' on input line 376.
 
 
-LaTeX Warning: Command \cyrs invalid in math mode on input line 387.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 376.
+
+[13 <./img_new/density2.pdf>]
+
+LaTeX Warning: Command \cyrs invalid in math mode on input line 410.
 
 
-LaTeX Warning: Command \cyrs invalid in math mode on input line 387.
+LaTeX Warning: Command \cyrs invalid in math mode on input line 410.
 
 
-LaTeX Warning: Command \cyrs invalid in math mode on input line 387.
-
-Missing character: There is no с in font cmr12!
-Missing character: There is no с in font cmr12!
-Missing character: There is no с in font cmr12!
-Missing character: There is no с in font cmr12!
-
-LaTeX Warning: Command \cyrs invalid in math mode on input line 389.
+LaTeX Warning: Command \cyrs invalid in math mode on input line 410.
 
 
-LaTeX Warning: Command \cyrs invalid in math mode on input line 389.
-
-
-LaTeX Warning: Command \cyrs invalid in math mode on input line 389.
-
-
-LaTeX Warning: Command \cyrs invalid in math mode on input line 389.
+LaTeX Warning: Command \cyrs invalid in math mode on input line 410.
 
 Missing character: There is no с in font cmr12!
 Missing character: There is no с in font cmr12!
-Missing character: There is no с in font cmr12!
-Missing character: There is no с in font cmr12!
-
-LaTeX Warning: Command \cyrs invalid in math mode on input line 391.
-
-
-LaTeX Warning: Command \cyrs invalid in math mode on input line 391.
-
-
-LaTeX Warning: Command \cyrs invalid in math mode on input line 391.
-
-
-LaTeX Warning: Command \cyrs invalid in math mode on input line 391.
-
-Missing character: There is no с in font cmr12!
-Missing character: There is no с in font cmr12!
-Missing character: There is no с in font cmr12!
-Missing character: There is no с in font cmr12!
-[13]
-
-LaTeX Warning: Command \cyrs invalid in math mode on input line 397.
-
-
-LaTeX Warning: Command \cyrs invalid in math mode on input line 397.
-
-
-LaTeX Warning: Command \cyrs invalid in math mode on input line 397.
-
-Missing character: There is no с in font cmr12!
-Missing character: There is no с in font cmr12!
-Missing character: There is no с in font cmr12!
-
-LaTeX Warning: Command \cyrs invalid in math mode on input line 402.
-
-
-LaTeX Warning: Command \cyrs invalid in math mode on input line 402.
-
-Missing character: There is no с in font cmr12!
-Missing character: There is no с in font cmr12!
-
-LaTeX Warning: Command \cyrs invalid in math mode on input line 403.
-
-
-LaTeX Warning: Command \cyrs invalid in math mode on input line 403.
-
-Missing character: There is no с in font cmr12!
-Missing character: There is no с in font cmr12!
-
-LaTeX Warning: Command \cyrs invalid in math mode on input line 404.
-
-
-LaTeX Warning: Command \cyrs invalid in math mode on input line 404.
-
 Missing character: There is no с in font cmr12!
 Missing character: There is no с in font cmr12!
 [14]
 
-LaTeX Warning: Command \cyrs invalid in math mode on input line 422.
+LaTeX Warning: Command \cyrs invalid in math mode on input line 412.
 
 
-LaTeX Warning: Command \cyrs invalid in math mode on input line 422.
+LaTeX Warning: Command \cyrs invalid in math mode on input line 412.
 
+
+LaTeX Warning: Command \cyrs invalid in math mode on input line 412.
+
+
+LaTeX Warning: Command \cyrs invalid in math mode on input line 412.
+
+Missing character: There is no с in font cmr12!
+Missing character: There is no с in font cmr12!
+Missing character: There is no с in font cmr12!
+Missing character: There is no с in font cmr12!
+
+LaTeX Warning: Command \cyrs invalid in math mode on input line 414.
+
+
+LaTeX Warning: Command \cyrs invalid in math mode on input line 414.
+
+
+LaTeX Warning: Command \cyrs invalid in math mode on input line 414.
+
+
+LaTeX Warning: Command \cyrs invalid in math mode on input line 414.
+
+Missing character: There is no с in font cmr12!
+Missing character: There is no с in font cmr12!
+Missing character: There is no с in font cmr12!
+Missing character: There is no с in font cmr12!
+
+LaTeX Warning: Command \cyrs invalid in math mode on input line 420.
+
+
+LaTeX Warning: Command \cyrs invalid in math mode on input line 420.
+
+
+LaTeX Warning: Command \cyrs invalid in math mode on input line 420.
+
+Missing character: There is no с in font cmr12!
 Missing character: There is no с in font cmr12!
 Missing character: There is no с in font cmr12!
 
@@ -1457,68 +1442,99 @@ LaTeX Warning: Command \cyrs invalid in math mode on input line 425.
 Missing character: There is no с in font cmr12!
 Missing character: There is no с in font cmr12!
 
-Overfull \hbox (0.14134pt too wide) in paragraph at lines 444--446
+LaTeX Warning: Command \cyrs invalid in math mode on input line 426.
+
+
+LaTeX Warning: Command \cyrs invalid in math mode on input line 426.
+
+Missing character: There is no с in font cmr12!
+Missing character: There is no с in font cmr12!
+
+LaTeX Warning: Command \cyrs invalid in math mode on input line 427.
+
+
+LaTeX Warning: Command \cyrs invalid in math mode on input line 427.
+
+Missing character: There is no с in font cmr12!
+Missing character: There is no с in font cmr12!
+[15]
+
+LaTeX Warning: Command \cyrs invalid in math mode on input line 445.
+
+
+LaTeX Warning: Command \cyrs invalid in math mode on input line 445.
+
+Missing character: There is no с in font cmr12!
+Missing character: There is no с in font cmr12!
+
+LaTeX Warning: Command \cyrs invalid in math mode on input line 448.
+
+
+LaTeX Warning: Command \cyrs invalid in math mode on input line 448.
+
+Missing character: There is no с in font cmr12!
+Missing character: There is no с in font cmr12!
+[16]
+Overfull \hbox (0.14134pt too wide) in paragraph at lines 467--469
 []\T2A/cmr/m/n/12 Рассмотрим трехточечную аппроксимацию логнормально
 го распределения с несим
  []
 
-[15]
-<img/sigma_12_new.pdf, id=294, 505.89pt x 505.89pt>
+<img/sigma_12_new.pdf, id=313, 505.89pt x 505.89pt>
 File: img/sigma_12_new.pdf Graphic file (type pdf)
 <use img/sigma_12_new.pdf>
-Package pdftex.def Info: img/sigma_12_new.pdf  used on input line 450.
+Package pdftex.def Info: img/sigma_12_new.pdf  used on input line 473.
 (pdftex.def)             Requested size: 445.99553pt x 446.0028pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[16] [17 <./img/sigma_12_new.pdf>]
-<img/par_new2.jpg, id=317, 426.84468pt x 417.81094pt>
+[17] [18 <./img/sigma_12_new.pdf>]
+<img/par_new2.jpg, id=335, 426.84468pt x 417.81094pt>
 File: img/par_new2.jpg Graphic file (type jpg)
 <use img/par_new2.jpg>
-Package pdftex.def Info: img/par_new2.jpg  used on input line 500.
+Package pdftex.def Info: img/par_new2.jpg  used on input line 523.
 (pdftex.def)             Requested size: 375.57782pt x 367.65564pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[18] [19 <./img/par_new2.jpg>] [20
+[19] [20 <./img/par_new2.jpg>] [21
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 582.
+(hyperref)                removing `math shift' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\pi' on input line 582.
+(hyperref)                removing `\pi' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 582.
+(hyperref)                removing `math shift' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 582.
+(hyperref)                removing `math shift' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 582.
+(hyperref)                removing `math shift' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 582.
+(hyperref)                removing `math shift' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\pi' on input line 582.
+(hyperref)                removing `\pi' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 582.
+(hyperref)                removing `math shift' on input line 605.
 
-[21] [22]
-Overfull \hbox (8.84772pt too wide) in paragraph at lines 630--632
+[22] [23]
+Overfull \hbox (8.84772pt too wide) in paragraph at lines 653--655
 \T2A/cmr/m/it/12 где $\OML/cmm/m/it/12 a$ \T2A/cmr/m/it/12 и $\OML/cmm/m/it/12 
 b$ \T2A/cmr/m/it/12 такие, что прямая $\OML/cmm/m/it/12 y \OT1/cmr/m/n/12 = [
 ]$ \T2A/cmr/m/it/12 проходит через точки $\OT1/cmr/m/n/12 ([](\OML/cmm/m/it
@@ -1527,157 +1543,158 @@ b$ \T2A/cmr/m/it/12 такие, что прямая $\OML/cmm/m/it/12 y \OT1/cmr/m/n/12 = [
 t/12 ; \OT1/cmr/m/n/12 0)$
  []
 
-[23] [24] [25
+[24] [25] [26
 
 ]
 
-LaTeX Warning: Command \cyrg invalid in math mode on input line 734.
+LaTeX Warning: Command \cyrg invalid in math mode on input line 757.
 
 
-LaTeX Warning: Command \cyrd invalid in math mode on input line 734.
+LaTeX Warning: Command \cyrd invalid in math mode on input line 757.
 
 
-LaTeX Warning: Command \cyre invalid in math mode on input line 734.
-
-Missing character: There is no г in font cmr12!
-Missing character: There is no д in font cmr12!
-Missing character: There is no е in font cmr12!
-[26]
-
-LaTeX Warning: Command \cyrg invalid in math mode on input line 740.
-
-
-LaTeX Warning: Command \cyrd invalid in math mode on input line 740.
-
-
-LaTeX Warning: Command \cyre invalid in math mode on input line 740.
+LaTeX Warning: Command \cyre invalid in math mode on input line 757.
 
 Missing character: There is no г in font cmr12!
 Missing character: There is no д in font cmr12!
 Missing character: There is no е in font cmr12!
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<img/gr_neww_1.pdf, id=395, 505.89pt x 505.89pt>
-File: img/gr_neww_1.pdf Graphic file (type pdf)
-<use img/gr_neww_1.pdf>
-Package pdftex.def Info: img/gr_neww_1.pdf  used on input line 806.
-(pdftex.def)             Requested size: 375.57782pt x 375.5878pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<img/gr_neww_2.pdf, id=396, 505.89pt x 505.89pt>
-File: img/gr_neww_2.pdf Graphic file (type pdf)
-<use img/gr_neww_2.pdf>
-Package pdftex.def Info: img/gr_neww_2.pdf  used on input line 816.
-(pdftex.def)             Requested size: 375.57782pt x 375.5878pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<img/gr_neww_3.pdf, id=397, 505.89pt x 505.89pt>
-File: img/gr_neww_3.pdf Graphic file (type pdf)
-<use img/gr_neww_3.pdf>
-Package pdftex.def Info: img/gr_neww_3.pdf  used on input line 826.
-(pdftex.def)             Requested size: 375.57782pt x 375.5878pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 [27]
 
+LaTeX Warning: Command \cyrg invalid in math mode on input line 763.
+
+
+LaTeX Warning: Command \cyrd invalid in math mode on input line 763.
+
+
+LaTeX Warning: Command \cyre invalid in math mode on input line 763.
+
+Missing character: There is no г in font cmr12!
+Missing character: There is no д in font cmr12!
+Missing character: There is no е in font cmr12!
+
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+<img/gr_neww_1.pdf, id=413, 505.89pt x 505.89pt>
+File: img/gr_neww_1.pdf Graphic file (type pdf)
+<use img/gr_neww_1.pdf>
+Package pdftex.def Info: img/gr_neww_1.pdf  used on input line 829.
+(pdftex.def)             Requested size: 375.57782pt x 375.5878pt.
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 888.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+<img/gr_neww_2.pdf, id=414, 505.89pt x 505.89pt>
+File: img/gr_neww_2.pdf Graphic file (type pdf)
+<use img/gr_neww_2.pdf>
+Package pdftex.def Info: img/gr_neww_2.pdf  used on input line 839.
+(pdftex.def)             Requested size: 375.57782pt x 375.5878pt.
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\xi' on input line 888.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+<img/gr_neww_3.pdf, id=415, 505.89pt x 505.89pt>
+File: img/gr_neww_3.pdf Graphic file (type pdf)
+<use img/gr_neww_3.pdf>
+Package pdftex.def Info: img/gr_neww_3.pdf  used on input line 849.
+(pdftex.def)             Requested size: 375.57782pt x 375.5878pt.
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 888.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 888.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\eta' on input line 888.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 888.
-
-<img/sr1.pdf, id=413, 505.89pt x 505.89pt>
-File: img/sr1.pdf Graphic file (type pdf)
-<use img/sr1.pdf>
-Package pdftex.def Info: img/sr1.pdf  used on input line 895.
-(pdftex.def)             Requested size: 445.99553pt x 446.0028pt.
 [28]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/sr2.pdf, id=421, 505.89pt x 505.89pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 911.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\xi' on input line 911.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 911.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 911.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\eta' on input line 911.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 911.
+
+<img/sr1.pdf, id=431, 505.89pt x 505.89pt>
+File: img/sr1.pdf Graphic file (type pdf)
+<use img/sr1.pdf>
+Package pdftex.def Info: img/sr1.pdf  used on input line 918.
+(pdftex.def)             Requested size: 445.99553pt x 446.0028pt.
+[29]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<img/sr2.pdf, id=439, 505.89pt x 505.89pt>
 File: img/sr2.pdf Graphic file (type pdf)
 <use img/sr2.pdf>
-Package pdftex.def Info: img/sr2.pdf  used on input line 906.
+Package pdftex.def Info: img/sr2.pdf  used on input line 929.
 (pdftex.def)             Requested size: 445.99553pt x 446.0028pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[29 <./img/gr_neww_1.pdf>]
+[30 <./img/gr_neww_1.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[30 <./img/gr_neww_2.pdf>] [31 <./img/gr_neww_3.pdf>] [32 <./img/sr1.pdf>]
-[33 <./img/sr2.pdf>] [34] [35
+[31 <./img/gr_neww_2.pdf>] [32 <./img/gr_neww_3.pdf>] [33 <./img/sr1.pdf>]
+[34 <./img/sr2.pdf>] [35] [36
 
 ]
-Underfull \hbox (badness 1281) in paragraph at lines 973--974
+Underfull \hbox (badness 1281) in paragraph at lines 997--998
 []\T2A/cmr/m/n/12 Bickel, J. Eric, Lake, Larry W., and John Lehman. "Discretiza
 tion, Simulation,
  []
 
 
-Underfull \hbox (badness 4765) in paragraph at lines 973--974
+Underfull \hbox (badness 4765) in paragraph at lines 997--998
 \T2A/cmr/m/n/12 and Swanson's (Inaccurate) Mean."SPE Econ Mgmt 3 (2011): 12814
 0. doi:
  []
 
 
-Underfull \hbox (badness 1122) in paragraph at lines 975--976
+Underfull \hbox (badness 1122) in paragraph at lines 999--1000
 []\T2A/cmr/m/n/12 Bickel, J. Eric. "Discretization, Simulation, and the Value o
 f Information."Paper
  []
 
-[36
+[37
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 981.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 981.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1007.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1007.
  (VKR.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 981.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 981.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1007.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1007.
+
 Package rerunfilecheck Info: File `VKR.out' has not changed.
-(rerunfilecheck)             Checksum: FC68867794199D0366B6E4D4D1EFFAF4;10462.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 981.
+(rerunfilecheck)             Checksum: 88D0BEFF884258AA48C6FBF9943217E6;10462.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1007.
  ) 
 Here is how much of TeX's memory you used:
- 32412 strings out of 492968
- 738881 string characters out of 3117975
+ 32430 strings out of 492968
+ 739233 string characters out of 3117975
  957344 words of memory out of 3000000
- 35530 multiletter control sequences out of 15000+200000
+ 35541 multiletter control sequences out of 15000+200000
  31673 words of font info for 90 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,13n,96p,2038b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1711,9 +1728,9 @@ frm1095.pfb><C:/Users/РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ/AppData/Local/Programs/MiKTeX 2.
 ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1728.pfb><C:/U
 sers/РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
 lic/cm-super/sfti1200.pfb>
-Output written on VKR.pdf (36 pages, 514376 bytes).
+Output written on VKR.pdf (37 pages, 542750 bytes).
 PDF statistics:
- 582 PDF objects out of 1000 (max. 8388607)
- 136 named destinations out of 1000 (max. 500000)
- 256 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 606 PDF objects out of 1000 (max. 8388607)
+ 140 named destinations out of 1000 (max. 500000)
+ 266 words of extra memory for PDF output out of 10000 (max. 10000000)
 
