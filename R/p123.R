@@ -351,3 +351,38 @@ ggplot(df, aes (x = x)) +
   labs(x = "pi", y = "sigma")
 
 dev.off()
+
+#======================
+f_s1 = function(pi){
+  s=seq(0.001, 2, by = 0.001)
+  s_lim = 0
+  for (i in s){
+    an = p2_sim(pi, i)
+    if (is.na(an)){
+      print('Missing')
+    }
+    if (an<0){
+      s_lim = i
+      if (i==0.001){s_lim =0}
+      break
+    }
+  }
+  return(s_lim)
+}
+
+f_s2 = function(pi){
+  s=seq(0.001,2, by = 0.001)
+  s_lim = 0
+  for (i in s){
+    an = p2(pi, i)
+    if (is.na(an)){
+      print('Missing')
+    }
+    if (an<0){
+      s_lim = i
+      if (i==0.001){s_lim =0}
+      break
+    }
+  }
+  return(s_lim)
+}
