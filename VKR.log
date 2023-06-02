@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  24 MAY 2023 02:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  24 MAY 2023 14:51
 entering extended mode
 **./VKR.tex
 (VKR.tex
@@ -1577,26 +1577,26 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/gr_neww_1.pdf, id=413, 505.89pt x 505.89pt>
-File: img/gr_neww_1.pdf Graphic file (type pdf)
-<use img/gr_neww_1.pdf>
-Package pdftex.def Info: img/gr_neww_1.pdf  used on input line 829.
+<img_new/ris41.pdf, id=413, 505.89pt x 505.89pt>
+File: img_new/ris41.pdf Graphic file (type pdf)
+<use img_new/ris41.pdf>
+Package pdftex.def Info: img_new/ris41.pdf  used on input line 829.
 (pdftex.def)             Requested size: 375.57782pt x 375.5878pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/gr_neww_2.pdf, id=414, 505.89pt x 505.89pt>
-File: img/gr_neww_2.pdf Graphic file (type pdf)
-<use img/gr_neww_2.pdf>
-Package pdftex.def Info: img/gr_neww_2.pdf  used on input line 839.
+<img_new/ris42.pdf, id=414, 505.89pt x 505.89pt>
+File: img_new/ris42.pdf Graphic file (type pdf)
+<use img_new/ris42.pdf>
+Package pdftex.def Info: img_new/ris42.pdf  used on input line 839.
 (pdftex.def)             Requested size: 375.57782pt x 375.5878pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/gr_neww_3.pdf, id=415, 505.89pt x 505.89pt>
-File: img/gr_neww_3.pdf Graphic file (type pdf)
-<use img/gr_neww_3.pdf>
-Package pdftex.def Info: img/gr_neww_3.pdf  used on input line 849.
+<img_new/ris43.pdf, id=415, 505.89pt x 505.89pt>
+File: img_new/ris43.pdf Graphic file (type pdf)
+<use img_new/ris43.pdf>
+Package pdftex.def Info: img_new/ris43.pdf  used on input line 849.
 (pdftex.def)             Requested size: 375.57782pt x 375.5878pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1649,31 +1649,33 @@ Package pdftex.def Info: img/sr2.pdf  used on input line 929.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[30 <./img/gr_neww_1.pdf>]
+[30 <./img_new/ris41.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[31 <./img/gr_neww_2.pdf>] [32 <./img/gr_neww_3.pdf>] [33 <./img/sr1.pdf>]
+[31 <./img_new/ris42.pdf>] [32 <./img_new/ris43.pdf>] [33 <./img/sr1.pdf>]
 [34 <./img/sr2.pdf>] [35] (VKR.bbl [36
 
 ]
-Overfull \hbox (26.03941pt too wide) in paragraph at lines 12--16
-[]\T2A/cmr/m/n/12 Keith G. Swanson's Swansong.  2020.  url: https://www.stochas
-tic.dk/post/swanson-s-swansong
+LaTeX Font Info:    Try loading font information for T2A+cmtt on input line 14.
+
+
+("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\latex
+\cyrillic\t2acmtt.fd"
+File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+)
+Underfull \hbox (badness 5741) in paragraph at lines 12--16
+[]\T2A/cmr/m/n/12 Keith G. Swanson's Swansong.  2020.  []$\T2A/cmtt/m/n/12 http
+s : / / www . stochastic . dk / post /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--35
-[]\T2A/cmr/m/n/12 Uncertainties impacting reserves, revenue, and costs.  url:
- []
-
-
-Underfull \hbox (badness 3646) in paragraph at lines 32--35
-\T2A/cmr/m/n/12 https://wiki.aapg.org/Uncertainties impacting reserves, revenue
-, and costs (����
+Underfull \hbox (badness 1668) in paragraph at lines 32--35
+\T2A/cmtt/m/n/12 aapg . org / Uncertaintiesimpactingreserves ,[] revenue ,[] an
+dcosts$[] \T2A/cmr/m/n/12 (���� ���������:
  []
 
 ) [37
@@ -1689,11 +1691,11 @@ Package rerunfilecheck Info: File `VKR.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 995.
  ) 
 Here is how much of TeX's memory you used:
- 32430 strings out of 492968
- 739255 string characters out of 3117975
- 957343 words of memory out of 3000000
- 35539 multiletter control sequences out of 15000+200000
- 31673 words of font info for 90 fonts, out of 3000000 for 9000
+ 32451 strings out of 492968
+ 739969 string characters out of 3117975
+ 957344 words of memory out of 3000000
+ 35554 multiletter control sequences out of 15000+200000
+ 31983 words of font info for 91 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,13n,96p,2038b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/en
@@ -1725,10 +1727,11 @@ frm1095.pfb><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.
 9/fonts/type1/public/cm-super/sfrm1200.pfb><C:/Users/Пользователь/A
 ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1728.pfb><C:/U
 sers/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/cm-super/sfti1200.pfb>
-Output written on VKR.pdf (37 pages, 599606 bytes).
+lic/cm-super/sfti1200.pfb><C:/Users/Пользователь/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on VKR.pdf (37 pages, 633004 bytes).
 PDF statistics:
- 605 PDF objects out of 1000 (max. 8388607)
+ 618 PDF objects out of 1000 (max. 8388607)
  139 named destinations out of 1000 (max. 500000)
  266 words of extra memory for PDF output out of 10000 (max. 10000000)
 
