@@ -12,7 +12,7 @@ s<-function(x){
 
 ggplot() +
   xlim(c(0, 5)) +
-  labs(x = "sigma", y = "")+
+  labs(x = "sigma", y = "относительная ошибка")+
   geom_function(aes(color = "отн. ошибка мат.ож."), fun = m,
                 colour = "red",
                 lwd = 1,
@@ -21,5 +21,6 @@ ggplot() +
                 colour = "blue",
                 lwd = 1,
                 linetype = 1)+
-  annotate("text", x= 0.75 , y= 0.98 , label= "отн. ошибка дисперсии", col=" blue")+
-  annotate("text", x= 4 , y= 0.75 , label= "отн. ошибка мат.ожидания", col=" red")
+  annotate("text", x= 0.75 , y= 0.98 , label= "отн. ошибка дисперсии", col=" blue", size = 6)+
+  annotate("text", x= 4 , y= 0.75 , label= "отн. ошибка мат.ожидания", col=" red", size = 6)+
+  theme(axis.title = element_text(size = 15, face = "bold"))

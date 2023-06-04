@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  3 JUN 2023 14:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2021.9.14)  2 JUN 2023 09:24
 entering extended mode
-**./slides3.tex
-(slides3.tex
+**./slides_final.tex
+(slides_final.tex
 LaTeX2e <2018-04-01> patch level 5
 
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\latex
@@ -1149,7 +1149,7 @@ File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\latex
 \ucs\uni-4.def"
 File: uni-4.def 2013/05/13 UCS: Unicode data U+0400..U+04FF
-) (slides3.aux
+) (slides_final.aux
 
 LaTeX Warning: Label `2' multiply defined.
 
@@ -1157,7 +1157,7 @@ LaTeX Warning: Label `2' multiply defined.
 LaTeX Warning: Label `ris7' multiply defined.
 
 )
-\openout1 = `slides3.aux'.
+\openout1 = `slides_final.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
 LaTeX Font Info:    ... okay on input line 77.
@@ -1265,9 +1265,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 77.
 LaTeX Info: Redefining \pageref on input line 77.
 LaTeX Info: Redefining \nameref on input line 77.
- (slides3.out) (slides3.out)
+ (slides_final.out) (slides_final.out)
 \@outlinefile=\write5
-\openout5 = `slides3.out'.
+\openout5 = `slides_final.out'.
 
 
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\latex
@@ -1312,13 +1312,11 @@ LaTeX Info: Redefining \selectfont on input line 77.
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.16} (current compat level: 1.9).
 
-(slides3.nav) [3
+No file slides_final.nav.
+[3
 
 {C:/Users/Пользователь/AppData/Local/MiKTeX/2.9/pdftex/config/pdfte
 x.map}
-
-] [5
-
 
 ]
 LaTeX Font Info:    Try loading font information for U+msa on input line 142.
@@ -1332,22 +1330,13 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 142.
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\latex
 \amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [7
+) [5
+
+
+] [7
 
 
 ] [9
-
-
-] [11
-
-
-] [13
-
-
-] [15
-
-
-] [17
 
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{2}) has been
@@ -1355,23 +1344,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <to be read again> 
                    \relax 
 l.256 	\end{frame}
-                   [19
-
-
-] [21
+                   [11
 
 
 ]
-Underfull \hbox (badness 1215) in paragraph at lines 270--270
-[]\T2A/cmss/m/n/10 ������������ ��-��-�� ��-����-��-��-��� ����-��-���-��� ���-
-����-���
- []
-
-[23
-
-
-]
-<img/par_new2.jpg, id=162, 426.84468pt x 417.81094pt>
+<img/par_new2.jpg, id=100, 426.84468pt x 417.81094pt>
 File: img/par_new2.jpg Graphic file (type jpg)
 <use img/par_new2.jpg>
 Package pdftex.def Info: img/par_new2.jpg  used on input line 303.
@@ -1380,58 +1357,37 @@ Package pdftex.def Info: img/par_new2.jpg  used on input line 303.
 Overfull \vbox (16.98721pt too high) detected at line 303
  []
 
-[25
+[13
 
 
-] [27
-
-
- <./img/par_new2.jpg>]
+]
 Overfull \vbox (3.15172pt too high) detected at line 348
  []
 
-[29
+[15
 
 
-] [31
+ <./img/par_new2.jpg>] [17
 
 
-] [33
+] [19
 
 
-] [35
-
-
-] [37
-
-
-] [39
-
-
-] [41
+] [21
 
 
 ]
 Overfull \vbox (1.46487pt too high) detected at line 503
  []
 
-[43
+[23
 
 
-] [45
-
-
-] [47
-
-
-] [49
-
-
-] [51
+] [25
 
 
 ]
-<img/sr1.pdf, id=297, 505.89pt x 505.89pt>
+<img/sr1.pdf, id=172, 505.89pt x 505.89pt>
 File: img/sr1.pdf Graphic file (type pdf)
 <use img/sr1.pdf>
 Package pdftex.def Info: img/sr1.pdf  used on input line 615.
@@ -1440,11 +1396,11 @@ Package pdftex.def Info: img/sr1.pdf  used on input line 615.
 Overfull \vbox (13.3142pt too high) detected at line 615
  []
 
-[53
+[27
 
 
 ]
-<img/sr2.pdf, id=308, 505.89pt x 505.89pt>
+<img/sr2.pdf, id=184, 505.89pt x 505.89pt>
 File: img/sr2.pdf Graphic file (type pdf)
 <use img/sr2.pdf>
 Package pdftex.def Info: img/sr2.pdf  used on input line 631.
@@ -1453,10 +1409,8 @@ Package pdftex.def Info: img/sr2.pdf  used on input line 631.
 Overfull \vbox (12.28743pt too high) detected at line 631
  []
 
-[55
+[29
 
-
- <./img/sr1.pdf>] [57
 
 pdfTeX warning (ext4): destination with the same identifier (name{ris7}) has be
 en already used, duplicate ignored
@@ -1464,87 +1418,23 @@ en already used, duplicate ignored
 \pgfpages@shipoutshipoutbox ...physicalpagesizes }
                                                   \endgroup 
 l.650 	\end{frame}
-                  
-
- <./img/sr2.pdf>]
+                   <./img/sr1.pdf> <./img/sr2.pdf>]
 ("C:\Users\Пользователь\AppData\Local\Programs\MiKTeX 2.9\tex\latex
 \ucs\uni-32.def"
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-) [59
+))
+! Emergency stop.
+<*> ./slides_final.tex
+                      
+*** (job aborted, no legal \end found)
 
-
-]
-\tf@nav=\write6
-\openout6 = `slides3.nav'.
-
-\tf@toc=\write7
-\openout7 = `slides3.toc'.
-
-\tf@snm=\write8
-\openout8 = `slides3.snm'.
-
- [61
-
-
- <C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/tex/latex
-/beamer/beamericonarticle.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 671.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 671.
- (slides3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 671.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 671.
-Package rerunfilecheck Info: File `slides3.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+ 
 Here is how much of TeX's memory you used:
- 37070 strings out of 492968
- 840782 string characters out of 3117975
- 1061820 words of memory out of 3000000
- 40101 multiletter control sequences out of 15000+200000
- 27544 words of font info for 83 fonts, out of 3000000 for 9000
+ 36897 strings out of 492968
+ 838593 string characters out of 3117975
+ 1055820 words of memory out of 3000000
+ 40002 multiletter control sequences out of 15000+200000
+ 26726 words of font info for 82 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,15n,98p,945b,628s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/en
-c/dvips/cm-super/cm-super-t2a.enc}<C:/Users/Пользователь/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/П�
-�льзователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmex10.pfb><C:/Users/Пользователь/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Пользоват
-ель/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.
-pfb><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Пользователь/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/П�
-�льзователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmmi8.pfb><C:/Users/Пользователь/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Пользовате
-ль/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb>
-<C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmr6.pfb><C:/Users/Пользователь/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Поль�
-�ователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmr8.pfb><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/Пользователь/A
-ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
-Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmsy7.pfb><C:/Users/Пользователь/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Польз�
-�ватель/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfs
-i1095.pfb><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/cm-super/sfss0600.pfb><C:/Users/Пользователь/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfss0900.pfb><C:/Use
-rs/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/cm-super/sfss1000.pfb><C:/Users/Пользователь/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/cm-super/sfss1095.pfb><C:/Users/Пользов
-атель/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfss14
-40.pfb><C:/Users/Пользователь/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/cm-super/sfsx1095.pfb>
-Output written on slides3.pdf (30 pages, 429150 bytes).
-PDF statistics:
- 464 PDF objects out of 1000 (max. 8388607)
- 138 named destinations out of 1000 (max. 500000)
- 100 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 64i,15n,98p,950b,628s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!

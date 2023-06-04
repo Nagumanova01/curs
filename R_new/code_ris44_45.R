@@ -7,8 +7,8 @@ library(ggridges)
 
 mu1 = 4
 mu2 = 4
-sigma1_2 = 2.25
-sigma2_2 = 0.75
+sigma1_2 = 0.25
+sigma2_2 = 0.25
 
 m=exp(mu1+sigma1_2/2)+exp(mu2+sigma2_2/2)
 d=(exp(2*mu1+sigma1_2))*(exp(sigma1_2)-1)+(exp(2*mu2+sigma2_2))*(exp(sigma2_2)-1)
@@ -31,7 +31,7 @@ z10_n = quantile(xi_n, 0.1)
 z90_n = quantile(xi_n, 0.9)
 
 x <- c(xi,xi_n)
-group <- c(rep("xi", 1000000), rep("xi_n", 1000000))
+group <- c(rep("xi", 1000000), rep("eta", 1000000))
 df <- data.frame(x, group)
 
 err_med = (abs(med-med_n))/med
@@ -49,18 +49,24 @@ err_q90
 destination = "C:\\Users\\Пользователь\\Desktop\\Диплом\\curs\\img_new\\ris45.pdf"
 pdf(file = destination)
 
+#color = "#FFB90F",    color = "#FFBBFF"
+#values = c("#CAFF70", "white", "#6E8B3D")   values = c("#FF83FA", "white", "#8B4789")
 ggplot(df, aes(x = x, y = group, fill = stat(quantile))) +
   stat_density_ridges(quantile_lines = TRUE,
                       calc_ecdf = TRUE,
                       geom = "density_ridges_gradient",
                       quantiles = c(0.1, 0.9),
-                      color = "#FFB90F",
+                      color = "#FFBBFF",
                       linetype = 1,
                       lwd = 0.75,
                       scale = 0.8) +
-  scale_fill_manual(name = "Prob", values = c("#CAFF70", "white", "#6E8B3D"),
+  scale_fill_manual(name = "Prob", values = c("#FF83FA", "white", "#8B4789"),
                     labels = c("(0, 10%]", "(10%, 90%]", "(90%, 1]"))+
-  xlim(NA,750)+
-  labs(x = "", y = "")
+  xlim(-10,500)+
+  labs(x = "x", y = "p(x)")+
+  theme(axis.text = element_text(color = "slateblue",
+                                 size = 12, face = "bold"))+
+  theme(axis.title = element_text(color = "#8B7355", size = 15, face = "bold"))+
+  theme(axis.ticks.y = element_line(color = 2))
 
 dev.off()
